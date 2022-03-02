@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands, tasks
 import Vars as vars
+from token import token
 
 Bot = commands.Bot("!")
 
@@ -99,4 +100,4 @@ async def i(ctx, *args):
         await ctx.send(vars.jii)
 
 
-Bot.run("ODU1MzI2MjYyMDc1NDU3NTQ2.YMw2qA.9HBOqUW55KIWb9CffNCyfKq2n6c")
+Bot.run(token)

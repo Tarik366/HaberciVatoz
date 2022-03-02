@@ -1,3 +1,10 @@
+from bs4 import BeautifulSoup
+import requests
+
+t = requests.get("https://discord.com/developers/applications/855326262075457546/bot")
+to = BeautifulSoup(t.text,"html5lib")
+tok = to.find("div",{"class":"flex-2S1XBF"}).find("div")
+print(tok)
 translater = "Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür mangaları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?"
 editor = "Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?"
 

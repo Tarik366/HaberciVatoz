@@ -19,14 +19,7 @@ async def clear(ctx, amount=100):
     await ctx.channel.purge(limit=amount)
 
 
-@Bot.command()
-async def başvuru(ctx, *args):
-    if "çevirmen" in args:
-        await ctx.send(vars.translater)
-    if "editör" in args:
-        await ctx.send(vars.editor)
-    else:
-        await ctx.channel.purge(limit=1)
+# gifs
 
 
 @Bot.command()
@@ -99,6 +92,19 @@ async def i(ctx, *args):
         await ctx.send(vars.balanced)
     if "jii" in args:
         await ctx.send(vars.jii)
+
+
+# ekibe başvuru
+
+
+@Bot.command()
+async def başvuru(ctx, *args):
+    if "çevirmen" in args:
+        await ctx.send(vars.translater)
+    if "editör" in args:
+        await ctx.send(vars.editor)
+    else:
+        await ctx.channel.purge(limit=1)
 
 
 Bot.run(token_2.token)

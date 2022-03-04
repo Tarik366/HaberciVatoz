@@ -15,7 +15,7 @@ async def on_ready():
 
 
 @Bot.command()
-async def clear(ctx, amount=100):
+async def clear(ctx, amount=100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000):
     await ctx.channel.purge(limit=amount)
 
 
@@ -25,9 +25,6 @@ async def ban(ctx, member: discord.Member, *args, reason="Yok"):
 
 async def kick(ctx, member: discord.Member, *args, reason="Yok"):
     await member.kick(reason=reason)
-
-
-
 
 
 # gifs

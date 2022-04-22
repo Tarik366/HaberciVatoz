@@ -115,7 +115,4 @@ async def başvuru(ctx, *args):
         await ctx.channel.purge(limit=1)
 
 
-# Responds
-
-
 Bot.run(token_2.token)

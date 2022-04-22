@@ -247,8 +247,6 @@ async def başvuru(ctx, *args):
         await ctx.send(Vars.webtranslater)
     if "webeditör" in args:
         await ctx.send(Vars.webeditor)
-    else:
-        await ctx.channel.purge(limit=1)
 
 
 # Responds

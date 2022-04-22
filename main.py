@@ -212,6 +212,26 @@ async def i(ctx, *args):
         await ctx.send(Vars.stalinpoint)
     if "serve" in args:
         await ctx.send(Vars.serve)
+    if "waku" in args:
+        await ctx.send(Vars.waku)
+    if "fail" in args:
+        await ctx.send(Vars.fail)
+    if "comunazi" in args:
+        await ctx.send(Vars.comunazi)
+    if "şaak" in args:
+        await ctx.send(Vars.şaak)
+    if "doom" in args:
+        await ctx.send(Vars.doom)
+    if "omori" in args:
+        await ctx.send(Vars.omori)
+    if "callvatoz" in args:
+        await ctx.send(Vars.callvatoz)
+    if "vatozlar" in args:
+        await ctx.send(Vars.knowvatoz)
+    if "papas" in args:
+        await ctx.send(Vars.papas)
+    if "hans" in args:
+        await ctx.send(Vars.hans)
 
 
 # ekibe başvuru
@@ -219,10 +239,14 @@ async def i(ctx, *args):
 
 @Bot.command()
 async def başvuru(ctx, *args):
-    if "çevirmen" in args:
+    if "mangaçevirmen" in args:
         await ctx.send(Vars.translater)
-    if "editör" in args:
+    if "mangaeditör" in args:
         await ctx.send(Vars.editor)
+    if "webçevirmen" in args:
+        await ctx.send(Vars.webtranslater)
+    if "webeditör" in args:
+        await ctx.send(Vars.webeditor)
     else:
         await ctx.channel.purge(limit=1)
 

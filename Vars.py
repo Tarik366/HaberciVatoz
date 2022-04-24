@@ -105,3 +105,4 @@ callvatoz = "https://media.discordapp.net/attachments/798641429056454689/9650046
 knowvatoz = "https://media.discordapp.net/attachments/798641429056454689/965004494796627978/23.jpg?width=168&height=700"
 papas = "https://media.discordapp.net/attachments/813893122365849630/965022608401772615/Ekran_Goruntusu_604.png?width=716&height=701"
 hans = "https://cdn.discordapp.com/attachments/813893122365849630/963588718361477200/FPUcfK3XEAESsUj.jpg"
+yummy = "https://c.tenor.com/9Xzbb_QFk_EAAAAM/russia-yummy.gif"

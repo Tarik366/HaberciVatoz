@@ -10,6 +10,7 @@ Bot = commands.Bot("!")
 @Bot.event
 async def on_ready():
     print("merhaba")
+    await Bot.change_presence(activity=discord.Game(name="Yahudi yakmaca", type=3, application_id=None, details="Yahudi yakıyor", state="Yahudi yakıyor",))
 
 # moderatrör komutları
 
@@ -232,6 +233,8 @@ async def i(ctx, *args):
         await ctx.send(Vars.papas)
     if "hans" in args:
         await ctx.send(Vars.hans)
+    if "yummy" in args:
+        await ctx.send(Vars.yummy)
 
 
 # ekibe başvuru
@@ -247,8 +250,6 @@ async def başvuru(ctx, *args):
         await ctx.send(Vars.webtranslater)
     if "webeditör" in args:
         await ctx.send(Vars.webeditor)
-    else:
-        await ctx.channel.purge(limit=1)
 
 
 # Responds

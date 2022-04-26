@@ -235,6 +235,30 @@ async def i(ctx, *args):
         await ctx.send(Vars.hans)
     if "yummy" in args:
         await ctx.send(Vars.yummy)
+    if "okay" in args:
+        await ctx.send(Vars.okay)
+    if "what" in args:
+        await ctx.send(Vars.what)
+    if "sad" in args:
+        await ctx.send(Vars.sad)
+    if "gel" in args:
+        await ctx.send(Vars.gel)
+    if "ekonomi" in args:
+        await ctx.send(Vars.ekonomi)
+    if "mikasa" in args:
+        await ctx.send(Vars.mikasa)
+    if "çıldır" in args:
+        await ctx.send(Vars.çıldır)
+    if "kırk" in args:
+        await ctx.send(Vars.kırk)
+    if "drink2" in args:
+        await ctx.send(Vars.drink2)
+    if "fbi" in args:
+        await ctx.send(Vars.fbi)
+    if "want" in args:
+        await ctx.send(Vars.want)
+    if "want2" in args:
+        await ctx.send(Vars.want2)
 
 
 # ekibe başvuru
@@ -250,15 +274,6 @@ async def başvuru(ctx, *args):
         await ctx.send(Vars.webtranslater)
     if "webeditör" in args:
         await ctx.send(Vars.webeditor)
-
-
-# Responds
-
-
-@Bot.event
-async def on_member_join(member):
-    channel = Bot.get_channel(947935677813772332)
-    await channel.send(f"Hoş geldin {member} https://c.tenor.com/ZyzG4mOlthkAAAAC/yoink-dance.gif")
 
 
 Bot.run(token_2.token)

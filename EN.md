@@ -1,6 +1,6 @@
 # Fascist stingray discord bot
 
-[For Turkish site](https://tarik366.github.io/dengesizVatoz/)
+[For Turkish site](https://tarik366.github.io/FascistVatoz/)
 
 This bot is completely open source and if its contents and theme are not stolen, no claims of stealing can be made (so you can get the codes).
 

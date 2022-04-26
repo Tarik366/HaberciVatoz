@@ -1,6 +1,6 @@
 # Faşist vatoz discord botu
 
-[For English site](https://tarik366.github.io/dengesizVatoz/EN.md)
+[For English site](https://tarik366.github.io/FascistVatoz/EN.md)
 
 Bu bot tamamen açık kaynaklı olup içerikleri ve teması çalınmaması durumunda herhangi bir çalınma iddiası oluşturulamaz(yani kodları alabilirsiniz).
 

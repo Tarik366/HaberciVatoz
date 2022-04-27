@@ -34,7 +34,7 @@ await Bot.change_presence(activity=discord.Game(name="jewish burning", type=3, a
 
 This code determines the statue of bot and it looks like this.
 
-![Statue](images/statue_EN.png)
+![Statue](https://github.com/Tarik366/FascistVatoz/blob/gh-pages/images/Statue_En.png?raw=true)
 
 ### commands
 

@@ -2,6 +2,10 @@
 
 [For Turkish site](https://tarik366.github.io/FascistVatoz/)
 
+![Discord Bot](https://top.gg/api/widget/948714385533206548.svg)
+
+[Top.gg](https://top.gg/bot/948714385533206548)
+
 This bot is completely open source and if its contents and theme are not stolen, no claims of stealing can be made (so you can get the codes).
 
 ## Developing

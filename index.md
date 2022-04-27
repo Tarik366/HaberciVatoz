@@ -58,6 +58,7 @@ Bu komutlar şuan çalışmıyor.
 ```
 
 x yerine eklemek istediğiniz gifleri yazın.
+
 **Not:** gifleri link olarak Vars.py dosyasına yazın. Vars.py dosyasında yeterince örnek var.
 
 #### ekibe başvuru

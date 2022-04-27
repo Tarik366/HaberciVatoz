@@ -34,7 +34,7 @@ await Bot.change_presence(activity=discord.Game(name="Yahudi yakmaca", type=3, a
 
 Bu kod botun oynadığı oyunu belirler ve böyle gözükür.
 
-![Statü](images/statue.png)
+![Statü](https://github.com/Tarik366/FascistVatoz/blob/gh-pages/images/Statue.png?raw=true)
 
 ### commands
 

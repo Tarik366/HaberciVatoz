@@ -1,7 +1,7 @@
 # Faşist vatoz discord botu
 
 [For English site](https://tarik366.github.io/FascistVatoz/EN)
-[![Discord Bot](https://top.gg/api/widget/948714385533206548.svg)(https://top.gg/bot/948714385533206548)
+[![Discord Bot](https://top.gg/api/widget/948714385533206548.svg)[Discord bot](https://top.gg/bot/948714385533206548)
 
 Bu bot tamamen açık kaynaklı olup içerikleri ve teması çalınmaması durumunda herhangi bir çalınma iddiası oluşturulamaz(yani kodları alabilirsiniz).
 

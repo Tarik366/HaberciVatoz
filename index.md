@@ -1,9 +1,9 @@
 # Faşist vatoz discord botu
 
-[For English site](https://tarik366.github.io/FascistVatoz/EN)
-[日本語サイト用](https://tarik366.github.io/FascistVatoz/JP)
-[Für Deutsch seite](https://tarik366.github.io/FascistVatoz/DE)
-[中文网站]((https://tarik366.github.io/FascistVatoz/CH)
+[For English site](https://tarik366.github.io/FascistVatoz/EN) 
+[日本語サイト用](https://tarik366.github.io/FascistVatoz/JP) 
+[Für Deutsch seite](https://tarik366.github.io/FascistVatoz/DE) 
+[中文网站](https://tarik366.github.io/FascistVatoz/CH) 
 
 ![Discord Bot](https://top.gg/api/widget/948714385533206548.svg)
 

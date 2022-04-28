@@ -36,12 +36,12 @@ async def on_ready():
 ### change_presence
 
 ```python
-await Bot.change_presence(activity=discord.Game(name="Yahudi yakmaca", type=3, application_id=None, details="Yahudi yakıyor", state="Yahudi yakıyor",))
+await Bot.change_presence(activity=discord.Game(name="ユダヤ人の火葬", type=3, application_id=None, details="ユダヤ人は燃えています", state="ユダヤ人は燃えています",))
 ```
 
 このコードは、ボットがプレイしているゲームを判別し、次のようになります。
 
-![状態](https://github.com/Tarik366/FascistVatoz/blob/gh-pages/images/Statue.png?raw=true)
+![状態](https://github.com/Tarik366/FascistVatoz/blob/gh-pages/images/Statue_JP.png?raw=true)
 
 ### commands
 

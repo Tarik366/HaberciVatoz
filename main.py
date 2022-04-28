@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import Vars as Vars
+from Vars import *
 import token_2
 from token_2 import token
 
@@ -34,231 +34,231 @@ async def kick(ctx, member: discord.Member, *args, reason="Yok"):
 @Bot.command()
 async def i(ctx, *args):
     if "like" in args:
-        await ctx.send(Vars.like)
+        await ctx.send(like)
     if "rage" in args:
-        await ctx.send(Vars.rage)
+        await ctx.send(rage)
     if "anakuzusu" in args:
-        await ctx.send(Vars.anakuzusu)
+        await ctx.send(anakuzusu)
     if "cry" in args:
-        await ctx.send(Vars.cry)
+        await ctx.send(cry)
     if "freakout" in args:
-        await ctx.send(Vars.frakout)
+        await ctx.send(freakout)
     if "haa" in args:
-        await ctx.send(Vars.haa)
+        await ctx.send(haa)
     if "o7konosuba" in args:
-        await ctx.send(Vars.o7konosuba)
+        await ctx.send(o7konosuba)
     if "nomnom" in args:
-        await ctx.send(Vars.nom)
+        await ctx.send(nomnom)
     if "like2x" in args:
-        await ctx.send(Vars.like2x)
+        await ctx.send(like2x)
     if "shock" in args:
-        await ctx.send(Vars.shock)
+        await ctx.send(shock)
     if "o7" in args:
-        await ctx.send(Vars.o7)
+        await ctx.send(o7)
     if "foksax" in args:
-        await ctx.send(Vars.foksax)
+        await ctx.send(foksax)
     if "dwayne" in args:
-        await ctx.send(Vars.dwayne)
+        await ctx.send(dwayne)
     if "hatsoff" in args:
-        await ctx.send(Vars.hatsoff)
+        await ctx.send(hatsoff)
     if "capitalism" in args:
-        await ctx.send(Vars.capitalism)
+        await ctx.send(capitalism)
     if "soviet" in args:
-        await ctx.send(Vars.soviet)
+        await ctx.send(soviet)
     if "sikin" in args:
-        await ctx.send(Vars.sikin)
+        await ctx.send(sikin)
     if "susamuru" in args:
-        await ctx.send(Vars.susamuru)
+        await ctx.send(susamuru)
     if "fire" in args:
-        await ctx.send(Vars.fire)
+        await ctx.send(fire)
     if "marcharmy" in args:
-        await ctx.send(Vars.marcharmy)
+        await ctx.send(marcharmy)
     if "irumadance" in args:
-        await ctx.send(Vars.irumadance)
+        await ctx.send(irumadance)
     if "taam" in args:
-        await ctx.send(Vars.taam)
+        await ctx.send(taam)
     if "milf" in args:
-        await ctx.send(Vars.milf)
+        await ctx.send(milf)
     if "stare" in args:
-        await ctx.send(Vars.stare)
+        await ctx.send(stare)
     if "GreatPurge" in args:
-        await ctx.send(Vars.GreatPurge)
+        await ctx.send(GreatPurge)
     if "napim" in args:
-        await ctx.send(Vars.napim)
+        await ctx.send(napim)
     if "napimdiyeni" in args:
-        await ctx.send(Vars.napimdiyeni)
+        await ctx.send(napimdiyeni)
     if "hatayapar" in args:
-        await ctx.send(Vars.hatayapar)
+        await ctx.send(hatayapar)
     if "nazifokları" in args:
-        await ctx.send(Vars.nazifokları)
+        await ctx.send(nazifokları)
     if "darkside" in args:
-        await ctx.send(Vars.darkside)
+        await ctx.send(darkside)
     if "troll" in args:
-        await ctx.send(Vars.troll)
+        await ctx.send(troll)
     if "yahudiler" in args:
-        await ctx.send(Vars.yahudiler)
+        await ctx.send(yahudiler)
     if "balanced" in args:
-        await ctx.send(Vars.balanced)
+        await ctx.send(balanced)
     if "jii" in args:
-        await ctx.send(Vars.jii)
+        await ctx.send(jii)
     if "shipbang" in args:
-        await ctx.send(Vars.shipbang)
+        await ctx.send(shipbang)
     if "tank" in args:
-        await ctx.send(Vars.tank)
+        await ctx.send(tank)
     if "degil" in args:
-        await ctx.send(Vars.degil)
+        await ctx.send(degil)
     if "air" in args:
-        await ctx.send(Vars.air)
+        await ctx.send(air)
     if "kimclap" in args:
-        await ctx.send(Vars.kimclap)
+        await ctx.send(kimclap)
     if "worry" in args:
-        await ctx.send(Vars.worry)
+        await ctx.send(worry)
     if "muso" in args:
-        await ctx.send(Vars.muso)
+        await ctx.send(muso)
     if "sob" in args:
-        await ctx.send(Vars.sob)
+        await ctx.send(sob)
     if "kannaeat" in args:
-        await ctx.send(Vars.kannaeat)
+        await ctx.send(kannaeat)
     if "baka" in args:
-        await ctx.send(Vars.baka)
+        await ctx.send(baka)
     if "triggered" in args:
-        await ctx.send(Vars.triggered)
+        await ctx.send(triggered)
     if "shinobu" in args:
-        await ctx.send(Vars.shinobu)
+        await ctx.send(shinobu)
     if "shy" in args:
-        await ctx.send(Vars.shy)
+        await ctx.send(shy)
     if "bang2" in args:
-        await ctx.send(Vars.bang2)
+        await ctx.send(bang2)
     if "shutup" in args:
-        await ctx.send(Vars.shutup)
+        await ctx.send(shutup)
     if "save" in args:
-        await ctx.send(Vars.save)
+        await ctx.send(save)
     if "aah" in args:
-        await ctx.send(Vars.aah)
+        await ctx.send(aah)
     if "para" in args:
-        await ctx.send(Vars.para)
+        await ctx.send(para)
     if "yay" in args:
-        await ctx.send(Vars.yay)
+        await ctx.send(yay)
     if "anlıyorum" in args:
-        await ctx.send(Vars.anlıyorum)
+        await ctx.send(anlıyorum)
     if "understood" in args:
-        await ctx.send(Vars.understood)
+        await ctx.send(understood)
     if "igetit" in args:
-        await ctx.send(Vars.igetit)
+        await ctx.send(igetit)
     if "benzin" in args:
-        await ctx.send(Vars.benzin)
+        await ctx.send(benzin)
     if "why" in args:
-        await ctx.send(Vars.why)
+        await ctx.send(why)
     if "celebrate" in args:
-        await ctx.send(Vars.celebrate)
+        await ctx.send(celebrate)
     if "braintime" in args:
-        await ctx.send(Vars.braintime)
+        await ctx.send(braintime)
     if "drink" in args:
-        await ctx.send(Vars.drink)
+        await ctx.send(drink)
     if "bb" in args:
-        await ctx.send(Vars.bb)
+        await ctx.send(bb)
     if "dot" in args:
-        await ctx.send(Vars.dot)
+        await ctx.send(dot)
     if "confused" in args:
-        await ctx.send(Vars.confused)
+        await ctx.send(confused)
     if "lenny" in args:
-        await ctx.send(Vars.lenny)
+        await ctx.send(lenny)
     if "bang" in args:
-        await ctx.send(Vars.bang)
+        await ctx.send(bang)
     if "slap" in args:
-        await ctx.send(Vars.slap)
+        await ctx.send(slap)
     if "mad" in args:
-        await ctx.send(Vars.mad)
+        await ctx.send(mad)
     if "sob2" in args:
-        await ctx.send(Vars.sob2)
+        await ctx.send(sob2)
     if "laugh" in args:
-        await ctx.send(Vars.laugh)
+        await ctx.send(laugh)
     if "evilsmile" in args:
-        await ctx.send(Vars.evilsmile)
+        await ctx.send(evilsmile)
     if "dissaper" in args:
-        await ctx.send(Vars.dissaper)
+        await ctx.send(dissaper)
     if "behind" in args:
-        await ctx.send(Vars.behind)
+        await ctx.send(behind)
     if "like3" in args:
-        await ctx.send(Vars.like3)
+        await ctx.send(like3)
     if "whatanime" in args:
-        await ctx.send(Vars.whatanime)
+        await ctx.send(whatanime)
     if "nomnomnom" in args:
-        await ctx.send(Vars.nomnomnom)
+        await ctx.send(nomnomnom)
     if "bonk" in args:
-        await ctx.send(Vars.bonk)
+        await ctx.send(bonk)
     if "yarra" in args:
-        await ctx.send(Vars.yarra)
+        await ctx.send(yarra)
     if "katon" in args:
-        await ctx.send(Vars.katon)
+        await ctx.send(katon)
     if "hug" in args:
-        await ctx.send(Vars.hug)
+        await ctx.send(hug)
     if "hug2" in args:
-        await ctx.send(Vars.hug2)
+        await ctx.send(hug2)
     if "sob3" in args:
-        await ctx.send(Vars.sob3)
+        await ctx.send(sob3)
     if "animechild" in args:
-        await ctx.send(Vars.animechild)
+        await ctx.send(animechild)
     if "narutodance" in args:
-        await ctx.send(Vars.narutodance)
+        await ctx.send(narutodance)
     if "darkstare" in args:
-        await ctx.send(Vars.darkstare)
+        await ctx.send(darkstare)
     if "think" in args:
-        await ctx.send(Vars.think)
+        await ctx.send(think)
     if "point" in args:
-        await ctx.send(Vars.point)
+        await ctx.send(point)
     if "bagıs" in args:
-        await ctx.send(Vars.bagıs)
+        await ctx.send(bagıs)
     if "stalinpoint" in args:
-        await ctx.send(Vars.stalinpoint)
+        await ctx.send(stalinpoint)
     if "serve" in args:
-        await ctx.send(Vars.serve)
+        await ctx.send(serve)
     if "waku" in args:
-        await ctx.send(Vars.waku)
+        await ctx.send(waku)
     if "fail" in args:
-        await ctx.send(Vars.fail)
+        await ctx.send(fail)
     if "comunazi" in args:
-        await ctx.send(Vars.comunazi)
+        await ctx.send(comunazi)
     if "şaak" in args:
-        await ctx.send(Vars.şaak)
+        await ctx.send(şaak)
     if "doom" in args:
-        await ctx.send(Vars.doom)
+        await ctx.send(doom)
     if "omori" in args:
-        await ctx.send(Vars.omori)
+        await ctx.send(omori)
     if "callvatoz" in args:
-        await ctx.send(Vars.callvatoz)
+        await ctx.send(callvatoz)
     if "vatozlar" in args:
-        await ctx.send(Vars.knowvatoz)
+        await ctx.send(knowvatoz)
     if "papas" in args:
-        await ctx.send(Vars.papas)
+        await ctx.send(papas)
     if "hans" in args:
-        await ctx.send(Vars.hans)
+        await ctx.send(hans)
     if "yummy" in args:
-        await ctx.send(Vars.yummy)
+        await ctx.send(yummy)
     if "okay" in args:
-        await ctx.send(Vars.okay)
+        await ctx.send(okay)
     if "what" in args:
-        await ctx.send(Vars.what)
+        await ctx.send(what)
     if "sad" in args:
-        await ctx.send(Vars.sad)
+        await ctx.send(sad)
     if "gel" in args:
-        await ctx.send(Vars.gel)
+        await ctx.send(gel)
     if "ekonomi" in args:
-        await ctx.send(Vars.ekonomi)
+        await ctx.send(ekonomi)
     if "mikasa" in args:
-        await ctx.send(Vars.mikasa)
+        await ctx.send(mikasa)
     if "çıldır" in args:
-        await ctx.send(Vars.çıldır)
+        await ctx.send(çıldır)
     if "kırk" in args:
-        await ctx.send(Vars.kırk)
+        await ctx.send(kırk)
     if "drink2" in args:
-        await ctx.send(Vars.drink2)
+        await ctx.send(drink2)
     if "fbi" in args:
-        await ctx.send(Vars.fbi)
+        await ctx.send(fbi)
     if "want" in args:
-        await ctx.send(Vars.want)
+        await ctx.send(want)
     if "want2" in args:
-        await ctx.send(Vars.want2)
+        await ctx.send(want2)
 
 
 # ekibe başvuru
@@ -267,13 +267,13 @@ async def i(ctx, *args):
 @Bot.command()
 async def başvuru(ctx, *args):
     if "mangaçevirmen" in args:
-        await ctx.send(Vars.translater)
+        await ctx.send(translater)
     if "mangaeditör" in args:
-        await ctx.send(Vars.editor)
+        await ctx.send(editor)
     if "webçevirmen" in args:
-        await ctx.send(Vars.webtranslater)
+        await ctx.send(webtranslater)
     if "webeditör" in args:
-        await ctx.send(Vars.webeditor)
+        await ctx.send(webeditor)
 
 
 Bot.run(token_2.token)

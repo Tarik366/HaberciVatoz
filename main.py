@@ -1,4 +1,5 @@
-import discord
+from turtle import title
+from discord import *
 from discord.ext import commands
 from Vars import *
 import token_2
@@ -10,7 +11,7 @@ Bot = commands.Bot("!")
 @Bot.event
 async def on_ready():
     print("merhaba")
-    await Bot.change_presence(activity=discord.Game(name="Yahudi yakmaca", type=3, application_id=None, details="Yahudi yakıyor", state="Yahudi yakıyor",))
+    await Bot.change_presence(activity=Game(name="Yahudi yakmaca", type=3, application_id=None, details="Yahudi yakıyor", state="Yahudi yakıyor",))
 
 # moderatrör komutları
 
@@ -18,14 +19,6 @@ async def on_ready():
 @Bot.command()
 async def clear(ctx, amount=100000000000000000000000):
     await ctx.channel.purge(limit=amount)
-
-
-async def ban(ctx, member: discord.Member, *args, reason="Yok"):
-    await member.ban(reason=reason)
-
-
-async def kick(ctx, member: discord.Member, *args, reason="Yok"):
-    await member.kick(reason=reason)
 
 
 # gifs
@@ -261,19 +254,51 @@ async def i(ctx, *args):
         await ctx.send(want2)
 
 
+# Bug fix
+@Bot.command()
+async def aki(ctx):
+    pass
+async def rank(ctx):
+    pass
+
 # ekibe başvuru
 
 
 @Bot.command()
 async def başvuru(ctx, *args):
     if "mangaçevirmen" in args:
-        await ctx.send(translater)
+        tr = Embed(
+            title="Manga çevirmen başvuru formu",
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür mangaları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nhttps://drive.google.com/file/d/1_qfW23Wvda94S19U3f4x8eCe6YEqFCug/view?usp=sharing\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın"
+        )
+        await ctx.send(embed=tr)
     if "mangaeditör" in args:
-        await ctx.send(editor)
+        ed = Embed(
+            title="Manga editör başvuru formu",
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/file/d/1-B-xLpofKmmyx86_wOuOA4ii-LfG4hb9/view?usp=sharing\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın")
+        await ctx.send(embed=ed)
     if "webçevirmen" in args:
-        await ctx.send(webtranslater)
+        wtr = Embed(
+            title="Webtoon çevirmen başvuru formu",
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür webtoonları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın")
+        await ctx.send(embed=wtr)
     if "webeditör" in args:
-        await ctx.send(webeditor)
+        wed = Embed(
+            title="Webtoon editör başvuru formu",
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın"
+        )
+        await ctx.send(embed=wed)
+
+
+# Adak
+
+
+@Bot.command()
+async def ada(ctx, *args):
+    mf = open("Bağışlananlar.txt", "w")
+    mf.writelines(ctx.author.name, args, "\n")
+    message = Embed(title="Adağınız kabul edildi")
+    await ctx.send(embed=message)
 
 
 Bot.run(token_2.token)

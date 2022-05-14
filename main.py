@@ -1,12 +1,10 @@
-from turtle import title
+import os.path
 from discord import *
 from discord.ext import commands
 from Vars import *
 import token_2
-from token_2 import token
 
 Bot = commands.Bot("!")
-
 
 @Bot.event
 async def on_ready():
@@ -20,6 +18,19 @@ async def on_ready():
 async def clear(ctx, amount=100000000000000000000000):
     await ctx.channel.purge(limit=amount)
 
+@Bot.command()
+@commands.has_permissions(ban_members = True)
+async def kick(ctx, member : Member, *, reason = None):
+    embed = Embed(title="kicklendi", description=f"{member.mention}", color=0x8a0a01)
+    await member.kick(reason = reason)
+    await ctx.send(embed=embed)
+
+@Bot.command()
+@commands.has_permissions(ban_members = True)
+async def yak(ctx, member : Member, *, reason = None):
+    embed = Embed(title="Yakılanlar listesi", description=f"{member.mention}", color=0x8a0a01)
+    await member.ban(reason = reason)
+    await ctx.send(embed=embed)
 
 # gifs
 
@@ -256,9 +267,12 @@ async def i(ctx, *args):
 
 # Bug fix
 @Bot.command()
-async def aki(ctx):
+async def aki():
     pass
-async def rank(ctx):
+
+
+@Bot.command()
+async def rank():
     pass
 
 # ekibe başvuru
@@ -285,20 +299,162 @@ async def başvuru(ctx, *args):
     if "webeditör" in args:
         wed = Embed(
             title="Webtoon editör başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın"
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/drive/folders/12spp_Y4xTWLRJ8HxLsaom4B5Ilord0_7?usp=sharing\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın"
         )
         await ctx.send(embed=wed)
 
 
-# Adak
+@Bot.command()
+async def onayla(ctx, *args):
+    if "me,hayır,yok,2,3" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+
+
+# Adak sistemi
 
 
 @Bot.command()
 async def ada(ctx, *args):
-    mf = open("Bağışlananlar.txt", "w")
-    mf.writelines(ctx.author.name, args, "\n")
-    message = Embed(title="Adağınız kabul edildi")
-    await ctx.send(embed=message)
+    author = str(ctx.message.author)
+    ad = "adaklar/"+ author +".txt"
+    if "temizle" in args:
+        os.remove(ad)
+        embed = Embed(title="Adağınız başarıyla temizlendi.")
+        await ctx.send(embed=embed)
+    if os.path.exists(ad) == True and "temizle" in args:
+        msg = Embed(title="Adağınız kabul edildi")
+        await ctx.send(embed=msg)
+        ada = open(str(ad), "w")
+        a = str(author)+str(args)
+        ada.write(a)
+    if os.path.exists(ad) == False and "temizle" not in args:
+        msg = Embed(title="Adağınız kabul edildi")
+        await ctx.send(embed=msg)
+        ada = open(str(ad), "x")
+        ada = open(str(ad), "w")
+        a = str(author)+str(args)
+        ada.write(a)
+
+
+@Bot.command()
+async def pp(ctx):
+    ppp = ctx.author.avatar_url
+    await ctx.send(ppp)
+
+
+@Bot.command()
+async def ideoloji(ctx, *args):
+    if "demokrat" in args:
+        dem = open("ppler/demkrat_vatoz.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Oy saymaca"))
+        await Bot.user.edit(username="Demokrat Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        embed = Embed(title="Herkes adaletli istiklalde eşit olacak")
+        await ctx.send(embed=embed)
+    if "faşist" in args:
+        fas = open("ppler/fasist_vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Yahudi yakmaca"))
+        await Bot.user.edit(username="Faşist Vatoz", avatar=fasc)
+        vatoz = "faşist"
+        embed = Embed(title="Köklerime döndüm")
+        await ctx.send(embed=embed)
+    if "anarko ilkel" in args:
+        ail = open("ppler/Anarko-ilkelcilik_vatoz.jpg", 'rb')
+        ailk = ail.read()
+        await Bot.change_presence(activity=Game(name="Hayvan avlıyor"))
+        await Bot.user.edit(username="Anarko-ilkelci Vatoz", avatar=fasc)
+        vatoz = "anarko ilkelci"
+        embed = Embed(title="Yeni dünya boş asıl olay geçmişte var")
+        await ctx.send(embed=embed)
+    if "anarko kapitalist" in args:
+        fas = open("ppler/Anarko-kapitalist_vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Tüccarlık yapıyor"))
+        await Bot.user.edit(username="Anarko Vatoz", avatar=fasc)
+        vatoz = "anarko kapitalist"
+        embed = Embed(title="Serbest piyasasında tüccarlık yapacağım")
+        await ctx.send(embed=embed)
+    if "anarşist" in args:
+        fas = open("ppler/anarsist_vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Otoriteye küfür ediyor"))
+        await Bot.user.edit(username="Anarşist Vatoz", avatar=fasc)
+        vatoz = "anarşist"
+        embed = Embed(title="Otoritede ne?")
+        await ctx.send(embed=embed)
+    if "fabrika" in args:
+        fas = open("ppler/fabrika_vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Edit yapıyor"))
+        await Bot.user.edit(username="Fabrika Vatoz", avatar=fasc)
+        vatoz = "fabrika"
+        embed = Embed(title="İdeolojiler ben edit yapacağım")
+        await ctx.send(embed=embed)
+    if "kuma" in args:
+        fas = open("ppler/kuma vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Dünyayı kumalıyor"))
+        await Bot.user.edit(username="Kuma Vatoz", avatar=fasc)
+        vatoz = "kuma"
+        embed = Embed(title="Kuma kuma kuma bear izleyip geldim")
+        await ctx.send(embed=embed)
+    if "liberteryanist" in args:
+        fas = open("ppler/Liberteryenist_vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Özgürlüğün dibine vuruyor"))
+        await Bot.user.edit(username="Liberteryanist Vatoz", avatar=fasc)
+        vatoz = "liberteryanist"
+        embed = Embed(title="Özgürlük, özgürlük ve daha fazla özgürlük")
+        await ctx.send(embed=embed)
+    if "mao" in args:
+        fas = open("ppler/maocu_vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Kırlarda hazırlanıyor"))
+        await Bot.user.edit(username="Maocu Vatoz", avatar=fasc)
+        vatoz = "maocu"
+        embed = Embed(title="Çin Komünizmi hiç fikrim yok")
+        await ctx.send(embed=embed)
+    if "radyoaktif" in args:
+        fas = open("ppler/radyoaktif_vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="α ışıması yapıyor"))
+        await Bot.user.edit(username="Radyoaktif Vatoz", avatar=fasc)
+        vatoz = "radyoaktif"
+        embed = Embed(title="Yanlışlıkla Uranyuma dokundum")
+        await ctx.send(embed=embed)
+    if "turan" in args:
+        fas = open("ppler/turancı vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Haritayı açık maviye boyuyor"))
+        await Bot.user.edit(username="Turancı Vatoz", avatar=fasc)
+        vatoz = "turancı"
+        embed = Embed(title="Türkler üstün ırktır ve bende görevim olan cihan fethini gerçekleştireceğim")
+        await ctx.send(embed=embed)
+
+
+# İşkence
+
+@Bot.command()
+async def işkence(ctx, member: Member):
+    if vatoz == "faşist":
+        user = await Bot.fetch_user(member.id)
+        await user.send("万歳博仁様")
+        await user.send("万歳博仁様")
+        await user.send("万歳博仁様")
+        await user.send("万歳博仁様")
+        await user.send("万歳博仁様")
+        await user.send("万歳博仁様")
+        await user.send("万歳博仁様")
+        await user.send("万歳博仁様")
+        await user.send("万歳博仁様")
+        await user.send("万歳博仁様")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
 
 
 Bot.run(token_2.token)

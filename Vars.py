@@ -3,6 +3,8 @@ editor = "Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa 
 webeditor = "Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın"
 webtranslater = "Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür webtoonları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın"
 
+vatoz = "faşist"
+
 # gifs
 like = "https://c.tenor.com/S_D9CVgOAv4AAAAM/konosuba-kazuma.gif"
 rage = "https://c.tenor.com/7eWRtQE4DMEAAAAM/konosuba-kazuma.gif"

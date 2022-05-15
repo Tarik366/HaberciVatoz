@@ -283,30 +283,111 @@ async def başvuru(ctx, *args):
     if "mangaçevirmen" in args:
         tr = Embed(
             title="Manga çevirmen başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür mangaları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nhttps://drive.google.com/file/d/1_qfW23Wvda94S19U3f4x8eCe6YEqFCug/view?usp=sharing\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın"
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür mangaları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nhttps://drive.google.com/file/d/1_qfW23Wvda94S19U3f4x8eCe6YEqFCug/view?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın"
         )
         await ctx.send(embed=tr)
     if "mangaeditör" in args:
         ed = Embed(
             title="Manga editör başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/file/d/1-B-xLpofKmmyx86_wOuOA4ii-LfG4hb9/view?usp=sharing\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın")
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/file/d/1-B-xLpofKmmyx86_wOuOA4ii-LfG4hb9/view?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın")
         await ctx.send(embed=ed)
     if "webçevirmen" in args:
         wtr = Embed(
             title="Webtoon çevirmen başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür webtoonları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın")
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür webtoonları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın")
         await ctx.send(embed=wtr)
     if "webeditör" in args:
         wed = Embed(
             title="Webtoon editör başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/drive/folders/12spp_Y4xTWLRJ8HxLsaom4B5Ilord0_7?usp=sharing\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın"
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/drive/folders/12spp_Y4xTWLRJ8HxLsaom4B5Ilord0_7?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın"
         )
         await ctx.send(embed=wed)
 
 
 @Bot.command()
 async def onayla(ctx, *args):
-    if "me,hayır,yok,2,3" in args:
+    if "me,hayır,yok,1,1" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "me,hayır,yok,1,2" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "me,hayır,yok,1,3" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "me,hayır,yok,1,4" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "mangaçevirmen" in args:
+        tr = Embed(
+            title="Manga çevirmen başvuru formu",
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür mangaları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nhttps://drive.google.com/file/d/1_qfW23Wvda94S19U3f4x8eCe6YEqFCug/view?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın"
+        )
+        await ctx.send(embed=tr)
+    if "mangaeditör" in args:
+        ed = Embed(
+            title="Manga editör başvuru formu",
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/file/d/1-B-xLpofKmmyx86_wOuOA4ii-LfG4hb9/view?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın")
+        await ctx.send(embed=ed)
+    if "webçevirmen" in args:
+        wtr = Embed(
+            title="Webtoon çevirmen başvuru formu",
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür webtoonları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın")
+        await ctx.send(embed=wtr)
+    if "webeditör" in args:
+        wed = Embed(
+            title="Webtoon editör başvuru formu",
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/drive/folders/12spp_Y4xTWLRJ8HxLsaom4B5Ilord0_7?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın"
+        )
+        await ctx.send(embed=wed)
+
+
+@Bot.command()
+async def onayla(ctx, *args):
+    if "me,hayır,yok,1,1" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "me,hayır,yok,1,2" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "me,hayır,yok,1,3" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "me,hayır,yok,1,4" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "me,hayır,yok,1,1" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "me,hayır,yok,1,2" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "me,hayır,yok,1,3" in args:
+        member = ctx.message.author
+        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
+        await member.add_roles(role)
+        await ctx.send(embed=embed)
+    if "me,hayır,yok,1,4" in args:
         member = ctx.message.author
         embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
         await member.add_roles(role)

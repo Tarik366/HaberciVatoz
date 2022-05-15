@@ -4,7 +4,7 @@ from discord.ext import commands
 from Vars import *
 import token_2
 
-Bot = commands.Bot("!")
+Bot = commands.Bot("!", help_command=None)
 
 @Bot.event
 async def on_ready():
@@ -30,6 +30,24 @@ async def kick(ctx, member : Member, *, reason = None):
 async def yak(ctx, member : Member, *, reason = None):
     embed = Embed(title="Yakılanlar listesi", description=f"{member.mention}", color=0x8a0a01)
     await member.ban(reason = reason)
+    await ctx.send(embed=embed)
+
+
+# Help komutu
+
+@Bot.command()
+async def yardım(ctx):
+    embed = Embed(title="Yardım", description="Yardım komutları", color=0x8a0a01)
+    embed.add_field(name="!yardım", value="yardım komutlarını gösterir", inline=False)
+    embed.add_field(name="!yak", value="Etiketlenen kişiyi yakar(banlar)", inline=False)
+    embed.add_field(name="!kick", value="Etiketlenen kişiyi kickler", inline=False)
+    embed.add_field(name="!clear", value="Belirlenen sayıda mesaj siler", inline=False)
+    embed.add_field(name="!i", value="110'dan fazla gif veya resimden seçileni atar", inline=False)
+    embed.add_field(name="!başvuru", value="Seçilen başvuru formunu gönderir", inline=False)
+    embed.add_field(name="!ada", value="İstediğiniz bir şeyi hayalet vatoza adar", inline=False)
+    embed.add_field(name="!pp", value="Yazan kişinin profil fotoğrafını atar", inline=False)
+    embed.add_field(name="!ideoloji", value="16 ideoloji arasından seçilen ideolojiye geçerim", inline=False)
+    embed.add_field(name="!işkence", value="Etiketlenen kişiye işkence yaparım. Fazla kullanmamaya dikkat edin", inline=False)
     await ctx.send(embed=embed)
 
 # gifs
@@ -302,96 +320,6 @@ async def başvuru(ctx, *args):
             description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/drive/folders/12spp_Y4xTWLRJ8HxLsaom4B5Ilord0_7?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın"
         )
         await ctx.send(embed=wed)
-
-
-@Bot.command()
-async def onayla(ctx, *args):
-    if "me,hayır,yok,1,1" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "me,hayır,yok,1,2" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "me,hayır,yok,1,3" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "me,hayır,yok,1,4" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "mangaçevirmen" in args:
-        tr = Embed(
-            title="Manga çevirmen başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür mangaları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nhttps://drive.google.com/file/d/1_qfW23Wvda94S19U3f4x8eCe6YEqFCug/view?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın"
-        )
-        await ctx.send(embed=tr)
-    if "mangaeditör" in args:
-        ed = Embed(
-            title="Manga editör başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/file/d/1-B-xLpofKmmyx86_wOuOA4ii-LfG4hb9/view?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın")
-        await ctx.send(embed=ed)
-    if "webçevirmen" in args:
-        wtr = Embed(
-            title="Webtoon çevirmen başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür webtoonları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın")
-        await ctx.send(embed=wtr)
-    if "webeditör" in args:
-        wed = Embed(
-            title="Webtoon editör başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/drive/folders/12spp_Y4xTWLRJ8HxLsaom4B5Ilord0_7?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın"
-        )
-        await ctx.send(embed=wed)
-
-
-@Bot.command()
-async def onayla(ctx, *args):
-    if "me,hayır,yok,1,1" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "me,hayır,yok,1,2" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "me,hayır,yok,1,3" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "me,hayır,yok,1,4" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "me,hayır,yok,1,1" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "me,hayır,yok,1,2" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "me,hayır,yok,1,3" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
-    if "me,hayır,yok,1,4" in args:
-        member = ctx.message.author
-        embed = Embed(title="Başvurunuz onaylandı", description="Şuanlık sadece stajyer rolü alacaksınız")
-        await member.add_roles(role)
-        await ctx.send(embed=embed)
 
 
 # Adak sistemi

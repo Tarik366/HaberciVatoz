@@ -1,1 +1,1 @@
-Tarýk#9983('tanya',)
+Tarýk#9983('bütün', 'günüm')

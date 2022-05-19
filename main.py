@@ -1,4 +1,6 @@
+from ast import arg
 import os.path
+from turtle import title
 from discord import *
 from discord.ext import commands
 from Vars import *
@@ -333,7 +335,7 @@ async def ada(ctx, *args):
         os.remove(ad)
         embed = Embed(title="Adağınız başarıyla temizlendi.")
         await ctx.send(embed=embed)
-    if os.path.exists(ad) == True and "temizle" in args:
+    if os.path.exists(ad) == True and "temizle" not in args:
         msg = Embed(title="Adağınız kabul edildi")
         await ctx.send(embed=msg)
         ada = open(str(ad), "w")
@@ -361,7 +363,9 @@ async def ideoloji(ctx, *args):
         demo = dem.read()
         await Bot.change_presence(activity=Game(name="Oy saymaca"))
         await Bot.user.edit(username="Demokrat Vatoz", avatar=demo)
+        global vatoz
         vatoz = "demokrat"
+        print(vatoz)
         embed = Embed(title="Herkes adaletli istiklalde eşit olacak")
         await ctx.send(embed=embed)
     if "faşist" in args:
@@ -378,6 +382,7 @@ async def ideoloji(ctx, *args):
         await Bot.change_presence(activity=Game(name="Hayvan avlıyor"))
         await Bot.user.edit(username="Anarko-ilkelci Vatoz", avatar=fasc)
         vatoz = "anarko ilkelci"
+        print(vatoz)
         embed = Embed(title="Yeni dünya boş asıl olay geçmişte var")
         await ctx.send(embed=embed)
     if "anarko kapitalist" in args:
@@ -386,6 +391,7 @@ async def ideoloji(ctx, *args):
         await Bot.change_presence(activity=Game(name="Tüccarlık yapıyor"))
         await Bot.user.edit(username="Anarko Vatoz", avatar=fasc)
         vatoz = "anarko kapitalist"
+        print(vatoz)
         embed = Embed(title="Serbest piyasasında tüccarlık yapacağım")
         await ctx.send(embed=embed)
     if "anarşist" in args:
@@ -394,6 +400,7 @@ async def ideoloji(ctx, *args):
         await Bot.change_presence(activity=Game(name="Otoriteye küfür ediyor"))
         await Bot.user.edit(username="Anarşist Vatoz", avatar=fasc)
         vatoz = "anarşist"
+        print(vatoz)
         embed = Embed(title="Otoritede ne?")
         await ctx.send(embed=embed)
     if "fabrika" in args:
@@ -402,6 +409,7 @@ async def ideoloji(ctx, *args):
         await Bot.change_presence(activity=Game(name="Edit yapıyor"))
         await Bot.user.edit(username="Fabrika Vatoz", avatar=fasc)
         vatoz = "fabrika"
+        print(vatoz)
         embed = Embed(title="İdeolojiler ben edit yapacağım")
         await ctx.send(embed=embed)
     if "kuma" in args:
@@ -410,6 +418,7 @@ async def ideoloji(ctx, *args):
         await Bot.change_presence(activity=Game(name="Dünyayı kumalıyor"))
         await Bot.user.edit(username="Kuma Vatoz", avatar=fasc)
         vatoz = "kuma"
+        print(vatoz)
         embed = Embed(title="Kuma kuma kuma bear izleyip geldim")
         await ctx.send(embed=embed)
     if "liberteryanist" in args:
@@ -418,6 +427,7 @@ async def ideoloji(ctx, *args):
         await Bot.change_presence(activity=Game(name="Özgürlüğün dibine vuruyor"))
         await Bot.user.edit(username="Liberteryanist Vatoz", avatar=fasc)
         vatoz = "liberteryanist"
+        print(vatoz)
         embed = Embed(title="Özgürlük, özgürlük ve daha fazla özgürlük")
         await ctx.send(embed=embed)
     if "mao" in args:
@@ -426,6 +436,7 @@ async def ideoloji(ctx, *args):
         await Bot.change_presence(activity=Game(name="Kırlarda hazırlanıyor"))
         await Bot.user.edit(username="Maocu Vatoz", avatar=fasc)
         vatoz = "maocu"
+        print(vatoz)
         embed = Embed(title="Çin Komünizmi hiç fikrim yok")
         await ctx.send(embed=embed)
     if "radyoaktif" in args:
@@ -434,6 +445,7 @@ async def ideoloji(ctx, *args):
         await Bot.change_presence(activity=Game(name="α ışıması yapıyor"))
         await Bot.user.edit(username="Radyoaktif Vatoz", avatar=fasc)
         vatoz = "radyoaktif"
+        print(vatoz)
         embed = Embed(title="Yanlışlıkla Uranyuma dokundum")
         await ctx.send(embed=embed)
     if "turan" in args:
@@ -442,6 +454,7 @@ async def ideoloji(ctx, *args):
         await Bot.change_presence(activity=Game(name="Haritayı açık maviye boyuyor"))
         await Bot.user.edit(username="Turancı Vatoz", avatar=fasc)
         vatoz = "turancı"
+        print(vatoz)
         embed = Embed(title="Türkler üstün ırktır ve bende görevim olan cihan fethini gerçekleştireceğim")
         await ctx.send(embed=embed)
 
@@ -452,17 +465,190 @@ async def ideoloji(ctx, *args):
 async def işkence(ctx, member: Member):
     if vatoz == "faşist":
         user = await Bot.fetch_user(member.id)
-        await user.send("天皇陛下万歳")
-        await user.send("天皇陛下万歳")
-        await user.send("天皇陛下万歳")
-        await user.send("天皇陛下万歳")
-        await user.send("天皇陛下万歳")
-        await user.send("天皇陛下万歳")
-        await user.send("天皇陛下万歳")
-        await user.send("天皇陛下万歳")
-        await user.send("天皇陛下万歳")
-        await user.send("天皇陛下万歳")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
         embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+    if vatoz == "demokrat":
+        user = await Bot.fetch_user(member.id)
+        await user.send("a")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        await user.send("Ein volk, ein reich, ein Führer")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+    if vatoz == "anarko ilkelci":
+        user = await Bot.fetch_user(member.id)
+        await user.send("Hunga bunga, hunga bunga")
+        await user.send("Hunga bunga, hunga bunga")
+        await user.send("Hunga bunga, hunga bunga")
+        await user.send("Hunga bunga, hunga bunga")
+        await user.send("Hunga bunga, hunga bunga")
+        await user.send("Hunga bunga, hunga bunga")
+        await user.send("Hunga bunga, hunga bunga")
+        await user.send("Hunga bunga, hunga bunga")
+        await user.send("Hunga bunga, hunga bunga")
+        await user.send("Hunga bunga, hunga bunga")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+    if vatoz == "anarko kapitalist":
+        user = await Bot.fetch_user(member.id)
+        await user.send("Param olsada ben alsam, gel abla gel gel")
+        await user.send("Param olsada ben alsam, gel abla gel gel")
+        await user.send("Param olsada ben alsam, gel abla gel gel")
+        await user.send("Param olsada ben alsam, gel abla gel gel")
+        await user.send("Param olsada ben alsam, gel abla gel gel")
+        await user.send("Param olsada ben alsam, gel abla gel gel")
+        await user.send("Param olsada ben alsam, gel abla gel gel")
+        await user.send("Param olsada ben alsam, gel abla gel gel")
+        await user.send("Param olsada ben alsam, gel abla gel gel")
+        await user.send("Param olsada ben alsam, gel abla gel gel")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+    if vatoz == "anarşist":
+        user = await Bot.fetch_user(member.id)
+        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+    if vatoz == "fabrika":
+        user = await Bot.fetch_user(member.id)
+        await user.send("Edit, edit ve daha çok edit")
+        await user.send("Edit, edit ve daha çok edit")
+        await user.send("Edit, edit ve daha çok edit")
+        await user.send("Edit, edit ve daha çok edit")
+        await user.send("Edit, edit ve daha çok edit")
+        await user.send("Edit, edit ve daha çok edit")
+        await user.send("Edit, edit ve daha çok edit")
+        await user.send("Edit, edit ve daha çok edit")
+        await user.send("Edit, edit ve daha çok edit")
+        await user.send("Edit, edit ve daha çok edit")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+    if vatoz == "kuma":
+        user = await Bot.fetch_user(member.id)
+        await user.send("Kuma kuma kuma kuma")
+        await user.send("Kuma kuma kuma kuma")
+        await user.send("Kuma kuma kuma kuma")
+        await user.send("Kuma kuma kuma kuma")
+        await user.send("Kuma kuma kuma kuma")
+        await user.send("Kuma kuma kuma kuma")
+        await user.send("Kuma kuma kuma kuma")
+        await user.send("Kuma kuma kuma kuma")
+        await user.send("Kuma kuma kuma kuma")
+        await user.send("Kuma kuma kuma kuma")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+    if vatoz == "liberteryanist":
+        user = await Bot.fetch_user(member.id)
+        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+    if vatoz == "maocu":
+        user = await Bot.fetch_user(member.id)
+        await user.send("不管路有多长，都必须迈出第一步。")
+        await user.send("不管路有多长，都必须迈出第一步。")
+        await user.send("不管路有多长，都必须迈出第一步。")
+        await user.send("不管路有多长，都必须迈出第一步。")
+        await user.send("不管路有多长，都必须迈出第一步。")
+        await user.send("不管路有多长，都必须迈出第一步。")
+        await user.send("不管路有多长，都必须迈出第一步。")
+        await user.send("不管路有多长，都必须迈出第一步。")
+        await user.send("不管路有多长，都必须迈出第一步。")
+        await user.send("不管路有多长，都必须迈出第一步。")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+    if vatoz == "radyoaktif":
+        user = await Bot.fetch_user(member.id)
+        await user.send("BZZZZZT")
+        await user.send("BZZZZZT")
+        await user.send("BZZZZZT")
+        await user.send("BZZZZZT")
+        await user.send("BZZZZZT")
+        await user.send("BZZZZZT")
+        await user.send("BZZZZZT")
+        await user.send("BZZZZZT")
+        await user.send("BZZZZZT")
+        await user.send("BZZZZZT")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+    if vatoz == "turan":
+        user = await Bot.fetch_user(member.id)
+        await user.send("Ceddin deden, neslin baban")
+        await user.send("Ceddin deden, neslin baban")
+        await user.send("Ceddin deden, neslin baban")
+        await user.send("Ceddin deden, neslin baban")
+        await user.send("Ceddin deden, neslin baban")
+        await user.send("Ceddin deden, neslin baban")
+        await user.send("Ceddin deden, neslin baban")
+        await user.send("Ceddin deden, neslin baban")
+        await user.send("Ceddin deden, neslin baban")
+        await user.send("Ceddin deden, neslin baban")
+        embed = Embed(description=f"{member.mention} iskence yapıldı")
+        await ctx.send(embed=embed)
+
+
+# Work
+
+@Bot.command()
+async def work(ctx, *args):
+    au = str(ctx.author)
+    wa = "work/" + au + ".txt"
+    if "profil" not in args:
+        if os.path.exists(wa) ==  True:
+            with open(str(wa), 'r') as f:
+                a = str(f.read())
+                a = int(a)
+                a = a + 150
+                a = str(a)
+            with open(str(wa), 'w') as f:
+                f.write(str(a))
+                embed = Embed(title="Çalışman sonucunda 150₺ kazandın")
+                await ctx.send(embed=embed)
+        if os.path.exists(wa) == False:
+            with open(str(wa), 'x') as fe:
+                with open(str(wa), "w") as fea:
+                    fea.write('150')
+                    embed = Embed(title="Çalışman sonucunda 150₺ kazandın\nVarlık: yok")
+                    await ctx.send(embed=embed)
+    if "profil" in args:
+        t = au + " Profili"
+        p = open(str(wa), 'r')
+        a = str(p.read())
+        a = int(a)
+        embed = Embed(title=t, description="Para : "+str(a))
+        embed.add_field(value="yok", name="Varlık")
         await ctx.send(embed=embed)
 
 

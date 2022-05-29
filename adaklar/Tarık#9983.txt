@@ -1,1 +1,1 @@
-Tarýk#9983('bütün', 'günüm')
+, ('bütün', 'haftasonum')

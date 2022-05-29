@@ -1,10 +1,18 @@
 import os.path
+import random
 from discord import *
 from discord.ext import commands
 from Vars import *
+from Sözler.Hitler import *
+from Sözler.Atatürk import *
+from Sözler.Lenin import *
+from Sözler.Stalin import *
+from Sözler.Cengiz import *
+from Sözler.CelalŞengör import *
 import token_2
 
 Bot = commands.Bot("!", help_command=None)
+
 
 @Bot.event
 async def on_ready():
@@ -20,7 +28,7 @@ async def clear(ctx, amount=100000000000000000000000):
 
 @Bot.command()
 @commands.has_permissions(ban_members = True)
-async def kick(ctx, member : Member, *, reason = None):
+async def kick(ctx, member:Member, *, reason = None):
     embed = Embed(title="kicklendi", description=f"{member.mention}", color=0x8a0a01)
     await member.kick(reason = reason)
     await ctx.send(embed=embed)
@@ -285,13 +293,13 @@ async def i(ctx, *args):
 
 # Bug fix
 @Bot.command()
-async def aki():
-    print("aki")
+async def aki(ctx):
+    print("")
 
 
 @Bot.command()
-async def rank():
-    print("rank")
+async def rank(ctx):
+    print("")
 
 # ekibe başvuru
 
@@ -336,22 +344,24 @@ async def ada(ctx, *args):
     if os.path.exists(ad) == True and "temizle" not in args:
         msg = Embed(title="Adağınız kabul edildi")
         await ctx.send(embed=msg)
+        r = open(ad, "r")
+        ar = r.read()
         ada = open(str(ad), "w")
-        a = str(author)+str(args)
+        a = str(ar) + ", " + str(args)
         ada.write(a)
     if os.path.exists(ad) == False and "temizle" not in args:
         msg = Embed(title="Adağınız kabul edildi")
         await ctx.send(embed=msg)
         ada = open(str(ad), "x")
         ada = open(str(ad), "w")
-        a = str(author)+str(args)
+        a = str(args)
         ada.write(a)
 
 
 @Bot.command()
-async def pp(ctx):
-    ppp = ctx.author.avatar_url
-    await ctx.send(ppp)
+async def pp(ctx, Member: Member):
+    await ctx.send(Member.avatar_url)
+
 
 
 @Bot.command()
@@ -435,7 +445,7 @@ async def ideoloji(ctx, *args):
         await Bot.user.edit(username="Maocu Vatoz", avatar=fasc)
         vatoz = "maocu"
         print(vatoz)
-        embed = Embed(title="Çin Komünizmi hiç fikrim yok")
+        embed = Embed(title="Çin Komünizmi işte")
         await ctx.send(embed=embed)
     if "radyoaktif" in args:
         fas = open("ppler/radyoaktif_vatoz.jpg", 'rb')
@@ -747,176 +757,136 @@ async def ideoloji(ctx, *args):
 
 # İşkence
 
+
 @Bot.command()
 async def işkence(ctx, member: Member):
-    if vatoz == "faşist":
         user = await Bot.fetch_user(member.id)
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "demokrat":
-        user = await Bot.fetch_user(member.id)
-        await user.send("a")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        await user.send("Ein volk, ein reich, ein Führer")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "anarko ilkelci":
-        user = await Bot.fetch_user(member.id)
-        await user.send("Hunga bunga, hunga bunga")
-        await user.send("Hunga bunga, hunga bunga")
-        await user.send("Hunga bunga, hunga bunga")
-        await user.send("Hunga bunga, hunga bunga")
-        await user.send("Hunga bunga, hunga bunga")
-        await user.send("Hunga bunga, hunga bunga")
-        await user.send("Hunga bunga, hunga bunga")
-        await user.send("Hunga bunga, hunga bunga")
-        await user.send("Hunga bunga, hunga bunga")
-        await user.send("Hunga bunga, hunga bunga")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "anarko kapitalist":
-        user = await Bot.fetch_user(member.id)
-        await user.send("Param olsada ben alsam, gel abla gel gel")
-        await user.send("Param olsada ben alsam, gel abla gel gel")
-        await user.send("Param olsada ben alsam, gel abla gel gel")
-        await user.send("Param olsada ben alsam, gel abla gel gel")
-        await user.send("Param olsada ben alsam, gel abla gel gel")
-        await user.send("Param olsada ben alsam, gel abla gel gel")
-        await user.send("Param olsada ben alsam, gel abla gel gel")
-        await user.send("Param olsada ben alsam, gel abla gel gel")
-        await user.send("Param olsada ben alsam, gel abla gel gel")
-        await user.send("Param olsada ben alsam, gel abla gel gel")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "anarşist":
-        user = await Bot.fetch_user(member.id)
-        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
-        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
-        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
-        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
-        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
-        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
-        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
-        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
-        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
-        await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "fabrika":
-        user = await Bot.fetch_user(member.id)
-        await user.send("Edit, edit ve daha çok edit")
-        await user.send("Edit, edit ve daha çok edit")
-        await user.send("Edit, edit ve daha çok edit")
-        await user.send("Edit, edit ve daha çok edit")
-        await user.send("Edit, edit ve daha çok edit")
-        await user.send("Edit, edit ve daha çok edit")
-        await user.send("Edit, edit ve daha çok edit")
-        await user.send("Edit, edit ve daha çok edit")
-        await user.send("Edit, edit ve daha çok edit")
-        await user.send("Edit, edit ve daha çok edit")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "kuma":
-        user = await Bot.fetch_user(member.id)
-        await user.send("Kuma kuma kuma kuma")
-        await user.send("Kuma kuma kuma kuma")
-        await user.send("Kuma kuma kuma kuma")
-        await user.send("Kuma kuma kuma kuma")
-        await user.send("Kuma kuma kuma kuma")
-        await user.send("Kuma kuma kuma kuma")
-        await user.send("Kuma kuma kuma kuma")
-        await user.send("Kuma kuma kuma kuma")
-        await user.send("Kuma kuma kuma kuma")
-        await user.send("Kuma kuma kuma kuma")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "liberteryanist":
-        user = await Bot.fetch_user(member.id)
-        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
-        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
-        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
-        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
-        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
-        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
-        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
-        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
-        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
-        await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "maocu":
-        user = await Bot.fetch_user(member.id)
-        await user.send("不管路有多长，都必须迈出第一步。")
-        await user.send("不管路有多长，都必须迈出第一步。")
-        await user.send("不管路有多长，都必须迈出第一步。")
-        await user.send("不管路有多长，都必须迈出第一步。")
-        await user.send("不管路有多长，都必须迈出第一步。")
-        await user.send("不管路有多长，都必须迈出第一步。")
-        await user.send("不管路有多长，都必须迈出第一步。")
-        await user.send("不管路有多长，都必须迈出第一步。")
-        await user.send("不管路有多长，都必须迈出第一步。")
-        await user.send("不管路有多长，都必须迈出第一步。")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "radyoaktif":
-        user = await Bot.fetch_user(member.id)
-        await user.send("BZZZZZT")
-        await user.send("BZZZZZT")
-        await user.send("BZZZZZT")
-        await user.send("BZZZZZT")
-        await user.send("BZZZZZT")
-        await user.send("BZZZZZT")
-        await user.send("BZZZZZT")
-        await user.send("BZZZZZT")
-        await user.send("BZZZZZT")
-        await user.send("BZZZZZT")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "turan":
-        user = await Bot.fetch_user(member.id)
-        await user.send("Ceddin deden, neslin baban")
-        await user.send("Ceddin deden, neslin baban")
-        await user.send("Ceddin deden, neslin baban")
-        await user.send("Ceddin deden, neslin baban")
-        await user.send("Ceddin deden, neslin baban")
-        await user.send("Ceddin deden, neslin baban")
-        await user.send("Ceddin deden, neslin baban")
-        await user.send("Ceddin deden, neslin baban")
-        await user.send("Ceddin deden, neslin baban")
-        await user.send("Ceddin deden, neslin baban")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
-    if vatoz == "oppai":
-        user = await Bot.fetch_user(member.id)
-        await user.send("MINORYU-KYUUUUUUN!!!")
-        await user.send("MINORYU-KYUUUUUUN!!!")
-        await user.send("MINORYU-KYUUUUUUN!!!")
-        await user.send("MINORYU-KYUUUUUUN!!!")
-        await user.send("MINORYU-KYUUUUUUN!!!")
-        await user.send("MINORYU-KYUUUUUUN!!!")
-        await user.send("MINORYU-KYUUUUUUN!!!")
-        await user.send("MINORYU-KYUUUUUUN!!!")
-        await user.send("MINORYU-KYUUUUUUN!!!")
-        await user.send("MINORYU-KYUUUUUUN!!!")
-        embed = Embed(description=f"{member.mention} iskence yapıldı")
-        await ctx.send(embed=embed)
+        if vatoz == "demokrat":
+            i = 0
+            while i < 5:
+                i = i+1
+                await user.send("Demokrasi, hak ettiğimizden daha iyi yönetilmeyeceğimizi garanti eden sistemdir.")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
+        if vatoz == "anarko ilkelci":
+            i = 0
+            while i < 5:
+                i = i+1
+                await user.send("Hunga bunga, hunga bunga")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
+        if vatoz == "anarko kapitalist":
+
+            i = 0
+            while i < 5:
+                i = i+1
+                await user.send("Param olsada ben alsam, gel abla gel gel")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
+        if vatoz == "anarşist":
+            await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+            await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+            await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+            await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+            await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+            await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+            await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+            await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+            await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+            await user.send("demokrasi çoğunlukların diktatörlüğüdür.")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
+        if vatoz == "fabrika":
+            await user.send("Edit, edit ve daha çok edit")
+            await user.send("Edit, edit ve daha çok edit")
+            await user.send("Edit, edit ve daha çok edit")
+            await user.send("Edit, edit ve daha çok edit")
+            await user.send("Edit, edit ve daha çok edit")
+            await user.send("Edit, edit ve daha çok edit")
+            await user.send("Edit, edit ve daha çok edit")
+            await user.send("Edit, edit ve daha çok edit")
+            await user.send("Edit, edit ve daha çok edit")
+            await user.send("Edit, edit ve daha çok edit")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
+        if vatoz == "kuma":
+            await user.send("Kuma kuma kuma kuma")
+            await user.send("Kuma kuma kuma kuma")
+            await user.send("Kuma kuma kuma kuma")
+            await user.send("Kuma kuma kuma kuma")
+            await user.send("Kuma kuma kuma kuma")
+            await user.send("Kuma kuma kuma kuma")
+            await user.send("Kuma kuma kuma kuma")
+            await user.send("Kuma kuma kuma kuma")
+            await user.send("Kuma kuma kuma kuma")
+            await user.send("Kuma kuma kuma kuma")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
+        if vatoz == "liberteryanist":
+            await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+            await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+            await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+            await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+            await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+            await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+            await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+            await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+            await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+            await user.send("Özgürlük, özgürlük ve daha fazla özgürlük")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
+        if vatoz == "maocu":
+            await user.send("不管路有多长，都必须迈出第一步。")
+            await user.send("不管路有多长，都必须迈出第一步。")
+            await user.send("不管路有多长，都必须迈出第一步。")
+            await user.send("不管路有多长，都必须迈出第一步。")
+            await user.send("不管路有多长，都必须迈出第一步。")
+            await user.send("不管路有多长，都必须迈出第一步。")
+            await user.send("不管路有多长，都必须迈出第一步。")
+            await user.send("不管路有多长，都必须迈出第一步。")
+            await user.send("不管路有多长，都必须迈出第一步。")
+            await user.send("不管路有多长，都必须迈出第一步。")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
+        if vatoz == "radyoaktif":
+            await user.send("BZZZZZT")
+            await user.send("BZZZZZT")
+            await user.send("BZZZZZT")
+            await user.send("BZZZZZT")
+            await user.send("BZZZZZT")
+            await user.send("BZZZZZT")
+            await user.send("BZZZZZT")
+            await user.send("BZZZZZT")
+            await user.send("BZZZZZT")
+            await user.send("BZZZZZT")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
+        if vatoz == "turan":
+            await user.send("Ceddin deden, neslin baban")
+            await user.send("Ceddin deden, neslin baban")
+            await user.send("Ceddin deden, neslin baban")
+            await user.send("Ceddin deden, neslin baban")
+            await user.send("Ceddin deden, neslin baban")
+            await user.send("Ceddin deden, neslin baban")
+            await user.send("Ceddin deden, neslin baban")
+            await user.send("Ceddin deden, neslin baban")
+            await user.send("Ceddin deden, neslin baban")
+            await user.send("Ceddin deden, neslin baban")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
+        if vatoz == "oppai":
+            await user.send("MINORYU-KYUUUUUUN!!!")
+            await user.send("MINORYU-KYUUUUUUN!!!")
+            await user.send("MINORYU-KYUUUUUUN!!!")
+            await user.send("MINORYU-KYUUUUUUN!!!")
+            await user.send("MINORYU-KYUUUUUUN!!!")
+            await user.send("MINORYU-KYUUUUUUN!!!")
+            await user.send("MINORYU-KYUUUUUUN!!!")
+            await user.send("MINORYU-KYUUUUUUN!!!")
+            await user.send("MINORYU-KYUUUUUUN!!!")
+            await user.send("MINORYU-KYUUUUUUN!!!")
+            embed = Embed(description=f"{member.mention} iskence yapıldı")
+            await ctx.send(embed=embed)
 
 
 # Work
@@ -950,6 +920,106 @@ async def work(ctx, *args):
         embed = Embed(title=t, description="Para : "+str(a))
         embed.add_field(value="yok", name="Varlık")
         await ctx.send(embed=embed)
+
+
+# Söz
+
+@Bot.command()
+async def söz(ctx):
+    l = random.randint(1, 6)
+    if l == 1:
+        Hitlerlist = [Hitler1,Hitler2,Hitler3, Hitler4, Hitler5, Hitler6, Hitler7, Hitler8, Hitler9, Hitler10, Hitler11, Hitler12, Hitler13, Hitler14, Hitler15, Hitler16, Hitler17, Hitler18, Hitler19, Hitler20, Hitler21, Hitler22, Hitler23, Hitler24, Hitler25, Hitler26, Hitler27, Hitler28, Hitler29, Hitler30, Hitler31, Hitler32, Hitler33, Hitler34, Hitler35, Hitler36, Hitler37, Hitler38, Hitler39, Hitler40, Hitler41, Hitler42, Hitler43, Hitler44, Hitler45, Hitler46, Hitler47, Hitler48, Hitler49, Hitler50, Hitler51, Hitler52, Hitler53, Hitler54, Hitler55, Hitler56, Hitler57, Hitler58, Hitler59, Hitler60, Hitler61, Hitler62, Hitler63, Hitler64, Hitler65, Hitler66, Hitler67, Hitler68, Hitler69, Hitler70, Hitler71, Hitler72, Hitler73, Hitler74, Hitler75, Hitler76, Hitler77, Hitler78, Hitler79, Hitler80, Hitler81, Hitler82, Hitler83, Hitler84, Hitler85, Hitler86, Hitler87, Hitler88, Hitler89, Hitler90, Hitler91, Hitler92, Hitler93, Hitler94, Hitler95, Hitler96, Hitler97, Hitler98, Hitler99, Hitler100, Hitler101, Hitler102, Hitler103, Hitler104, Hitler105, Hitler106, Hitler107, Hitler108, Hitler109, Hitler110, Hitler111, Hitler112, Hitler113, Hitler114, Hitler115, Hitler116, Hitler117, Hitler118, Hitler119, Hitler120, Hitler121, Hitler122, Hitler123, Hitler124, Hitler125, Hitler126, Hitler127, Hitler128, Hitler129, Hitler130, Hitler131, Hitler132, Hitler133, Hitler134, Hitler135, Hitler136, Hitler137, Hitler138, Hitler139, Hitler140, Hitler141, Hitler142, Hitler143, Hitler144, Hitler145, Hitler146, Hitler147, Hitler148, Hitler149, Hitler150, Hitler151, Hitler152, Hitler153, Hitler154, Hitler155, Hitler156, Hitler157, Hitler158, Hitler159, Hitler160, Hitler161, Hitler162, Hitler163, Hitler164, Hitler165, Hitler166, Hitler167, Hitler168, Hitler169, Hitler170, Hitler171, Hitler172, Hitler173, Hitler174, Hitler175, Hitler176, Hitler177, Hitler178, Hitler179, Hitler180, Hitler181, Hitler182, Hitler183, Hitler184, Hitler185, Hitler186, Hitler187, Hitler188, Hitler189, Hitler190, Hitler191, Hitler192, Hitler193, Hitler194, Hitler195, Hitler196, Hitler197, Hitler198, Hitler199, Hitler200, Hitler201, Hitler202, Hitler203, Hitler204, Hitler205, Hitler206, Hitler207, Hitler208, Hitler209, Hitler210, Hitler211, Hitler212, Hitler213, Hitler214, Hitler215, Hitler216, Hitler217, Hitler218, Hitler219, Hitler220, Hitler221, Hitler222, Hitler223, Hitler224, Hitler225, Hitler226, Hitler227, Hitler228, Hitler229, Hitler230, Hitler231, Hitler232, Hitler233, Hitler234, Hitler235, Hitler236, Hitler237, Hitler238, Hitler239, Hitler240, Hitler241, Hitler242, Hitler243, Hitler244, Hitler245, Hitler246, Hitler247, Hitler248, Hitler249, Hitler250, Hitler251, Hitler252, Hitler253, Hitler254, Hitler255, Hitler256, Hitler257]
+        f = random.choice(Hitlerlist)
+        embed = Embed(title="Hitler derki", description=f)
+        await ctx.send(embed=embed)
+    if l == 2:
+        Ataturklist = [Ataturk1, Ataturk2, Ataturk3, Ataturk4, Ataturk5, Ataturk6, Ataturk7, Ataturk8, Ataturk9, Ataturk10, Ataturk11, Ataturk12, Ataturk13, Ataturk14, Ataturk15, Ataturk16, Ataturk17, Ataturk18, Ataturk19, Ataturk20, Ataturk21, Ataturk22, Ataturk23, Ataturk24, Ataturk25, Ataturk26, Ataturk27, Ataturk28, Ataturk29, Ataturk30, Ataturk31, Ataturk32, Ataturk33, Ataturk34, Ataturk35, Ataturk36, Ataturk37, Ataturk38, Ataturk39, Ataturk40, Ataturk41, Ataturk42, Ataturk43, Ataturk44, Ataturk45, Ataturk46, Ataturk47, Ataturk48, Ataturk49, Ataturk50, Ataturk51, Ataturk52, Ataturk53, Ataturk54, Ataturk55, Ataturk56, Ataturk57, Ataturk58, Ataturk59, Ataturk60, Ataturk61, Ataturk62, Ataturk63, Ataturk64, Ataturk65, Ataturk66, Ataturk67, Ataturk68, Ataturk69, Ataturk70, Ataturk71, Ataturk72, Ataturk73, Ataturk74, Ataturk75, Ataturk76, Ataturk77, Ataturk78, Ataturk79, Ataturk80, Ataturk81, Ataturk82, Ataturk83, Ataturk84, Ataturk85, Ataturk86, Ataturk87, Ataturk88, Ataturk89, Ataturk90, Ataturk91, Ataturk92, Ataturk93, Ataturk94, Ataturk95, Ataturk96, Ataturk97, Ataturk98, Ataturk99, Ataturk100, Ataturk101, Ataturk102, Ataturk103, Ataturk104, Ataturk105, Ataturk106, Ataturk107, Ataturk108, Ataturk109, Ataturk110, Ataturk111, Ataturk112, Ataturk113, Ataturk114, Ataturk115, Ataturk116, Ataturk117, Ataturk118, Ataturk119, Ataturk120, Ataturk121, Ataturk122, Ataturk123, Ataturk124, Ataturk125, Ataturk126, Ataturk127, Ataturk128, Ataturk129, Ataturk130, Ataturk131, Ataturk132, Ataturk133, Ataturk134, Ataturk135, Ataturk136, Ataturk137, Ataturk138, Ataturk139, Ataturk140, Ataturk141, Ataturk142, Ataturk143, Ataturk144, Ataturk145, Ataturk146, Ataturk147, Ataturk148, Ataturk149, Ataturk150, Ataturk151, Ataturk152, Ataturk153, Ataturk154, Ataturk155, Ataturk156, Ataturk157, Ataturk158, Ataturk159, Ataturk160, Ataturk161, Ataturk162, Ataturk163, Ataturk164, Ataturk165, Ataturk166, Ataturk167, Ataturk168, Ataturk169, Ataturk170, Ataturk171, Ataturk172, Ataturk173, Ataturk174, Ataturk175, Ataturk176, Ataturk177, Ataturk178, Ataturk179, Ataturk180, Ataturk181, Ataturk182, Ataturk183, Ataturk184, Ataturk185, Ataturk186, Ataturk187]
+        f = random.choice(Ataturklist)
+        embed = Embed(title="Atatürk derki", description=f)
+        await ctx.send(embed=embed)
+    if l == 3:
+        Leninlist = [Lenin1, Lenin2, Lenin3, Lenin4, Lenin5, Lenin6, Lenin7, Lenin8, Lenin9, Lenin10, Lenin11, Lenin12, Lenin13, Lenin14, Lenin15, Lenin16, Lenin17, Lenin18, Lenin19, Lenin20, Lenin21]
+        f = random.choice(Leninlist)
+        embed = Embed(title="Lenin derki", description=f)
+        await ctx.send(embed=embed)
+    if l == 4:
+        Stalinlist = [Stalin1, Stalin2, Stalin3, Stalin4, Stalin5, Stalin6, Stalin7, Stalin8, Stalin9, Stalin10, Stalin11, Stalin12, Stalin13, Stalin14, Stalin15, Stalin16, Stalin17, Stalin18, Stalin19, Stalin20, Stalin21, Stalin22, Stalin23, Stalin24, Stalin25, Stalin26,]
+        f = random.choice(Stalinlist)
+        embed = Embed(title="Stalin derki", description=f)
+        await ctx.send(embed=embed)
+    if l == 5:
+        Cengizlist = [CengizHan1, CengizHan2, CengizHan3, CengizHan4, CengizHan5, CengizHan6, CengizHan7, CengizHan8, CengizHan9]
+        f = random.choice(Cengizlist)
+        embed = Embed(title="Cengiz Han derki", description=f)
+        await ctx.send(embed=embed)
+    if l == 6:
+        CelalŞengörlist = [Celal1, Celal2, Celal3, Celal4, Celal5, Celal6, Celal7, Celal8, Celal9, Celal10, Celal11, Celal12, Celal13, Celal14, Celal15, Celal16, Celal17, Celal18, Celal19, Celal20, Celal21, Celal22, Celal23, Celal24, Celal25, Celal26, Celal27, Celal28, Celal29, Celal30, Celal31, Celal32, Celal33, Celal34, Celal35, Celal36, Celal37, Celal38, Celal39, Celal40, Celal41, Celal42, Celal43]
+        f = random.choice(CelalŞengörlist)
+        embed = Embed(title="Celal Şengör derki", description=f)
+        await ctx.send(embed=embed)
+
+
+# Konuşma
+
+@Bot.event
+async def on_message(message):
+    if message.author == Bot.user:
+        return
+# 日本語
+    if 'こんにちは' == message.content and message.author != Bot.user:
+        await message.channel.send(f"こんにちは{message.author.name}、お名前は何ですか？")
+    if "私は" in message.content and message.author != Bot.user and "こんにちは" not in message.content:
+        a = message.content.replace("私は",'')
+        b = a.replace("です",'')
+        await message.channel.send(f"よろしくお願いします{b}－さん、俺はファシストエイですよろしくお願いします。")
+    if "おはよう" in message.content and message.author != Bot.user:
+        await message.channel.send(f"おはよう{message.author.name}、お名前は何ですか？")
+    if "こんばんは" in message.content and message.author != Bot.user:
+        await message.channel.send(f"こんばんは{message.author.name}ーさん。")
+    if "おやすみ" in message.content and message.author != Bot.user:
+        await message.channel.send(f"おやすみございます{message.author.name}ーさん。")
+# English
+    if "hello" in message.content and message.author != Bot.user:
+        await message.channel.send(f"hello {message.author.name} what is your name?")
+    if "my name is" in message.content and message.author != Bot.user and "hello" not in message.content:
+        a = message.content.replace("my name is",'')
+        await message.channel.send(f"hello {a} nice to meet you, I am")
+    if "good morning" in message.content and message.author != Bot.user:
+        await message.channel.send(f"good morning {message.author.name}")
+    if "good evening" in message.content and message.author != Bot.user:
+        await message.channel.send(f"good evening {message.author.name}")
+    if "good night" in message.content and message.author != Bot.user:
+        await message.channel.send(f"good night {message.author.name}")
+    if "good bye" in message.content and message.author != Bot.user:
+        await message.channel.send(f"good bye {message.author.name}")
+    # Deutsch
+    if "hallo" in message.content and message.author != Bot.user:
+        await message.channel.send(f"hallo {message.author.name} was ist dein name?")
+    if "mein name ist" in message.content and message.author != Bot.user and "hallo" not in message.content:
+        a = message.content.replace("mein name ist",'')
+        await message.channel.send(f"hallo {a} schön dich kennen zu lernen, ich bin")
+    if "guten morgen" in message.content and message.author != Bot.user:
+        await message.channel.send(f"guten morgen {message.author.name}")
+    if "guten abend" in message.content and message.author != Bot.user:
+        await message.channel.send(f"guten abend {message.author.name}")
+    if "gute nacht" in message.content and message.author != Bot.user:
+        await message.channel.send(f"gute nacht {message.author.name}")
+    if "Bis später" in message.content and message.author != Bot.user:
+        await message.channel.send(f"Bis später {message.author.name}")
+    # 한국인
+    if "안녕" in message.content and message.author != Bot.user:
+        await message.channel.send(f"안녕 {message.author.name} 이름이 뭐예요?")
+    if "내 이름은" in message.content and message.author != Bot.user and "안녕" not in message.content:
+        a = message.content.replace("내 이름은",'')
+        await message.channel.send(f"안녕 {a} 안녕하세요, 나는")
+    if "오전 잘 지내요" in message.content and message.author != Bot.user:
+        await message.channel.send(f"오전 잘 지내요 {message.author.name}")
+    if "저녁 잘 지내요" in message.content and message.author != Bot.user:
+        await message.channel.send(f"저녁 잘 지내요 {message.author.name}")
+    if "나중에 봐요" in message.content and message.author != Bot.user:
+        await message.channel.send(f"나중에 봐요 {message.author.name}")
+    else:
+        await Bot.process_commands(message)
 
 
 Bot.run(token_2.token)

@@ -1008,7 +1008,7 @@ async def on_message(message):
         await message.channel.send(f"Bis später {message.author.name}")
     # 한국인
     if "안녕" in message.content and message.author != Bot.user:
-        await message.channel.send(f"안녕하세요 {message.author.name} 이름이 뭐예요?")
+        await message.channel.send(f"안녕하세요 이름이 뭐예요?")
     if "내 이름은" in message.content and message.author != Bot.user and "안녕" not in message.content:
         a = message.content.replace("내 이름은",'')
         await message.channel.send(f"안녕 {a} 안녕하세요, 나는")

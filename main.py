@@ -1077,9 +1077,7 @@ async def Kapat(ctx):
     au = ctx.author.id
     if au == 618214247742308361:
         await ctx.send("Kapatılıyor...")
-        await Bot.logout()
-        f = input()
-        print("çalıştırılsınmı?" + f)
+        exit()
     if au != 618214247742308361:
         await ctx.send("Kapatma yetkiniz yok")
 

@@ -18,8 +18,11 @@ Bot = commands.Bot("!", help_command=None)
 
 @Bot.event
 async def on_ready():
-    global W
-    W = datetime.now()
+    global Wed, Weh, Wem, Wes
+    Wed = datetime.now().strftime("%d")
+    Weh = datetime.now().strftime("%H")
+    Wem = datetime.now().strftime("%M")
+    Wes = datetime.now().strftime("%S")
     print("Bot çalışıyor")
     await Bot.change_presence(activity=Game(name="Yahudi yakmaca", type=3, application_id=None, details="Yahudi yakıyor", state="Yahudi yakıyor",))
 
@@ -1079,26 +1082,6 @@ async def Kapat(ctx):
         print("çalıştırılsınmı?" + f)
     if au != 618214247742308361:
         await ctx.send("Kapatma yetkiniz yok")
-
-
-@Bot.command()
-async def wt(ctx):
-    Wt = datetime.now()
-    Wt - W
-    d = (Wt - W).days
-    h = (Wt - W).seconds/3600
-    m = (Wt - W).seconds/60
-    s = (Wt - W).seconds
-    if d < 1:
-        if h > 1:
-            await ctx.send(f"Bot {h} saat {m} dakika {s} saniye çalışmış")
-        if h < 1:
-            if m > 1:
-                await ctx.send(f"Bot {m} dakika {s} saniye çalışmış")
-            if m < 1:
-                await ctx.send(f"Bot {s} saniye çalışmış")
-    if d > 1:
-        await ctx.send(f"Bot {d} gün {h} saat {m} dakika {s} saniye çalışmış")
 
 
 Bot.run(token_2.token)

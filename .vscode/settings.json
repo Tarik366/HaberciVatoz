@@ -1,3 +1,6 @@
 {
-    "kvlang.pythonPath": "python"
+    "kvlang.pythonPath": "python",
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }

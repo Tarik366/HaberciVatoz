@@ -1,3 +1,4 @@
+from datetime import datetime
 import os.path
 import random
 from discord import *
@@ -9,6 +10,7 @@ from Sözler.Lenin import *
 from Sözler.Stalin import *
 from Sözler.Cengiz import *
 from Sözler.CelalŞengör import *
+from propaganda import *
 import token_2
 
 Bot = commands.Bot("!", help_command=None)
@@ -16,6 +18,8 @@ Bot = commands.Bot("!", help_command=None)
 
 @Bot.event
 async def on_ready():
+    global W
+    W = datetime.now()
     print("Bot çalışıyor")
     await Bot.change_presence(activity=Game(name="Yahudi yakmaca", type=3, application_id=None, details="Yahudi yakıyor", state="Yahudi yakıyor",))
 
@@ -1001,7 +1005,7 @@ async def on_message(message):
         await message.channel.send(f"おやすみございます{message.author.name}ーさん。")
     if "元気ですか" in message.content and message.author != Bot.user:
         await message.channel.send(f"大丈夫です。あなたは元気ですか？")
-    if "職業はなんですか":
+    if "職業はなんですか" in message.content and message.author != Bot.user:
         await message.channel.send(f"俺は楽しいベースのDiscordボットで、!yardımコマンドを使用してコマンドを表示できます")
     # English
     if "hello" in message.content and message.author != Bot.user:
@@ -1057,6 +1061,44 @@ async def on_message(message):
         await message.channel.send(f"나는 재미를 위한 Discord 봇입니다! !yardım 명령을 사용하여 내 명령을 볼 수 있습니다.")
     else:
         await Bot.process_commands(message)
+
+
+@Bot.command()
+async def propaganda(ctx):
+    propagandalist = [Propaganda1, Propaganda2, Propaganda3, Propaganda4, Propaganda5, Propaganda6, Propaganda7, Propaganda8, Propaganda9, Propaganda10, Propaganda11, Propaganda12, Propaganda13, Propaganda14, Propaganda15, Propaganda16, Propaganda17, Propaganda18, Propaganda19, Propaganda20, Propaganda21, Propaganda22, Propaganda23, Propaganda24, Propaganda25, Propaganda26, Propaganda27, Propaganda28, Propaganda29, Propaganda30, Propaganda31, Propaganda32, Propaganda33, Propaganda34, Propaganda35, Propaganda36, Propaganda37, Propaganda38, Propaganda39, Propaganda40, Propaganda41, Propaganda42, Propaganda43, Propaganda44, Propaganda45, Propaganda46, Propaganda47, Propaganda48, Propaganda49, Propaganda50, Propaganda51, Propaganda52, Propaganda53, Propaganda54, Propaganda55, Propaganda56, Propaganda57, Propaganda58, Propaganda59, Propaganda60, Propaganda61]
+    await ctx.send(random.choice(propagandalist))
+
+
+@Bot.command()
+async def Kapat(ctx):
+    au = ctx.author.id
+    if au == 618214247742308361:
+        await ctx.send("Kapatılıyor...")
+        await Bot.logout()
+        f = input()
+        print("çalıştırılsınmı?" + f)
+    if au != 618214247742308361:
+        await ctx.send("Kapatma yetkiniz yok")
+
+
+@Bot.command()
+async def wt(ctx):
+    Wt = datetime.now()
+    Wt - W
+    d = (Wt - W).days
+    h = (Wt - W).seconds/3600
+    m = (Wt - W).seconds/60
+    s = (Wt - W).seconds
+    if d < 1:
+        if h > 1:
+            await ctx.send(f"Bot {h} saat {m} dakika {s} saniye çalışmış")
+        if h < 1:
+            if m > 1:
+                await ctx.send(f"Bot {m} dakika {s} saniye çalışmış")
+            if m < 1:
+                await ctx.send(f"Bot {s} saniye çalışmış")
+    if d > 1:
+        await ctx.send(f"Bot {d} gün {h} saat {m} dakika {s} saniye çalışmış")
 
 
 Bot.run(token_2.token)

@@ -56,6 +56,7 @@ async def yardım(ctx):
     embed.add_field(name="!pp", value="Yazan kişinin profil fotoğrafını atar", inline=False)
     embed.add_field(name="!ideoloji", value="16 ideoloji arasından seçilen ideolojiye geçerim", inline=False)
     embed.add_field(name="!işkence", value="Etiketlenen kişiye işkence yaparım. Fazla kullanmamaya dikkat edin", inline=False)
+    embed.add_field(name="!söz", value="Rastgele bir kişinin sözünü atar", inline=False)
     await ctx.send(embed=embed)
 
 # gifs
@@ -289,6 +290,22 @@ async def i(ctx, *args):
         await ctx.send(want)
     if "want2" in args:
         await ctx.send(want2)
+    if "tehe" in args:
+        await ctx.send(tehe)
+    if "cringe" in args:
+        await ctx.send(cringe)
+    if "money" in args:
+        await ctx.send(money)
+    if "yay2" in args:
+        await ctx.send(yay2)
+    if "nod" in args:
+        await ctx.send(nod)
+    if "tobi" in args:
+        await ctx.send(tobi)
+    if "yesmaster" in args:
+        await ctx.send(yesmaster)
+    if "nope" in args:
+        await ctx.send(nope)
 
 
 # Bug fix
@@ -301,6 +318,10 @@ async def aki(ctx):
 async def rank(ctx):
     print("")
 
+@Bot.command()
+async def owo(ctx):
+    print("")
+
 # ekibe başvuru
 
 
@@ -309,23 +330,23 @@ async def başvuru(ctx, *args):
     if "mangaçevirmen" in args:
         tr = Embed(
             title="Manga çevirmen başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür mangaları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nhttps://drive.google.com/file/d/1_qfW23Wvda94S19U3f4x8eCe6YEqFCug/view?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın"
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür mangaları seviyorsun?\n\nİngilizceni değerlendiriniz(A1, A2, B1, B2, C1, C2)\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\n\nhttps://drive.google.com/file/d/1_qfW23Wvda94S19U3f4x8eCe6YEqFCug/view?usp=sharing\n\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın."
         )
         await ctx.send(embed=tr)
     if "mangaeditör" in args:
         ed = Embed(
             title="Manga editör başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/file/d/1-B-xLpofKmmyx86_wOuOA4ii-LfG4hb9/view?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın")
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\n\nhttps://drive.google.com/file/d/1-B-xLpofKmmyx86_wOuOA4ii-LfG4hb9/view?usp=sharing\n\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın")
         await ctx.send(embed=ed)
     if "webçevirmen" in args:
         wtr = Embed(
             title="Webtoon çevirmen başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür webtoonları seviyorsun?\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın")
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nİngilizce seviyen nedir?\n\nEn çok hangi tür webtoonları seviyorsun?\n\nİngilizceni değerlendiriniz(A1, A2, B1, B2, C1, C2)\n\nHaftada kaç bölüm çevirebilirsin?\n\nVe bu örnek sayfayı çevirmeni istiyoruz\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın")
         await ctx.send(embed=wtr)
     if "webeditör" in args:
         wed = Embed(
             title="Webtoon editör başvuru formu",
-            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\nhttps://drive.google.com/drive/folders/12spp_Y4xTWLRJ8HxLsaom4B5Ilord0_7?usp=sharing\nSon olarak yeni-gelenlere kanalına bakmayı unutmayın"
+            description="Daha önce başka bir ekipte çalıştın mı?\n\nBağımsız da olsa deneyimin var mı?\n\nHaftada kaç bölüm editleyebilirsin?\n\nPhotoshop seviyene 5 üzerinden puan verebilir misin?\n\nVe bu örnek sayfayı editlemeni istiyoruz\n\nhttps://drive.google.com/drive/folders/12spp_Y4xTWLRJ8HxLsaom4B5Ilord0_7?usp=sharing\n\nSon olarak #yeni-gelenlere kanalına bakmayı unutmayın"
         )
         await ctx.send(embed=wed)
 
@@ -965,7 +986,7 @@ async def söz(ctx):
 async def on_message(message):
     if message.author == Bot.user:
         return
-# 日本語
+    # 日本語
     if 'こんにちは' == message.content and message.author != Bot.user:
         await message.channel.send(f"こんにちは{message.author.name}、お名前は何ですか？")
     if "私は" in message.content and message.author != Bot.user and "こんにちは" not in message.content:
@@ -978,7 +999,11 @@ async def on_message(message):
         await message.channel.send(f"こんばんは{message.author.name}ーさん。")
     if "おやすみ" in message.content and message.author != Bot.user:
         await message.channel.send(f"おやすみございます{message.author.name}ーさん。")
-# English
+    if "元気ですか" in message.content and message.author != Bot.user:
+        await message.channel.send(f"大丈夫です。あなたは元気ですか？")
+    if "職業はなんですか":
+        await message.channel.send(f"俺は楽しいベースのDiscordボットで、!yardımコマンドを使用してコマンドを表示できます")
+    # English
     if "hello" in message.content and message.author != Bot.user:
         await message.channel.send(f"hello {message.author.name} what is your name?")
     if "my name is" in message.content and message.author != Bot.user and "hello" not in message.content:
@@ -992,6 +1017,10 @@ async def on_message(message):
         await message.channel.send(f"good night {message.author.name}")
     if "good bye" in message.content and message.author != Bot.user:
         await message.channel.send(f"good bye {message.author.name}")
+    if "how are you" in message.content and message.author != Bot.user:
+        await message.channel.send(f"I am fine, how are you {message.author.name}")
+    if "what is your job" in message.content and message.author != Bot.user:
+        await message.channel.send(f"I am a entertainment based Discord bot, I can show you commands with !yardım command")
     # Deutsch
     if "hallo" in message.content and message.author != Bot.user:
         await message.channel.send(f"hallo {message.author.name} was ist dein name?")
@@ -1006,18 +1035,26 @@ async def on_message(message):
         await message.channel.send(f"gute nacht {message.author.name}")
     if "Bis später" in message.content and message.author != Bot.user:
         await message.channel.send(f"Bis später {message.author.name}")
+    if "wie gehts" in message.content and message.author != Bot.user:
+        await message.channel.send(f"Ich bin gut, wie geht's {message.author.name}")
+    if "was ist dein job" in message.content and message.author != Bot.user:
+        await message.channel.send(f"Ich bin ein Entertainment basiertes Discord Bot, ich kann dir mit !yardım kommandos anzeigen")
     # 한국인
     if "안녕" in message.content and message.author != Bot.user:
-        await message.channel.send(f"안녕하세요 이름이 뭐예요?")
+        await message.channel.send(f"안녕하세요 이름이 뭐에 요?")
     if "내 이름은" in message.content and message.author != Bot.user and "안녕" not in message.content:
         a = message.content.replace("내 이름은",'')
-        await message.channel.send(f"안녕 {a} 안녕하세요, 나는")
+        await message.channel.send(f"안녕 {a} 안녕하세요, 저는 파시스트 가오리")
     if "오전 잘 지내요" in message.content and message.author != Bot.user:
         await message.channel.send(f"오전 잘 지내요 {message.author.name}")
     if "저녁 잘 지내요" in message.content and message.author != Bot.user:
         await message.channel.send(f"저녁 잘 지내요 {message.author.name}")
     if "나중에 봐요" in message.content and message.author != Bot.user:
         await message.channel.send(f"나중에 봐요 {message.author.name}")
+    if "잘 지내고 있나요" in message.content and message.author != Bot.user:
+        await message.channel.send(f"전 잘 지냅니다. 당신은 어떤가요?")
+    if "너 뭐하니" in message.content and message.author != Bot.user:
+        await message.channel.send(f"나는 재미를 위한 Discord 봇입니다! !yardım 명령을 사용하여 내 명령을 볼 수 있습니다.")
     else:
         await Bot.process_commands(message)
 

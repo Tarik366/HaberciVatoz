@@ -12,6 +12,9 @@ from Sözler.Cengiz import *
 from Sözler.CelalŞengör import *
 from propaganda import *
 import token_2
+from bs4 import BeautifulSoup
+import requests
+import json
 
 Bot = commands.Bot("!", help_command=None)
 
@@ -23,7 +26,7 @@ async def on_ready():
     Weh = datetime.now().strftime("%H")
     Wem = datetime.now().strftime("%M")
     Wes = datetime.now().strftime("%S")
-    print("Bot çalışıyor")
+    print("Bot çalışıyor 2.6")
     await Bot.change_presence(activity=Game(name="Yahudi yakmaca", type=3, application_id=None, details="Yahudi yakıyor", state="Yahudi yakıyor",))
 
 # moderatrör komutları
@@ -64,6 +67,7 @@ async def yardım(ctx):
     embed.add_field(name="!ideoloji", value="16 ideoloji arasından seçilen ideolojiye geçerim", inline=False)
     embed.add_field(name="!işkence", value="Etiketlenen kişiye işkence yaparım. Fazla kullanmamaya dikkat edin", inline=False)
     embed.add_field(name="!söz", value="Rastgele bir kişinin sözünü atar", inline=False)
+    embed.add_field(name="!propaganda", value="Random propaganda gönderir", inline=False)
     await ctx.send(embed=embed)
 
 # gifs
@@ -971,7 +975,7 @@ async def söz(ctx):
         embed = Embed(title="Lenin derki", description=f)
         await ctx.send(embed=embed)
     if l == 4:
-        Stalinlist = [Stalin1, Stalin2, Stalin3, Stalin4, Stalin5, Stalin6, Stalin7, Stalin8, Stalin9, Stalin10, Stalin11, Stalin12, Stalin13, Stalin14, Stalin15, Stalin16, Stalin17, Stalin18, Stalin19, Stalin20, Stalin21, Stalin22, Stalin23, Stalin24, Stalin25, Stalin26,]
+        Stalinlist = [Stalin1, Stalin2, Stalin3, Stalin4, Stalin5, Stalin6, Stalin7, Stalin8, Stalin9, Stalin10, Stalin11, Stalin12, Stalin13, Stalin14, Stalin15, Stalin16, Stalin17, Stalin18, Stalin19, Stalin20, Stalin21, Stalin22, Stalin23, Stalin24, Stalin25]
         f = random.choice(Stalinlist)
         embed = Embed(title="Stalin derki", description=f)
         await ctx.send(embed=embed)
@@ -1073,13 +1077,76 @@ async def propaganda(ctx):
 
 
 @Bot.command()
+async def r(ctx, *args):
+    if "kitap" in args:
+        page = requests.get("https://www.generatormix.com/random-book-generator")
+        soup = BeautifulSoup(page.text, "lxml")
+        a = soup.find("div", class_="col-7")
+        b = a.text.replace("Get it on Amazon US", "")
+        c = b.replace("Fiction", "Kurgu")
+        d = c.replace("keywords", "Anahtar Kelimeler")
+        e = d.replace("\n\n", "\n")
+        f = e.replace("\nby ", "Yazar: ")
+        embed = Embed(title="Random Kitap Önerisi", description=f, color=0x00ff00)
+        await ctx.send(embed=embed)
+    if "film" in args:
+        page = requests.get("https://www.generatormix.com/random-movie-generator")
+        soup = BeautifulSoup(page.text, "lxml")
+        a = soup.find("div", class_="thumbnail-col-3 tile-block-inner marg-top first")
+        b = a.text.replace("Watch trailer", "")
+        d = c.replace("Get it on Amazon US", "")
+        embed = Embed(title="Random Film Önerisi", description=d, color=0x00ff00)
+        await ctx.send(embed=embed)
+    if "şarkı" in args:
+        page = requests.get("https://www.generatormix.com/random-spotify-songs-generator")
+        soup = BeautifulSoup(page.text, "lxml")
+        a = soup.find("div", class_="thumbnail-col-3 tile-block-inner marg-top first")
+        z = soup.find("a", class_="btn btn-default col-10 no-float btn-spotify marg-top")["href"]
+        b = a.text.replace("No preview available.", "")
+        c = b.replace(" Get track on Spotify", z)
+        d = c.replace("Get it on Amazon US", "")
+        embed = Embed(title="Random Şarkı Önerisi", description=str(d), color=0x00ff00)
+        await ctx.send(embed=embed)
+    if "oyun" in args:
+        page = requests.get("https://www.generatormix.com/random-steam-games-generator")
+        soup = BeautifulSoup(page.text, "lxml")
+        a = soup.find("a", class_="btn btn-steam marg-bottom col-12")["href"]
+        await ctx.send(a)
+    if "anime" in args:
+        query = '''
+        query ($id: Int) { # Define which variables will be used in the query (id)
+        Media (id: $id, type: ANIME) { # Insert our variables into the query arguments (id) (type: ANIME is hard-coded in the query)
+            id
+            title {
+            romaji
+            }
+        }
+        }
+        '''
+        l = random.randint(1, 9999)
+        variables = {
+            'id': l
+        }
+        url = 'https://graphql.anilist.co'
+        response = requests.post(url, json={'query': query, 'variables': variables})
+        a = json.loads(response.text)
+        url = 'https://anilist.co/anime/' + str(l)
+        u = a.get('data').get('Media').get('title').get('romaji')
+        embed = Embed(title=u, description=url, color=0x00ff00)
+        await ctx.send(embed=embed)
+    if "manga" in args:
+        l = random.randint(1, 20700)
+        url = 'https://myanimelist.net/manga/' + str(l)
+        embed = Embed(title="Random manga önerisi" ,description=url)
+        await ctx.send(embed=embed)
+
+
+@Bot.command()
 async def Kapat(ctx):
     au = ctx.author.id
     if au == 618214247742308361:
         await ctx.send("Kapatılıyor...")
-        await Bot.logout()
-        f = input()
-        print("çalıştırılsınmı?" + f)
+        exit()
     if au != 618214247742308361:
         await ctx.send("Kapatma yetkiniz yok")
 

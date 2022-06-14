@@ -10,6 +10,7 @@ from Sözler.Lenin import *
 from Sözler.Stalin import *
 from Sözler.Cengiz import *
 from Sözler.CelalŞengör import *
+from Sözler.MeteHan import *
 from propaganda import *
 import token_2
 from bs4 import BeautifulSoup
@@ -824,7 +825,7 @@ async def work(ctx, *args):
 
 @Bot.command()
 async def söz(ctx):
-    l = random.randint(1, 6)
+    l = random.randint(1, 7)
     if l == 1:
         Hitlerlist = [Hitler1,Hitler2,Hitler3, Hitler4, Hitler5, Hitler6, Hitler7, Hitler8, Hitler9, Hitler10, Hitler11, Hitler12, Hitler13, Hitler14, Hitler15, Hitler16, Hitler17, Hitler18, Hitler19, Hitler20, Hitler21, Hitler22, Hitler23, Hitler24, Hitler25, Hitler26, Hitler27, Hitler28, Hitler29, Hitler30, Hitler31, Hitler32, Hitler33, Hitler34, Hitler35, Hitler36, Hitler37, Hitler38, Hitler39, Hitler40, Hitler41, Hitler42, Hitler43, Hitler44, Hitler45, Hitler46, Hitler47, Hitler48, Hitler49, Hitler50, Hitler51, Hitler52, Hitler53, Hitler54, Hitler55, Hitler56, Hitler57, Hitler58, Hitler59, Hitler60, Hitler61, Hitler62, Hitler63, Hitler64, Hitler65, Hitler66, Hitler67, Hitler68, Hitler69, Hitler70, Hitler71, Hitler72, Hitler73, Hitler74, Hitler75, Hitler76, Hitler77, Hitler78, Hitler79, Hitler80, Hitler81, Hitler82, Hitler83, Hitler84, Hitler85, Hitler86, Hitler87, Hitler88, Hitler89, Hitler90, Hitler91, Hitler92, Hitler93, Hitler94, Hitler95, Hitler96, Hitler97, Hitler98, Hitler99, Hitler100, Hitler101, Hitler102, Hitler103, Hitler104, Hitler105, Hitler106, Hitler107, Hitler108, Hitler109, Hitler110, Hitler111, Hitler112, Hitler113, Hitler114, Hitler115, Hitler116, Hitler117, Hitler118, Hitler119, Hitler120, Hitler121, Hitler122, Hitler123, Hitler124, Hitler125, Hitler126, Hitler127, Hitler128, Hitler129, Hitler130, Hitler131, Hitler132, Hitler133, Hitler134, Hitler135, Hitler136, Hitler137, Hitler138, Hitler139, Hitler140, Hitler141, Hitler142, Hitler143, Hitler144, Hitler145, Hitler146, Hitler147, Hitler148, Hitler149, Hitler150, Hitler151, Hitler152, Hitler153, Hitler154, Hitler155, Hitler156, Hitler157, Hitler158, Hitler159, Hitler160, Hitler161, Hitler162, Hitler163, Hitler164, Hitler165, Hitler166, Hitler167, Hitler168, Hitler169, Hitler170, Hitler171, Hitler172, Hitler173, Hitler174, Hitler175, Hitler176, Hitler177, Hitler178, Hitler179, Hitler180, Hitler181, Hitler182, Hitler183, Hitler184, Hitler185, Hitler186, Hitler187, Hitler188, Hitler189, Hitler190, Hitler191, Hitler192, Hitler193, Hitler194, Hitler195, Hitler196, Hitler197, Hitler198, Hitler199, Hitler200, Hitler201, Hitler202, Hitler203, Hitler204, Hitler205, Hitler206, Hitler207, Hitler208, Hitler209, Hitler210, Hitler211, Hitler212, Hitler213, Hitler214, Hitler215, Hitler216, Hitler217, Hitler218, Hitler219, Hitler220, Hitler221, Hitler222, Hitler223, Hitler224, Hitler225, Hitler226, Hitler227, Hitler228, Hitler229, Hitler230, Hitler231, Hitler232, Hitler233, Hitler234, Hitler235, Hitler236, Hitler237, Hitler238, Hitler239, Hitler240, Hitler241, Hitler242, Hitler243, Hitler244, Hitler245, Hitler246, Hitler247, Hitler248, Hitler249, Hitler250, Hitler251, Hitler252, Hitler253, Hitler254, Hitler255, Hitler256, Hitler257]
         f = random.choice(Hitlerlist)
@@ -854,6 +855,11 @@ async def söz(ctx):
         CelalŞengörlist = [Celal1, Celal2, Celal3, Celal4, Celal5, Celal6, Celal7, Celal8, Celal9, Celal10, Celal11, Celal12, Celal13, Celal14, Celal15, Celal16, Celal17, Celal18, Celal19, Celal20, Celal21, Celal22, Celal23, Celal24, Celal25, Celal26, Celal27, Celal28, Celal29, Celal30, Celal31, Celal32, Celal33, Celal34, Celal35, Celal36, Celal37, Celal38, Celal39, Celal40, Celal41, Celal42, Celal43]
         f = random.choice(CelalŞengörlist)
         embed = Embed(title="Celal Şengör derki", description=f)
+        await ctx.send(embed=embed)
+    if l == 7: # TODO 2.7 Eklenecek
+        Metehanlist = [Metehan1, Metehan2, Metehan3, Metehan4, Metehan5, Metehan6, Metehan7]
+        f = random.choice(Metehanlist)
+        embed = Embed(title="Metehan derki", description=f)
         await ctx.send(embed=embed)
 
 
@@ -1005,6 +1011,13 @@ async def r(ctx, *args):
         url = 'https://myanimelist.net/manga/' + str(l)
         embed = Embed(title="Random manga önerisi" ,description=url)
         await ctx.send(embed=embed)
+
+
+@Bot.command()
+async def zar(ctx, u): # TODO 2.7 eklendi
+    z = random.randint(1, 6)
+    embed = Embed(title="Zar atıldı!", description=z , color=0x00ff00)
+    await ctx.send(embed=embed)
 
 
 @Bot.command()

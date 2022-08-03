@@ -1,4 +1,4 @@
-CengizHan1 = "At sırtında dünyayı fethetmek kolaydır. Zor olan, attan inip onu yönetmektir.[1]"
+CengizHan1 = "At sırtında dünyayı fethetmek kolaydır. Zor olan, attan inip onu yönetmektir."
 CengizHan2 = "Benim kazanmam yeterli değil! Diğerlerinin hepsi kaybetmelidir."
 CengizHan3 = "Arkasındaki düşmanı hisseden, önündeki düşmanla savaşamaz."
 CengizHan4 = "Ben Tanrı'nın cezasıyım. Eğer bir günah işlememiş olsaydınız, Tanrı sizi cezalandırmam için beni yollamazdı."

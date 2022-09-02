@@ -12,7 +12,6 @@ from Sözler.CelalŞengör import *
 from Sözler.MeteHan import *
 from propaganda import *
 from hoi4tips import *
-import token_2
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -1549,4 +1548,4 @@ async def Yeniden(ctx):
         await ctx.send("Yeniden başlatma yetkiniz yok")
 
 
-Bot.run(token_2.token)
+Bot.run(token)

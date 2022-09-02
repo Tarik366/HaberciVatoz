@@ -1,0 +1,5 @@
+pip install discord.py
+pip install Pillow
+pip install bs4
+pip install requests
+python main.py

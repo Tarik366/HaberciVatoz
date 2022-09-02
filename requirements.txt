@@ -1,5 +1,6 @@
-pip install discord.py
-pip install Pillow
-pip install bs4
-pip install requests
+pip install -r requirements.txt
+pip install -r discord.py
+pip install -r Pillow
+pip install -r bs4
+pip install -r requests
 python main.py

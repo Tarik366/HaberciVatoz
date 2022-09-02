@@ -4,7 +4,7 @@ async-timeout==4.0.2
 attrs==22.1.0
 beautifulsoup4==4.11.1
 bs4==0.0.1
-certifi==4.11.1
+certifi==2022.6.15
 cffi==1.15.1
 charset-normalizer==2.1.1
 discord.py==2.0.1

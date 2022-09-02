@@ -10,13 +10,21 @@ from Sözler.Stalin import *
 from Sözler.Cengiz import *
 from Sözler.CelalŞengör import *
 from Sözler.MeteHan import *
+from Sözler.Einstein import *
 from propaganda import *
 from hoi4tips import *
 from bs4 import BeautifulSoup
 import requests
 import json
+from PIL import Image
+from PIL import ImageFont
+from PIL import ImageDraw 
+import numpy as np
 
-Bot = commands.Bot("!", help_command=None)
+
+intents = Intents.default()
+intents.message_content = True
+Bot = commands.Bot("!", help_command=None, intents=intents)
 tür = "vatoz"
 # moderatrör komutları
 
@@ -1307,7 +1315,7 @@ async def ideoloji(ctx, *args):
 
 @Bot.command()
 async def söz(ctx):
-    l = random.randint(1, 7)
+    l = random.randint(1, 8)
     if l == 1:
         Hitlerlist = [Hitler1,Hitler2,Hitler3, Hitler4, Hitler5, Hitler6, Hitler7, Hitler8, Hitler9, Hitler10, Hitler11, Hitler12, Hitler13, Hitler14, Hitler15, Hitler16, Hitler17, Hitler18, Hitler19, Hitler20, Hitler21, Hitler22, Hitler23, Hitler24, Hitler25, Hitler26, Hitler27, Hitler28, Hitler29, Hitler30, Hitler31, Hitler32, Hitler33, Hitler34, Hitler35, Hitler36, Hitler37, Hitler38, Hitler39, Hitler40, Hitler41, Hitler42, Hitler43, Hitler44, Hitler45, Hitler46, Hitler47, Hitler48, Hitler49, Hitler50, Hitler51, Hitler52, Hitler53, Hitler54, Hitler55, Hitler56, Hitler57, Hitler58, Hitler59, Hitler60, Hitler61, Hitler62, Hitler63, Hitler64, Hitler65, Hitler66, Hitler67, Hitler68, Hitler69, Hitler70, Hitler71, Hitler72, Hitler73, Hitler74, Hitler75, Hitler76, Hitler77, Hitler78, Hitler79, Hitler80, Hitler81, Hitler82, Hitler83, Hitler84, Hitler85, Hitler86, Hitler87, Hitler88, Hitler89, Hitler90, Hitler91, Hitler92, Hitler93, Hitler94, Hitler95, Hitler96, Hitler97, Hitler98, Hitler99, Hitler100, Hitler101, Hitler102, Hitler103, Hitler104, Hitler105, Hitler106, Hitler107, Hitler108, Hitler109, Hitler110, Hitler111, Hitler112, Hitler113, Hitler114, Hitler115, Hitler116, Hitler117, Hitler118, Hitler119, Hitler120, Hitler121, Hitler122, Hitler123, Hitler124, Hitler125, Hitler126, Hitler127, Hitler128, Hitler129, Hitler130, Hitler131, Hitler132, Hitler133, Hitler134, Hitler135, Hitler136, Hitler137, Hitler138, Hitler139, Hitler140, Hitler141, Hitler142, Hitler143, Hitler144, Hitler145, Hitler146, Hitler147, Hitler148, Hitler149, Hitler150, Hitler151, Hitler152, Hitler153, Hitler154, Hitler155, Hitler156, Hitler157, Hitler158, Hitler159, Hitler160, Hitler161, Hitler162, Hitler163, Hitler164, Hitler165, Hitler166, Hitler167, Hitler168, Hitler169, Hitler170, Hitler171, Hitler172, Hitler173, Hitler174, Hitler175, Hitler176, Hitler177, Hitler178, Hitler179, Hitler180, Hitler181, Hitler182, Hitler183, Hitler184, Hitler185, Hitler186, Hitler187, Hitler188, Hitler189, Hitler190, Hitler191, Hitler192, Hitler193, Hitler194, Hitler195, Hitler196, Hitler197, Hitler198, Hitler199, Hitler200, Hitler201, Hitler202, Hitler203, Hitler204, Hitler205, Hitler206, Hitler207, Hitler208, Hitler209, Hitler210, Hitler211, Hitler212, Hitler213, Hitler214, Hitler215, Hitler216, Hitler217, Hitler218, Hitler219, Hitler220, Hitler221, Hitler222, Hitler223, Hitler224, Hitler225, Hitler226, Hitler227, Hitler228, Hitler229, Hitler230, Hitler231, Hitler232, Hitler233, Hitler234, Hitler235, Hitler236, Hitler237, Hitler238, Hitler239, Hitler240, Hitler241, Hitler242, Hitler243, Hitler244, Hitler245, Hitler246, Hitler247, Hitler248, Hitler249, Hitler250, Hitler251, Hitler252, Hitler253, Hitler254, Hitler255, Hitler256, Hitler257]
         f = random.choice(Hitlerlist)
@@ -1338,10 +1346,15 @@ async def söz(ctx):
         f = random.choice(CelalŞengörlist)
         embed = Embed(title="Celal Şengör derki", description=f)
         await ctx.send(embed=embed)
-    if l == 7: # TODO 2.7 Eklenecek
+    if l == 7:
         Metehanlist = [Metehan1, Metehan2, Metehan3, Metehan4, Metehan5, Metehan6, Metehan7]
         f = random.choice(Metehanlist)
         embed = Embed(title="Metehan derki", description=f)
+        await ctx.send(embed=embed)
+    if l == 8:
+        Einlist = [Ein1, Ein2,Ein3,Ein4,Ein5, Ein6,Ein7,Ein8,Ein9,Ein10,Ein11,Ein12,Ein13,Ein14,Ein15,Ein16,Ein17,Ein18]
+        f = random.choice(Einlist)
+        embed = Embed(title="Einstein derki", description=f)
         await ctx.send(embed=embed)
 
 
@@ -1390,7 +1403,7 @@ async def on_message(message):
     if "what is your job" in message.content or "What is your job" in message.content and message.author != Bot.user:
         await message.channel.send(f"I am a entertainment based Discord bot, I can show you commands with !yardım command")
     # Deutsch
-    if "hallo" in message.content or "Hallo" in message.content and message.author != Bot.user:
+    if "hallo" == message.content or "Hallo" == message.content and message.author != Bot.user:
         await message.channel.send(f"hallo {message.author.name}!")
     if "mein name ist" in message.content or "Mein name ist" in message.content and message.author != Bot.user and "hallo" not in message.content:
         a = message.content.replace("mein name ist",'')
@@ -1426,6 +1439,9 @@ async def on_message(message):
         await message.channel.send(f"전 잘 지냅니다. 당신은 어떤가요?")
     if "너 뭐하니" in message.content and message.author != Bot.user:
         await message.channel.send(f"나는 재미를 위한 Discord 봇입니다! !yardım 명령을 사용하여 내 명령을 볼 수 있습니다.")
+    # 4.1.1
+    if "balık" in message.content and message.author != Bot.user:
+        await message.channel.send(f"BALIIIIIKKKKKKK!!!!!!!!")
     else:
         await Bot.process_commands(message)
 
@@ -1524,6 +1540,48 @@ async def ders(ctx, *args):
     if "anime-çeviri" in args:
         await ctx.send("https://i.imgur.com/DZBjYxg.jpg\nhttps://i.imgur.com/X5r544n.jpg")
 
+# 4.1
+
+@Bot.command()
+async def cmm(ctx, *args):
+    img = Image.open("change-my-mind.jpg")
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.truetype("impact.ttf", 55, encoding="utf-8")
+    metin = str(args).replace("(", "")
+    metin = metin.replace(")", "")
+    metin = metin.replace("'", "")
+    metin = metin.replace(",", "")
+    metin = metin.replace("-", " ")
+    y = 550
+    for i, metin in enumerate(metin.split(' ')):
+        draw.text((340, y),metin,(0,0,0),font=font)
+        y = y + 60
+    kdgh = "cmm/" + str(random.randint(0, 10000)) + ".jpg"
+    img.save(kdgh)
+    await ctx.send(' ', file=File(kdgh))
+    
+@Bot.command(pass_context=True)
+async def polska(ctx):
+    if(ctx.author.voice):
+        if vatoz != "cow": 
+            dem = open("dancing-polish-cow-at4am.gif", 'rb')
+            demo = dem.read()
+            await Bot.change_presence(activity=Game(name="Tylko jedno w głowie mam Koksu pięc gram"))
+            await Bot.user.edit(username="Polish Cow", avatar=demo)
+        channel=ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(FFmpegPCMAudio(executable="bin/ffmpeg.exe", source="polish-cow-full-song.mp3"))
+        await ctx.send("https://tenor.com/bqmYe.gif")
+    else:   
+        await ctx.send("Herhangi bir sesd sunucusunda değilsin!")
+
+@Bot.command(pass_context=True)
+async def çık(ctx):
+    if(ctx.voice_client):
+        await ctx.guild.voice_client.disconnect()
+        await ctx.send("Ses sunucusundan çıktım")
+    else:
+        await ctx.send("Herhangi bir ses kanalımda değilim")
 
 @Bot.command()
 async def Kapat(ctx):
@@ -1534,18 +1592,5 @@ async def Kapat(ctx):
         exit()
     if au != 618214247742308361:
         await ctx.send("Kapatma yetkiniz yok")
-
-
-@Bot.command()
-async def Yeniden(ctx):
-    au = ctx.author.id
-    if au == 618214247742308361:
-        embed = Embed(title="Yeniden başlatılıyor...", color=0x00ff00)
-        await ctx.send(embed=embed)
-        os.system("pythonw fasistvatoz.pyw")
-        exit()
-    if au != 618214247742308361:
-        await ctx.send("Yeniden başlatma yetkiniz yok")
-
 
 Bot.run(token)

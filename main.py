@@ -20,7 +20,9 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw 
 import numpy as np
+from dotenv.main import load_dotenv
 
+load_dotenv()
 
 intents = Intents.default()
 intents.message_content = True
@@ -1583,4 +1585,4 @@ async def çık(ctx):
     else:
         await ctx.send("Herhangi bir ses kanalımda değilim")
 
-Bot.run(token)
+Bot.run(os.getenv('token'))

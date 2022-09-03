@@ -1,0 +1,8 @@
+bs4
+discord.py
+ffmpeg
+opencv-python
+Pillow
+PyNaCl
+requests
+python-dotenv

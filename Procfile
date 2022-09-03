@@ -1,1 +1,1 @@
-worker: pythonw fasistvatoz.pyw
+worker: python main.py

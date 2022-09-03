@@ -1583,4 +1583,4 @@ async def çık(ctx):
     else:
         await ctx.send("Herhangi bir ses kanalımda değilim")
 
-Bot.run(t.token)
+Bot.run(token)

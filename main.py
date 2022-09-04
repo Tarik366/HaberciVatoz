@@ -1572,7 +1572,7 @@ async def polska(ctx):
             await Bot.user.edit(username="Polish Cow", avatar=demo)
         channel=ctx.message.author.voice.channel
         vc = await channel.connect()
-        vc.play(FFmpegPCMAudio(executable="bin/ffmpeg.exe", source="polish-cow-full-song.mp3"))
+        vc.play(FFmpegPCMAudio(executable="ffmpeg.exe", source="polish-cow-full-song.mp3"))
         await ctx.send("https://tenor.com/bqmYe.gif")
     else:   
         await ctx.send("Herhangi bir sesd sunucusunda değilsin!")

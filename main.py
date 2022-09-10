@@ -1474,25 +1474,25 @@ async def cmm(ctx: Interaction, meme: str):
     
 @Bot.command(name = "polska", description = "Sadece dene ve gör😏", guild = Object(id = uid))
 async def polska(ctx: Interaction):
-    if(ctx.author.voice):
+    if(ctx.user.voice):
         if vatoz != "cow": 
             dem = open("dancing-polish-cow-at4am.gif", 'rb')
             demo = dem.read()
             await client.change_presence(activity=Game(name="Tylko jedno w głowie mam Koksu pięc gram"))
             await client.user.edit(username="Polish Cow", avatar=demo)
-        channel=ctx.ctx.author.voice.channel
+        channel=ctx.user.voice.channel
         vc = await channel.connect()
         vc.play(FFmpegPCMAudio(executable="ffmpeg.exe", source="polish-cow-full-song.mp3"))
         await ctx.response.send_message("https://tenor.com/bqmYe.gif")
     else:   
-        await ctx.response.send_message("Herhangi bir sesd sunucusunda değilsin!")
+        await ctx.response.send_message("Herhangi bir ses kanalında değilsin!")
 
 @Bot.command(name = "çık", description = "Vatozu bulunduğunuz kanaldan çıkarır", guild = Object(id = uid))
 async def çık(ctx: Interaction):
-    if(ctx.voice_client):
+    if(ctx.guild.voice_client):
         await ctx.guild.voice_client.disconnect()
-        await ctx.response.send_message("Ses sunucusundan çıktım")
+        await ctx.response.send_message("Ses kanalından çıktım")
     else:
-        await ctx.response.send_message("Herhangi bir ses kanalımda değilim")
+        await ctx.response.send_message("Herhangi bir ses kanalında değilim")
 
 client.run(os.getenv('token'))

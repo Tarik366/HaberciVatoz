@@ -933,7 +933,7 @@ async def ideoloji(ctx: Interaction, ülke: str):
             embed = Embed(title="Bahreynli oldum")
             await ctx.response.send_message(embed=embed)
         if "bangladeş" in ülke:
-            dem = open("vatozlar/asya/bangladeş.jpg", 'rb')
+            dem = open("vatozlar/asya/Bangladeş.jpg", 'rb')
             demo = dem.read()
             await client.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
             await client.user.edit(username="Bilge Bangladeşli Vatoz", avatar=demo)

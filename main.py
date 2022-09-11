@@ -1482,7 +1482,7 @@ async def polska(ctx: Interaction):
             await client.user.edit(username="Polish Cow", avatar=demo)
         channel=ctx.user.voice.channel
         vc = await channel.connect()
-        vc.play(FFmpegPCMAudio(executable="ffmpeg.exe", source="polish-cow-full-song.mp3"))
+        vc.play(FFmpegPCMAudio(executable="bin/ffmpeg.exe", source="polish-cow-full-song.mp3"))
         await ctx.response.send_message("https://tenor.com/bqmYe.gif")
     else:   
         await ctx.response.send_message("Herhangi bir ses kanalında değilsin!")

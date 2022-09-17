@@ -12,10 +12,12 @@ from Sözler.CelalŞengör import *
 from Sözler.MeteHan import *
 from propaganda import *
 from hoi4tips import *
-import token_2
 from bs4 import BeautifulSoup
 import requests
 import json
+from dotenv.main import load_dotenv
+
+load_dotenv()
 
 Bot = commands.Bot("!", help_command=None)
 tür = "vatoz"
@@ -1549,4 +1551,4 @@ async def Yeniden(ctx):
         await ctx.send("Yeniden başlatma yetkiniz yok")
 
 
-Bot.run(token_2.token)
+Bot.run(os.getenv('token'))

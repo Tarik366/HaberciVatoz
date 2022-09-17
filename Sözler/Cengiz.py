@@ -1,4 +1,3 @@
-
 CengizHan1 = "At sırtında dünyayı fethetmek kolaydır. Zor olan, attan inip onu yönetmektir."
 CengizHan2 = "Benim kazanmam yeterli değil! Diğerlerinin hepsi kaybetmelidir."
 CengizHan3 = "Arkasındaki düşmanı hisseden, önündeki düşmanla savaşamaz."

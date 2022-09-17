@@ -19,4 +19,3 @@ Lenin18 = "Rüşvet, halkın görüşünü satın alma ve burjuvazinin yararına
 Lenin19 = "Uyuşmazlıkları giderebiliriz, çelişki kalıcıdır. "
 Lenin20 = "İşçiler daha yüksek ücret için greve çıkarlarsa sendikacılık yapıyorlardır. Yahudilerin dövülmesine karşı greve çıktıklarında ise gerçek sosyalisttirler. "
 Lenin21 = "Bir kimse köle doğdu diye suçlanamaz; ama özgürlük uğruna savaşımdan kaçmakla kalmayıp köleliğini haklı bulan ve onu öven bir köle, haklı olarak, öfke, tiksinti ve nefret duyguları uyandıran bir aşağılık parazit, bayağının bayağısı bir köledir. "
-Lenin22 = "Din, kişinin özel meselesi olarak görülmelidir."

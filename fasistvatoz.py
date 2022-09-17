@@ -19,7 +19,8 @@ from dotenv.main import load_dotenv
 
 load_dotenv()
 
-Bot = commands.Bot("!", help_command=None)
+intents = Intents.all()
+Bot = commands.Bot("!", help_command=None, intents=intents)
 tür = "vatoz"
 # moderatrör komutları
 

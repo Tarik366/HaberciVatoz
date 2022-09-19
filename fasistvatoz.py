@@ -16,6 +16,9 @@ from bs4 import BeautifulSoup
 import requests
 import json
 from dotenv.main import load_dotenv
+from PIL import Image
+from PIL import ImageFont
+from PIL import ImageDraw 
 
 load_dotenv()
 
@@ -1529,6 +1532,25 @@ async def hoi4tip(ctx):
 async def ders(ctx, *args):
     if "anime-çeviri" in args:
         await ctx.send("https://i.imgur.com/DZBjYxg.jpg\nhttps://i.imgur.com/X5r544n.jpg")
+
+
+@Bot.command()
+async def cmm(ctx, *args):
+    img = Image.open("change-my-mind.jpg")
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.truetype("impact.ttf", 55, encoding="utf-8")
+    metin = str(args).replace("(", "")
+    metin = metin.replace(")", "")
+    metin = metin.replace("'", "")
+    metin = metin.replace(",", "")
+    metin = metin.replace("-", " ")
+    y = 550
+    for i, metin in enumerate(metin.split(' ')):
+        draw.text((340, y),metin,(0,0,0),font=font)
+        y = y + 60
+    kdgh = "cmm/" + str(random.randint(0, 10000)) + ".jpg"
+    img.save(kdgh)
+    await ctx.send(' ', file=File(kdgh))
 
 
 @Bot.command()

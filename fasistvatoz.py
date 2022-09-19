@@ -1394,7 +1394,7 @@ async def on_message(message):
     if "what is your job" in message.content or "What is your job" in message.content and message.author != Bot.user:
         await message.channel.send(f"I am a entertainment based Discord bot, I can show you commands with !yardım command")
     # Deutsch
-    if "hallo" in message.content or "Hallo" in message.content and message.author != Bot.user:
+    if "hallo" == message.content or "Hallo" == message.content and message.author != Bot.user:
         await message.channel.send(f"hallo {message.author.name}!")
     if "mein name ist" in message.content or "Mein name ist" in message.content and message.author != Bot.user and "hallo" not in message.content:
         a = message.content.replace("mein name ist",'')
@@ -1430,6 +1430,8 @@ async def on_message(message):
         await message.channel.send(f"전 잘 지냅니다. 당신은 어떤가요?")
     if "너 뭐하니" in message.content and message.author != Bot.user:
         await message.channel.send(f"나는 재미를 위한 Discord 봇입니다! !yardım 명령을 사용하여 내 명령을 볼 수 있습니다.")
+    if "balık" == message.content and message.author != Bot.user:
+        await message.channel.send("BALIKKKK!!!!"
     else:
         await Bot.process_commands(message)
 

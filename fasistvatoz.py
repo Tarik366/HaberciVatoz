@@ -1431,7 +1431,7 @@ async def on_message(message):
     if "너 뭐하니" in message.content and message.author != Bot.user:
         await message.channel.send(f"나는 재미를 위한 Discord 봇입니다! !yardım 명령을 사용하여 내 명령을 볼 수 있습니다.")
     if "balık" == message.content and message.author != Bot.user:
-        await message.channel.send("BALIKKKK!!!!"
+        await message.channel.send("BALIKKKK!!!!")
     else:
         await Bot.process_commands(message)
 

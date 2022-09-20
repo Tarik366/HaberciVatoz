@@ -949,7 +949,7 @@ async def ideoloji(ctx, *args):
             embed = Embed(title="Arap oldum")
             await ctx.send(embed=embed)
         if "brunei" in args:
-            dem = open("vatozlar/asya/brunei.jpg", 'rb')
+            dem = open("vatozlar/asya/Brunei.jpg", 'rb')
             demo = dem.read()
             await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
             await Bot.user.edit(username="Bilge Bruneyli Vatoz", avatar=demo)
@@ -1228,7 +1228,7 @@ async def ideoloji(ctx, *args):
             embed = Embed(title="Sri Lankalı oldum")
             await ctx.send(embed=embed)
         if "suriye" in args:
-            dem = open("vatozlar/asya/suriye.jpg", 'rb')
+            dem = open("vatozlar/asya/Suriye.jpg", 'rb')
             demo = dem.read()
             await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
             await Bot.user.edit(username="Cahil Suriyeli Vatoz", avatar=demo)
@@ -1246,7 +1246,7 @@ async def ideoloji(ctx, *args):
             embed = Embed(title="أصبحت عربيا")
             await ctx.send(embed=embed)
         if "tacikistan" in args:
-            dem = open("vatozlar/asya/tacikistan.jpg", 'rb')
+            dem = open("vatozlar/asya/Tacikistan.jpg", 'rb')
             demo = dem.read()
             await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
             await Bot.user.edit(username="Bilge Tacik Vatoz", avatar=demo)

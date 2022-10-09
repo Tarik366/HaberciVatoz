@@ -1565,7 +1565,7 @@ class Menu(ui.View):
 from Seriler import *
 
 @Bot.command()
-async def Seri(ctx):
+async def seri(ctx):
     se = [seri_1, seri_2, seri_3, seri_4, seri_5, seri_6, seri_7, seri_8, seri_9, seri_10, seri_11, seri_12, seri_13, seri_14, seri_15, seri_16, seri_17, seri_18, seri_19, seri_20, seri_21, seri_22, seri_23, seri_24, seri_25]
     seri = random.choice(se)
     view = Menu()

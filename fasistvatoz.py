@@ -1,6 +1,8 @@
 import os.path
 import random
+from re import S
 from discord import *
+import discord
 from discord.ext import commands
 from Vars import *
 from Sözler.Hitler import *
@@ -1551,6 +1553,26 @@ async def cmm(ctx, *args):
     kdgh = "cmm/" + str(random.randint(0, 10000)) + ".jpg"
     img.save(kdgh)
     await ctx.send(' ', file=File(kdgh))
+
+# 4.2
+
+class Menu(ui.View):
+    def __init__(self):
+        super().__init__()
+        self.value = None
+    
+
+from Seriler import *
+
+@Bot.command()
+async def Seri(ctx):
+    se = [seri_1, seri_2, seri_3, seri_4, seri_5, seri_6, seri_7, seri_8, seri_9, seri_10, seri_11, seri_12, seri_13, seri_14, seri_15, seri_16, seri_17, seri_18, seri_19, seri_20, seri_21, seri_22, seri_23, seri_24, seri_25]
+    seri = random.choice(se)
+    view = Menu()
+    view.add_item(ui.Button(label="Sitemizden oku", style=ButtonStyle.url, url=seri.url))
+    embed = Embed(title=seri.ad, description=seri.desc)
+    embed.set_image(url = seri.image)
+    await ctx.reply(embed=embed, view=view)
 
 
 @Bot.command()

@@ -27,21 +27,6 @@ load_dotenv()
 intents = Intents.all()
 Bot = commands.Bot("!", help_command=None, intents=intents)
 tür = "vatoz"
-# moderatrör komutları
-
-@Bot.command()
-@commands.has_permissions(ban_members = True)
-async def kick(ctx, member:Member, *, reason = None):
-    embed = Embed(title="kicklendi", description=f"{member.mention}", color=0x8a0a01)
-    await member.kick(reason = reason)
-    await ctx.send(embed=embed)
-
-@Bot.command()
-@commands.has_permissions(ban_members = True)
-async def yak(ctx, member : Member, *, reason = None):
-    embed = Embed(title="Yakılanlar listesi", description=f"{member.mention}", color=0x8a0a01)
-    await member.ban(reason = reason)
-    await ctx.send(embed=embed)
 
 
 # Help komutu
@@ -373,7 +358,7 @@ async def ada(ctx, *args):
 
 @Bot.command()
 async def pp(ctx, Member: Member):
-    await ctx.send(Member.avatar_url)
+    await ctx.send(Member.avatar)
 
 
 @Bot.command()

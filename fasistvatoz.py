@@ -378,7 +378,7 @@ async def pp(ctx, Member: Member):
 
 @Bot.command()
 async def spp(ctx):
-    icon_url = ctx.guild.icon_url
+    icon_url = ctx.guild.icon
     await ctx.send(f"{icon_url}")
 
 

@@ -6,7 +6,7 @@ class seri_1:
     desc = "“Yetişkin olduğunda benimle evlenebilirsin.” Bana böyle söylemişti. O değerli vaatleri hâlâ adım gibi hatırlıyorum!"
     image = "https://athenafansub.com/wp-content/uploads/2022/08/55d98bdf-cb07-48cf-b9aa-2ddc1bbc7c86-1.jpg"
     url = "https://athenafansub.com/manga/tekito-na-maid-no-onee-san-to-erasou-de-ichizu-na-bocchan/"
-
+    
 class seri_2:
     ad = "Tennen Gyaru Kawaguchi-san!"
     desc = "Havalı bir kızla kalın kafalı bir oğlanın hikayesi..."
@@ -128,3 +128,8 @@ class seri_25:
     image = "https://athenafansub.com/wp-content/uploads/2022/08/roshidere.jpg"
     url = "https://athenafansub.com/manga/tokidoki-bosotto-russia-go-de-dereru-tonari-no-aalya-san/"
 
+class seri_26:
+    ad = "Tokidoki Bosotto Roshiago de Dereru Tonari no Alya-san"
+    desc = "Akıllı, zarif ve çarpıcı bir şekilde muhteşem, yarı Rus yarı Japon Alisa Mikhailovna Kujou, okulunun idolü olarak kabul ediliyor. Uzun gümüş rengi saçları, büyüleyici mavi gözleri ve son derece açık teniyle sayısız erkek öğrencinin kalbini kazanırken, diğerleri tarafından büyük beğeni topladı. Öyle olsa bile, görünüşte ulaşılmaz kişiliği nedeniyle, herkes neredeyse kusursuz kıza karşı dikkatli olmaya devam ediyor. Birkaç istisnadan biri, günlerini anime izleyerek ve gacha oyunları oynayarak geçiren nispeten ortalama bir çocuk olan Alisa'nın yedek arkadaşı Masachika Kuze. Kayıtsız tavrına rağmen Masachika, Alisa'nın dikkatini çeken tek öğrencidir. Tamamen dürüst olamayan Alisa, Masachika'ya karşı genellikle sert davranır ve sevgisini yalnızca Rusça olarak ifade eder. Ancak onun farkında olmadan, Masachika dili gerçekten anlıyor, ancak kendi eğlencesi için başka türlü davranıyor. Garip ikili esprili ve eğlenceli sözler söylemeye devam ettikçe ilişkileri giderek daha romantik ve keyifli hale gelir ve Alisa sonunda gerçek duygularını özgürce iletmeyi öğrenebilir."
+    image = "https://athenafansub.com/wp-content/uploads/2022/08/roshidere.jpg"
+    url = "https://athenafansub.com/manga/tokidoki-bosotto-roshiago-de-dereru-tonari-no-alya-san/"

@@ -1,6 +1,5 @@
 import os.path
 import random
-from re import S
 from discord import *
 import discord
 from discord.ext import commands
@@ -21,6 +20,7 @@ from dotenv.main import load_dotenv
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw 
+from Seriler import *
 
 load_dotenv()
 
@@ -1545,13 +1545,10 @@ class Menu(ui.View):
     def __init__(self):
         super().__init__()
         self.value = None
-    
-
-from Seriler import *
 
 @Bot.command()
 async def seri(ctx):
-    se = [seri_1, seri_2, seri_3, seri_4, seri_5, seri_6, seri_7, seri_8, seri_9, seri_10, seri_11, seri_12, seri_13, seri_14, seri_15, seri_16, seri_17, seri_18, seri_19, seri_20, seri_21, seri_22, seri_23, seri_24, seri_25]
+    se = [seri_1, seri_2, seri_3, seri_4, seri_5, seri_6, seri_7, seri_8, seri_9, seri_10, seri_11, seri_12, seri_13, seri_14, seri_15, seri_16, seri_17, seri_18, seri_19, seri_20, seri_21, seri_22, seri_23, seri_24, seri_25, seri_26]
     seri = random.choice(se)
     view = Menu()
     view.add_item(ui.Button(label="Sitemizden oku", style=ButtonStyle.url, url=seri.url))
@@ -1577,7 +1574,7 @@ async def Yeniden(ctx):
     if au == 618214247742308361:
         embed = Embed(title="Yeniden başlatılıyor...", color=0x00ff00)
         await ctx.send(embed=embed)
-        os.system("pythonw fasistvatoz.pyw")
+        os.system("python fasistvatoz.py")
         exit()
     if au != 618214247742308361:
         await ctx.send("Yeniden başlatma yetkiniz yok")

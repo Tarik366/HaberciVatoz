@@ -6,3 +6,4 @@ Pillow
 PyNaCl
 requests
 python-dotenv
+feedparser

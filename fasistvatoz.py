@@ -2,7 +2,7 @@ import os.path
 import random
 from discord import *
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 from Vars import *
 from Sözler.Hitler import *
 from Sözler.Atatürk import *
@@ -21,13 +21,43 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw 
 from Seriler import *
+import datetime as dt
+import feedparser
+from parse import *
 
 load_dotenv()
-
+a = 813886736051863554
 intents = Intents.all()
 Bot = commands.Bot("!", help_command=None, intents=intents)
 tür = "vatoz"
 
+@Bot.event
+async def on_ready():
+    NF = feedparser.parse("https://athenafansub.com/feed/")
+    fentry = NF.entries[0]
+    msg1.start()
+    
+@tasks.loop(minutes=5)
+async def msg1():
+    NF = feedparser.parse("https://athenafansub.com/feed/")
+    entry = NF.entries[0]
+    le = open("lastEntry.txt", "r")
+    ar = le.read()
+    sentry = str(entry)
+    if sentry not in ar:
+        emed = Embed(title=f"{entry.title} yayında keyifli okumalar!", description=f"okumak için {entry.link}", url=entry.link)
+        emed = emed.set_image(url = n.img)
+        channel = Bot.get_channel(a)
+        print(emed)
+        await channel.send(embed=emed)
+        with open("lastEntry.txt", "w") as wle:
+            wle.write(sentry)
+
+@Bot.command()
+async def o(ctx):
+    emed = Embed(title=f"{n.title} yayında keyifli okumalar!", description=f"okumak için {n.link}", url=n.link)
+    emed = emed.set_image(url = n.img)
+    await ctx.send(embed=emed)
 
 # Help komutu
 

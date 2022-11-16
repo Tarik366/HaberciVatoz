@@ -7,3 +7,4 @@ PyNaCl
 requests
 python-dotenv
 feedparser
+lxml

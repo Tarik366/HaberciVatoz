@@ -44,7 +44,9 @@ async def msg1():
     le = open("lastEntry.txt", "r")
     ar = le.read()
     sentry = str(entry)
-    if sentry not in ar:
+    if sentry in str(ar):
+        pass
+    if sentry not in str(ar):
         emed = Embed(title=f"{entry.title} yayında keyifli okumalar!", description=f"okumak için {entry.link}", url=entry.link)
         emed = emed.set_image(url = n.img)
         channel = Bot.get_channel(a)
@@ -52,6 +54,7 @@ async def msg1():
         await channel.send(embed=emed)
         with open("lastEntry.txt", "w") as wle:
             wle.write(sentry)
+    
 
 @Bot.command()
 async def o(ctx):

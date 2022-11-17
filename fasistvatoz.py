@@ -37,6 +37,7 @@ async def on_ready():
     fentry = NF.entries[0]
     msg1.start()
     
+"""
 @tasks.loop(minutes=5)
 async def msg1():
     NF = feedparser.parse("https://athenafansub.com/feed/")
@@ -61,7 +62,7 @@ async def o(ctx):
     emed = Embed(title=f"{n.title} yayında keyifli okumalar!", description=f"okumak için {n.link}", url=n.link)
     emed = emed.set_image(url = n.img)
     await ctx.send(embed=emed)
-
+"""
 # Help komutu
 
 @Bot.command()

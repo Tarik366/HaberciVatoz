@@ -35,7 +35,6 @@ tür = "vatoz"
 async def on_ready():
     NF = feedparser.parse("https://athenafansub.com/feed/")
     fentry = NF.entries[0]
-    msg1.start()
     
 """
 @tasks.loop(minutes=5)

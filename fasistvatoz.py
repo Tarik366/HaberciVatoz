@@ -23,7 +23,6 @@ from PIL import ImageDraw
 from Seriler import *
 import datetime as dt
 import feedparser
-from parse import *
 
 load_dotenv()
 a = 813886736051863554
@@ -35,33 +34,66 @@ tür = "vatoz"
 async def on_ready():
     NF = feedparser.parse("https://athenafansub.com/feed/")
     fentry = NF.entries[0]
-    
-"""
-@tasks.loop(minutes=5)
+    msg1.start()
+
+@tasks.loop(minutes=3)
 async def msg1():
+    
+    
     NF = feedparser.parse("https://athenafansub.com/feed/")
     entry = NF.entries[0]
-    le = open("lastEntry.txt", "r")
-    ar = le.read()
-    sentry = str(entry)
-    if sentry in str(ar):
-        pass
-    if sentry not in str(ar):
-        emed = Embed(title=f"{entry.title} yayında keyifli okumalar!", description=f"okumak için {entry.link}", url=entry.link)
-        emed = emed.set_image(url = n.img)
-        channel = Bot.get_channel(a)
-        print(emed)
-        await channel.send(embed=emed)
-        with open("lastEntry.txt", "w") as wle:
-            wle.write(sentry)
     
+    
+    le = open("lastEntry.txt", "r", encoding="utf-8")
+    ar = le.read()
+    
+    
+    class n:
+        title = entry.title
+        link = entry.link
+        cat = entry.category
+        catt = cat.replace(" ", "-")
+        catt = catt.replace("'", "").lower()
+        
+        
+    h = "https://athenafansub.com/manga/" + n.catt + "/"
+    sentry = entry.title
+    
+    
+    if sentry not in str(ar):
+        print(h)
 
-@Bot.command()
-async def o(ctx):
-    emed = Embed(title=f"{n.title} yayında keyifli okumalar!", description=f"okumak için {n.link}", url=n.link)
-    emed = emed.set_image(url = n.img)
-    await ctx.send(embed=emed)
-"""
+        headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+        sou = requests.get(h, headers=headers)
+        soup = BeautifulSoup(sou.content, 'html.parser')
+        
+        
+        hgf = "https://athenafansub.com/wp-content/themes/mangastream/assets/images/noimg165px.png"
+        
+        def ws():
+            for s in soup.find_all("div", class_="thumb"):
+                
+                
+                for item in s.find_all('img', class_="wp-post-image"):
+                    i = item['src']
+                    im = i.split("\n")
+                    hgf = im[0]
+                    print(hgf)
+                    return hgf
+
+        nimg = ws()
+        emed = Embed(title=f"{entry.title} yayında keyifli okumalar!", description=f"okumak için {entry.link}", url=entry.link)
+        emed = emed.set_image(url = nimg)
+
+        channel = Bot.get_channel(a)
+
+        print(str(ar))
+
+        with open("lastEntry.txt", "w", encoding="utf-8") as wle:
+            wle.write(sentry)
+
+        await channel.send(embed=emed)
+    print(h)
 # Help komutu
 
 @Bot.command()

@@ -152,7 +152,7 @@ async def i(ctx, *args):
         await ctx.send(capitalism)
     if "soviet" in args:
         await ctx.send(soviet)
-    if "sikin" in args:
+    if "dön" in args:
         await ctx.send(sikin)
     if "susamuru" in args:
         await ctx.send(susamuru)
@@ -348,6 +348,8 @@ async def i(ctx, *args):
         await ctx.send(yesmaster)
     if "nope" in args:
         await ctx.send(nope)
+    if "blyatiful" in args:
+        await ctx.send(blyatiful)
 
 
 # Bug fix
@@ -1487,6 +1489,8 @@ async def on_message(message):
         await message.channel.send(f"나는 재미를 위한 Discord 봇입니다! !yardım 명령을 사용하여 내 명령을 볼 수 있습니다.")
     if "balık" == message.content and message.author != Bot.user:
         await message.channel.send("BALIKKKK!!!!")
+    if "tavşan" == message.content and message.author != Bot.user:
+        await message.channel.send("TAVŞANNNN!!!!")
     else:
         await Bot.process_commands(message)
 

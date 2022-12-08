@@ -20,7 +20,7 @@ from dotenv.main import load_dotenv
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw 
-from Seriler import *
+from Seriler import seriler
 import datetime as dt
 import feedparser
 

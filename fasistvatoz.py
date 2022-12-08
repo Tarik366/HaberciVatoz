@@ -479,7 +479,8 @@ async def ideoloji(ctx, *args):
         await Bot.user.edit(username="Bilge Anarko-ilkelci Vatoz", avatar=fasc)
         vatoz = "anarko ilkelci"
         print(vatoz)
-        embed = Embed(title="Yeni dünya boş asıl olay geçmişte var")            await ctx.send(embed=embed)
+        embed = Embed(title="Yeni dünya boş asıl olay geçmişte var")
+        await ctx.send(embed=embed)
     if "anarkokapitalist" in args:
         fas = open("vatozlar/Anarko-kapitalist_vatoz.jpg", 'rb')
         fasc = fas.read()
@@ -514,853 +515,853 @@ async def ideoloji(ctx, *args):
         await Bot.user.edit(username="Bilge Belaruslu Vatoz", avatar=demo)
         vatoz = "demokrat"
         print(vatoz)
-            embed = Embed(title="Belaruslu oldum")
-            await ctx.send(embed=embed)
-        if "Belçika" in args:
-            dem = open("vatozlar/Belçika.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Belçikalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Belçikalı oldum")
-            await ctx.send(embed=embed)
-        if "BosnaHersek" in args:
-            dem = open("vatozlar/bosna.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Bosnalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Bosnalı oldum")
-            await ctx.send(embed=embed)
-        if "Bulgaristan" in args:
-            dem = open("vatozlar/Bulgaristan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Bulgar Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Bulgar oldum")
-            await ctx.send(embed=embed)
-        if "Çek" in args:
-            dem = open("vatozlar/Çek.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Çekli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Çekli oldum")
-            await ctx.send(embed=embed)
-        if "demokrat" in args:
-            dem = open("vatozlar/demokrat.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Oy saymaca"))
-            await Bot.user.edit(username="Bilge Demokrat Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Herkes istiklalimde eşit özgür olacak")
-            await ctx.send(embed=embed)
-        if "Danimarka" in args:
-            dem = open("vatozlar/denmark.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Danimarkalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Danimarkalı oldum")
-            await ctx.send(embed=embed)
-        if "ermenistan" in args:
-            dem = open("vatozlar/ermenistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Eremeni Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Ermeni oldum")
-            await ctx.send(embed=embed)
-        if "Estonya" in args:
-            dem = open("vatozlar/estonya.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Estonyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Estonyalı oldum")
-            await ctx.send(embed=embed)
-        if "fabrika" in args:
-            fas = open("vatozlar/fabrika_vatoz.jpg", 'rb')
-            fasc = fas.read()
-            await Bot.change_presence(activity=Game(name="Edit yapıyor"))
-            await Bot.user.edit(username="Bilge Fabrika Vatoz", avatar=fasc)
-            vatoz = "fabrika"
-            print(vatoz)
-            embed = Embed(title="İdeolojileri boş verdim ben edit yapacağım")
-            await ctx.send(embed=embed)
-        if "faşist" in args:
-            fas = open("vatozlar/fasist_vatoz.jpg", 'rb')
-            fasc = fas.read()
-            await Bot.change_presence(activity=Game(name="Yahudi yakmaca"))
-            await Bot.user.edit(username="Bilge Faşist Vatoz", avatar=fasc)
-            vatoz = "faşist"
-            embed = Embed(title="Köklerime döndüm")
-            await ctx.send(embed=embed)
-        if "finlandiya" in args:
-            dem = open("vatozlar/finland.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Finlandiyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Finlandiyalı oldum")
-            await ctx.send(embed=embed)
-        if "fransa" in args:
-            dem = open("vatozlar/fransa.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Fransız Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Fransız oldum")
-            await ctx.send(embed=embed)
-        if "gürcistan" in args:
-            dem = open("vatozlar/Gürcistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Gürci Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Gürcistanlı oldum")
-            await ctx.send(embed=embed)
-        if "hırvatistan" in args:
-            dem = open("vatozlar/Hırvatistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Hırvat Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Hırvat oldum")
-            await ctx.send(embed=embed)
-        if "irlanda" in args:
-            dem = open("vatozlar/İrlanda.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge İrlandalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="İrlandalı oldum")
-            await ctx.send(embed=embed)
-        if "İspanya" in args:
-            dem = open("vatozlar/ispanya.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge İspanyol Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="İspanyol oldum")
-            await ctx.send(embed=embed)
-        if "İtalya" in args:
-            dem = open("vatozlar/italya.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge İtalyan Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="İtalyan oldum")
-            await ctx.send(embed=embed)
-        if "izlanda" in args:
-            dem = open("vatozlar/izlanda.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge İzlandalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="İzlandalı oldum")
-            await ctx.send(embed=embed)
-        if "karadağ" in args:
-            dem = open("vatozlar/Karadağ.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Karadağlı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Karadağlı oldum")
-            await ctx.send(embed=embed)
-        if "kazakistan" in args:
-            dem = open("vatozlar/kazakistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Kazak Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Kazak oldum")
-            await ctx.send(embed=embed)
-        if "kıbrıs" in args:
-            dem = open("vatozlar/kıbrıs.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Kıbrıslı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Kıbrıslı oldum")
-            await ctx.send(embed=embed)
-        if "kuma" in args:
-            fas = open("vatozlar/kuma vatoz.jpg", 'rb')
-            fasc = fas.read()
-            await Bot.change_presence(activity=Game(name="Dünyayı kumalıyor"))
-            await Bot.user.edit(username="Bilge Kuma Vatoz", avatar=fasc)
-            vatoz = "kuma"
-            print(vatoz)
-            embed = Embed(title="Kuma kuma kuma bear izleyip geldim")
-            await ctx.send(embed=embed)
-        if "kuzey kıbrıs" in args:
-            dem = open("vatozlar/kuzey-kıbrıs.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Kuzey kıbrıslı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Kuzey kıbrıslı oldum")
-            await ctx.send(embed=embed)
-        if "makedonya" in args:
-            dem = open("vatozlar/kuzey-makedonya.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Makedonyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Makedonyalı oldum")
-            await ctx.send(embed=embed)
-        if "letonya" in args:
-            dem = open("vatozlar/Latvia.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Letonyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Letonyalı oldum")
-            await ctx.send(embed=embed)
-        if "liberteryanist" in args:
-            fas = open("vatozlar/librteryenist.jpg", 'rb')
-            fasc = fas.read()
-            await Bot.change_presence(activity=Game(name="Özgürlüğün dibine vuruyor"))
-            await Bot.user.edit(username="Bilge Liberteryanist Vatoz", avatar=fasc)
-            vatoz = "liberteryanist"
-            print(vatoz)
-            embed = Embed(title="Özgürlük, özgürlük ve daha fazla özgürlük")
-            await ctx.send(embed=embed)
-        if "liechtenstein" in args:
-            dem = open("vatozlar/Liechtenstein.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Liechtensteinlı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Liechtensteinlı oldum")
-            await ctx.send(embed=embed)
-        if "litvanya" in args:
-            dem = open("vatozlar/lithuania.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Litvanyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Litvanyalı oldum")
-            await ctx.send(embed=embed)
-        if "lüksemburg" in args:
-            dem = open("vatozlar/Lüksemburg.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Lüksemburglu Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Lüksemburglu oldum")
-            await ctx.send(embed=embed)
-        if "Macaristan" in args:
-            dem = open("vatozlar/Macaristan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Macar Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Macar oldum")
-            await ctx.send(embed=embed)
-        if "mao" in args:
-            fas = open("vatozlar/maocu.jpg", 'rb')
-            fasc = fas.read()
-            await Bot.change_presence(activity=Game(name="Kırlarda hazırlanıyor"))
-            await Bot.user.edit(username="Bilge Maocu Vatoz", avatar=fasc)
-            vatoz = "maocu"
-            print(vatoz)
-            embed = Embed(title="马克思主义者认为，只有人们的社会实践，才是人们对于外界认识的真理性的标准。……判定认识或理论之是否真理，不是依主观上觉得如何而定，而是依客观上社会实践的结果如何而定。真理的标准只能是社会的实践。")
-            await ctx.send(embed=embed)
-        if "moldova" in args:
-            dem = open("vatozlar/moldovo.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Moldovalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Moldovalı oldum")
-            await ctx.send(embed=embed)
-        if "monako" in args:
-            dem = open("vatozlar/Monaco.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Monakolu Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Monakolu oldum")
-            await ctx.send(embed=embed)
-        if "norveç" in args:
-            dem = open("vatozlar/norway.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Norveçli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Norveçli oldum")
-            await ctx.send(embed=embed)
-        if "onee-san" in args:
-            dem = open("vatozlar/onee-san.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Minoru-kun'la yaşıyor"))
-            await Bot.user.edit(username="Bilge Onee-san Vatoz", avatar=demo)
-            vatoz = "oppai"
-            print(vatoz)
-            embed = Embed(title="MINORYU-KYUNNNN!!!")
-            await ctx.send(embed=embed)
-        if "polonya" in args:
-            dem = open("vatozlar/poland.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Polonyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Polonyalı oldum")
-            await ctx.send(embed=embed)
-        if "radyoaktif" in args:
-            fas = open("vatozlar/radyoaktif.jpg", 'rb')
-            fasc = fas.read()
-            await Bot.change_presence(activity=Game(name="α ışıması yapıyor"))
-            await Bot.user.edit(username="Bilge Radyoaktif Vatoz", avatar=fasc)
-            vatoz = "radyoaktif"
-            print(vatoz)
-            embed = Embed(title="Yanlışlıkla Uranyuma dokundum umarım sıkıntı olmaz")
-            await ctx.send(embed=embed)
-        if "romanya" in args:
-            dem = open("vatozlar/romania.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Romanyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Romanyalı oldum")
-            await ctx.send(embed=embed)
-        if "rus" in args:
-            dem = open("vatozlar/russia.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Rus Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Rus oldum")
-            await ctx.send(embed=embed)
-        if "sırbistan" in args:
-            dem = open("vatozlar/Serbia.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Sırp Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Sırp oldum")
-            await ctx.send(embed=embed)
-        if "slovakya" in args:
-            dem = open("vatozlar/slovakia.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Slovakyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Slovakyalı oldum")
-            await ctx.send(embed=embed)
-        if "slovenya" in args:
-            dem = open("vatozlar/slovenia.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Slovenyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Slovenyalı oldum")
-            await ctx.send(embed=embed)
-        if "stalin" in args:
-            dem = open("vatozlar/Stalin.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Stalin Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Россия - священная наша держава")
-            await ctx.send(embed=embed)
-        if "isveç" in args:
-            dem = open("vatozlar/sweden.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge İsveçli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="İsveçli oldum")
-            await ctx.send(embed=embed)
-        if "isviçre" in args:
-            dem = open("vatozlar/switzerland.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge İsviçreli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="İsviçreli oldum")
-            await ctx.send(embed=embed)
-        if "turan" in args:
-            fas = open("vatozlar/turancı.jpg", 'rb')
-            fasc = fas.read()
-            await Bot.change_presence(activity=Game(name="Haritayı açık maviye boyuyor"))
-            await Bot.user.edit(username="Bilge Turancı Vatoz", avatar=fasc)
-            vatoz = "turancı"
-            print(vatoz)
-            embed = Embed(title="Türkler üstün ırktır ve ben de görevim olan cihan fethini gerçekleştireceğim")
-            await ctx.send(embed=embed)
-        if "türk" in args:
-            fas = open("vatozlar/Türkiye.jpg", 'rb')
-            fasc = fas.read()
-            await Bot.change_presence(activity=Game(name="Yaşayamıyor"))
-            await Bot.user.edit(username="Bilge Türk Vatoz", avatar=fasc)
-            vatoz = "turancı"
-            print(vatoz)
-            embed = Embed(title="Ne mutlu Türküm diyene!")
-            await ctx.send(embed=embed)
-        if "ukrayna" in args:
-            dem = open("vatozlar/ukrayna.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Ukraynalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Ukraynalı oldum")
-            await ctx.send(embed=embed)
-        if "İngiltere" in args:
-            dem = open("vatozlar/Unitend-kingdom.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge İngiliz Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="İngiliz oldum")
-            await ctx.send(embed=embed)
-        if "yunanistan" in args:
-            dem = open("vatozlar/yunanistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Yunan Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Yunan oldum")
-            await ctx.send(embed=embed)
-        if "afganistan" in args:
-            dem = open("vatozlar/asya/afganistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Afgan Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Afgan oldum")
-            await ctx.send(embed=embed)
-        if "bahreyn" in args:
-            dem = open("vatozlar/asya/bahreyn.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Bahreynli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Bahreynli oldum")
-            await ctx.send(embed=embed)
-        if "bangladeş" in args:
-            dem = open("vatozlar/asya/bangladeş.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Bangladeşli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Bangladeşli oldum")
-            await ctx.send(embed=embed)
-        if "bae" in args:
-            dem = open("vatozlar/asya/Birleşik arap emirliği.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Cahil Arap Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Arap oldum")
-            await ctx.send(embed=embed)
-        if "brunei" in args:
-            dem = open("vatozlar/asya/Brunei.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Bruneyli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Bruneyli oldum")
-            await ctx.send(embed=embed)
-        if "butan" in args:
-            dem = open("vatozlar/asya/butan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Butanlı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Butanlı oldum")
-            await ctx.send(embed=embed)
-        if "çin" in args:
-            dem = open("vatozlar/asya/çin.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Çinli Vatoz", avatar=demo)
-            vatoz = "sosyalist"
-            print(vatoz)
-            embed = Embed(title="近前看其詳上寫着秦香蓮那三十二歲 那狀告當朝驸馬郎")
-            await ctx.send(embed=embed)
-        if "timor" in args:
-            dem = open("vatozlar/asya/doğu timor.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Timorlu Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Timorlu oldum")
-            await ctx.send(embed=embed)
-        if "endonezya" in args:
-            dem = open("vatozlar/asya/endonezya.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Orospu Endonezyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Endonezyalı oldum")
-            await ctx.send(embed=embed)
-        if "filipinler" in args:
-            dem = open("vatozlar/asya/filipinler.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Filipinli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Filipinli oldum")
-            await ctx.send(embed=embed)
-        if "güneykore" in args:
-            dem = open("vatozlar/asya/güney kore.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Koreli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Koreli oldum")
-            await ctx.send(embed=embed)
-        if "hindistan" in args:
-            dem = open("vatozlar/asya/Hindistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Hintli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Hintli oldum")
-            await ctx.send(embed=embed)
-        if "hong-kong" in args:
-            dem = open("vatozlar/asya/hong-kong.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Hong-konglu Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Hong-konglu oldum")
-            await ctx.send(embed=embed)
-        if "ırak" in args:
-            dem = open("vatozlar/asya/ırak.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Cahil Iraklı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="أصبحت عراقيا")
-            await ctx.send(embed=embed)
-        if "iran" in args:
-            dem = open("vatozlar/asya/İran.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Cahil İranlı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="أصبحت إيرانيًا")
-            await ctx.send(embed=embed)
-        if "israil" in args:
-            dem = open("vatozlar/asya/israil.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge İsrailli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="İsrailli oldum")
-            await ctx.send(embed=embed)
-        if "japonya" in args:
-            dem = open("vatozlar/asya/Japonya.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşıyor"))
-            await Bot.user.edit(username="Ultra Bilge Japon Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="日本人になった")
-            await ctx.send(embed=embed)
-        if "kamboçya" in args:
-            dem = open("vatozlar/asya/kamboçya.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Kmer Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Kmer oldum")
-            await ctx.send(embed=embed)
-        if "katar" in args:
-            dem = open("vatozlar/asya/Katar.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Zengin Katar Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Katarlı oldum")
-            await ctx.send(embed=embed)
-        if "kırgızistan" in args:
-            dem = open("vatozlar/asya/Kırgızistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Kırgız Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Kırgız oldum")
-            await ctx.send(embed=embed)
-        if "kuveyt" in args:
-            dem = open("vatozlar/asya/kuveyt.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Kuveytli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Kuveytli oldum")
-            await ctx.send(embed=embed)
-        if "kuzey-kore" in args:
-            dem = open("vatozlar/asya/kuzey kore.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Kuzey Koreli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Kuzey Koreli oldum")
-            await ctx.send(embed=embed)
-        if "laos" in args:
-            dem = open("vatozlar/asya/Laos.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Laoslu Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Laoslu oldum")
-            await ctx.send(embed=embed)
-        if "lübnan" in args:
-            dem = open("vatozlar/asya/Lübnan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Lübnanlı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Lübnanlı oldum")
-            await ctx.send(embed=embed)
-        if "maldivler" in args:
-            dem = open("vatozlar/asya/Maldivler.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Maldivli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Maldivli oldum")
-            await ctx.send(embed=embed)
-        if "malezya" in args:
-            dem = open("vatozlar/asya/malezya.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Malezyalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Malezyalı oldum")
-            await ctx.send(embed=embed)
-        if "mısır" in args:
-            dem = open("vatozlar/asya/mısır.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Mısırlı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Mısırlı oldum")
-            await ctx.send(embed=embed)
-        if "moğol" in args:
-            dem = open("vatozlar/asya/moğolistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Moğol Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Moğol oldum")
-            await ctx.send(embed=embed)
-        if "myanmar" in args:
-            dem = open("vatozlar/asya/Myanmar.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Burmalı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Burmalı oldum")
-            await ctx.send(embed=embed)
-        if "nepal" in args:
-            dem = open("vatozlar/asya/nepal.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Nepalli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Nepalli oldum")
-            await ctx.send(embed=embed)
-        if "oman" in args:
-            dem = open("vatozlar/asya/oman.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Cahil Omanlı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Omanlı oldum")
-            await ctx.send(embed=embed)
-        if "özbekistan" in args:
-            dem = open("vatozlar/asya/özbekistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Türk Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Özbek, Türkmen, Uygur, Tatar, Azer bir boydur \nKarakalpak, Kırgız, Kazak bunlar bir soydur")
-            await ctx.send(embed=embed)
-        if "pakistan" in args:
-            dem = open("vatozlar/asya/pakistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Pakistanlı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Pakistanlı oldum")
-            await ctx.send(embed=embed)
-        if "singapur" in args:
-            dem = open("vatozlar/asya/singapur.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Singapurlu Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Singapurlu oldum")
-            await ctx.send(embed=embed)
-        if "srilanka" in args:
-            dem = open("vatozlar/asya/sri lanka.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Sri Lanka Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Sri Lankalı oldum")
-            await ctx.send(embed=embed)
-        if "suriye" in args:
-            dem = open("vatozlar/asya/Suriye.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Cahil Suriyeli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="أصبحت سوريًا")
-            await ctx.send(embed=embed)
-        if "suudi" in args:
-            dem = open("vatozlar/asya/suudi-america.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Cahil Suudi Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="أصبحت عربيا")
-            await ctx.send(embed=embed)
-        if "tacikistan" in args:
-            dem = open("vatozlar/asya/Tacikistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Tacik Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Tacik oldum")
-            await ctx.send(embed=embed)
-        if "tayland" in args:
-            dem = open("vatozlar/asya/tayland.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Taylandlı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Taylandlı oldum")
-            await ctx.send(embed=embed)
-        if "tayvan" in args:
-            dem = open("vatozlar/asya/tayvan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Tayvanlı Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Tayvanlı oldum")
-            await ctx.send(embed=embed)
-        if "türkmenistan" in args:
-            dem = open("vatozlar/asya/türkmenistan.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Türk Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Özbek, Türkmen, Uygur, Tatar, Azer bir boydur\nKarakalpak, Kırgız, Kazak bunlar bir soydur")
-            await ctx.send(embed=embed)
-        if "ürdün" in args:
-            dem = open("vatozlar/asya/ürdün.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Cahil Ürdünlü Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Arap oldum")
-            await ctx.send(embed=embed)
-        if "vietnam" in args:
-            dem = open("vatozlar/asya/Vietnam.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Vietnam Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Vietnamlı oldum")
-            await ctx.send(embed=embed)
-        if "yemen" in args:
-            dem = open("vatozlar/asya/yemen.jpg", 'rb')
-            demo = dem.read()
-            await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
-            await Bot.user.edit(username="Bilge Yemenli Vatoz", avatar=demo)
-            vatoz = "demokrat"
-            print(vatoz)
-            embed = Embed(title="Yemenli oldum")
-            await ctx.send(embed=embed)
+        embed = Embed(title="Belaruslu oldum")
+        await ctx.send(embed=embed)
+    if "Belçika" in args:
+        dem = open("vatozlar/Belçika.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Belçikalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Belçikalı oldum")
+        await ctx.send(embed=embed)
+    if "BosnaHersek" in args:
+        dem = open("vatozlar/bosna.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Bosnalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Bosnalı oldum")
+        await ctx.send(embed=embed)
+    if "Bulgaristan" in args:
+        dem = open("vatozlar/Bulgaristan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Bulgar Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Bulgar oldum")
+        await ctx.send(embed=embed)
+    if "Çek" in args:
+        dem = open("vatozlar/Çek.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Çekli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Çekli oldum")
+        await ctx.send(embed=embed)
+    if "demokrat" in args:
+        dem = open("vatozlar/demokrat.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Oy saymaca"))
+        await Bot.user.edit(username="Bilge Demokrat Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Herkes istiklalimde eşit özgür olacak")
+        await ctx.send(embed=embed)
+    if "Danimarka" in args:
+        dem = open("vatozlar/denmark.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Danimarkalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Danimarkalı oldum")
+        await ctx.send(embed=embed)
+    if "ermenistan" in args:
+        dem = open("vatozlar/ermenistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Eremeni Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Ermeni oldum")
+        await ctx.send(embed=embed)
+    if "Estonya" in args:
+        dem = open("vatozlar/estonya.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Estonyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Estonyalı oldum")
+        await ctx.send(embed=embed)
+    if "fabrika" in args:
+        fas = open("vatozlar/fabrika_vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Edit yapıyor"))
+        await Bot.user.edit(username="Bilge Fabrika Vatoz", avatar=fasc)
+        vatoz = "fabrika"
+        print(vatoz)
+        embed = Embed(title="İdeolojileri boş verdim ben edit yapacağım")
+        await ctx.send(embed=embed)
+    if "faşist" in args:
+        fas = open("vatozlar/fasist_vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Yahudi yakmaca"))
+        await Bot.user.edit(username="Bilge Faşist Vatoz", avatar=fasc)
+        vatoz = "faşist"
+        embed = Embed(title="Köklerime döndüm")
+        await ctx.send(embed=embed)
+    if "finlandiya" in args:
+        dem = open("vatozlar/finland.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Finlandiyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Finlandiyalı oldum")
+        await ctx.send(embed=embed)
+    if "fransa" in args:
+        dem = open("vatozlar/fransa.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Fransız Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Fransız oldum")
+        await ctx.send(embed=embed)
+    if "gürcistan" in args:
+        dem = open("vatozlar/Gürcistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Gürci Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Gürcistanlı oldum")
+        await ctx.send(embed=embed)
+    if "hırvatistan" in args:
+        dem = open("vatozlar/Hırvatistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Hırvat Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Hırvat oldum")
+        await ctx.send(embed=embed)
+    if "irlanda" in args:
+        dem = open("vatozlar/İrlanda.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge İrlandalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="İrlandalı oldum")
+        await ctx.send(embed=embed)
+    if "İspanya" in args:
+        dem = open("vatozlar/ispanya.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge İspanyol Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="İspanyol oldum")
+        await ctx.send(embed=embed)
+    if "İtalya" in args:
+        dem = open("vatozlar/italya.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge İtalyan Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="İtalyan oldum")
+        await ctx.send(embed=embed)
+    if "izlanda" in args:
+        dem = open("vatozlar/izlanda.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge İzlandalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="İzlandalı oldum")
+        await ctx.send(embed=embed)
+    if "karadağ" in args:
+        dem = open("vatozlar/Karadağ.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Karadağlı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Karadağlı oldum")
+        await ctx.send(embed=embed)
+    if "kazakistan" in args:
+        dem = open("vatozlar/kazakistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Kazak Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Kazak oldum")
+        await ctx.send(embed=embed)
+    if "kıbrıs" in args:
+        dem = open("vatozlar/kıbrıs.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Kıbrıslı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Kıbrıslı oldum")
+        await ctx.send(embed=embed)
+    if "kuma" in args:
+        fas = open("vatozlar/kuma vatoz.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Dünyayı kumalıyor"))
+        await Bot.user.edit(username="Bilge Kuma Vatoz", avatar=fasc)
+        vatoz = "kuma"
+        print(vatoz)
+        embed = Embed(title="Kuma kuma kuma bear izleyip geldim")
+        await ctx.send(embed=embed)
+    if "kuzey kıbrıs" in args:
+        dem = open("vatozlar/kuzey-kıbrıs.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Kuzey kıbrıslı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Kuzey kıbrıslı oldum")
+        await ctx.send(embed=embed)
+    if "makedonya" in args:
+        dem = open("vatozlar/kuzey-makedonya.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Makedonyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Makedonyalı oldum")
+        await ctx.send(embed=embed)
+    if "letonya" in args:
+        dem = open("vatozlar/Latvia.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Letonyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Letonyalı oldum")
+        await ctx.send(embed=embed)
+    if "liberteryanist" in args:
+        fas = open("vatozlar/librteryenist.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Özgürlüğün dibine vuruyor"))
+        await Bot.user.edit(username="Bilge Liberteryanist Vatoz", avatar=fasc)
+        vatoz = "liberteryanist"
+        print(vatoz)
+        embed = Embed(title="Özgürlük, özgürlük ve daha fazla özgürlük")
+        await ctx.send(embed=embed)
+    if "liechtenstein" in args:
+        dem = open("vatozlar/Liechtenstein.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Liechtensteinlı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Liechtensteinlı oldum")
+        await ctx.send(embed=embed)
+    if "litvanya" in args:
+        dem = open("vatozlar/lithuania.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Litvanyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Litvanyalı oldum")
+        await ctx.send(embed=embed)
+    if "lüksemburg" in args:
+        dem = open("vatozlar/Lüksemburg.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Lüksemburglu Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Lüksemburglu oldum")
+        await ctx.send(embed=embed)
+    if "Macaristan" in args:
+        dem = open("vatozlar/Macaristan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Macar Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Macar oldum")
+        await ctx.send(embed=embed)
+    if "mao" in args:
+        fas = open("vatozlar/maocu.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Kırlarda hazırlanıyor"))
+        await Bot.user.edit(username="Bilge Maocu Vatoz", avatar=fasc)
+        vatoz = "maocu"
+        print(vatoz)
+        embed = Embed(title="马克思主义者认为，只有人们的社会实践，才是人们对于外界认识的真理性的标准。……判定认识或理论之是否真理，不是依主观上觉得如何而定，而是依客观上社会实践的结果如何而定。真理的标准只能是社会的实践。")
+        await ctx.send(embed=embed)
+    if "moldova" in args:
+        dem = open("vatozlar/moldovo.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Moldovalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Moldovalı oldum")
+        await ctx.send(embed=embed)
+    if "monako" in args:
+        dem = open("vatozlar/Monaco.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Monakolu Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Monakolu oldum")
+        await ctx.send(embed=embed)
+    if "norveç" in args:
+        dem = open("vatozlar/norway.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Norveçli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Norveçli oldum")
+        await ctx.send(embed=embed)
+    if "onee-san" in args:
+        dem = open("vatozlar/onee-san.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Minoru-kun'la yaşıyor"))
+        await Bot.user.edit(username="Bilge Onee-san Vatoz", avatar=demo)
+        vatoz = "oppai"
+        print(vatoz)
+        embed = Embed(title="MINORYU-KYUNNNN!!!")
+        await ctx.send(embed=embed)
+    if "polonya" in args:
+        dem = open("vatozlar/poland.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Polonyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Polonyalı oldum")
+        await ctx.send(embed=embed)
+    if "radyoaktif" in args:
+        fas = open("vatozlar/radyoaktif.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="α ışıması yapıyor"))
+        await Bot.user.edit(username="Bilge Radyoaktif Vatoz", avatar=fasc)
+        vatoz = "radyoaktif"
+        print(vatoz)
+        embed = Embed(title="Yanlışlıkla Uranyuma dokundum umarım sıkıntı olmaz")
+        await ctx.send(embed=embed)
+    if "romanya" in args:
+        dem = open("vatozlar/romania.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Romanyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Romanyalı oldum")
+        await ctx.send(embed=embed)
+    if "rus" in args:
+        dem = open("vatozlar/russia.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Rus Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Rus oldum")
+        await ctx.send(embed=embed)
+    if "sırbistan" in args:
+        dem = open("vatozlar/Serbia.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Sırp Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Sırp oldum")
+        await ctx.send(embed=embed)
+    if "slovakya" in args:
+        dem = open("vatozlar/slovakia.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Slovakyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Slovakyalı oldum")
+        await ctx.send(embed=embed)
+    if "slovenya" in args:
+        dem = open("vatozlar/slovenia.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Slovenyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Slovenyalı oldum")
+        await ctx.send(embed=embed)
+    if "stalin" in args:
+        dem = open("vatozlar/Stalin.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Stalin Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Россия - священная наша держава")
+        await ctx.send(embed=embed)
+    if "isveç" in args:
+        dem = open("vatozlar/sweden.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge İsveçli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="İsveçli oldum")
+        await ctx.send(embed=embed)
+    if "isviçre" in args:
+        dem = open("vatozlar/switzerland.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge İsviçreli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="İsviçreli oldum")
+        await ctx.send(embed=embed)
+    if "turan" in args:
+        fas = open("vatozlar/turancı.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Haritayı açık maviye boyuyor"))
+        await Bot.user.edit(username="Bilge Turancı Vatoz", avatar=fasc)
+        vatoz = "turancı"
+        print(vatoz)
+        embed = Embed(title="Türkler üstün ırktır ve ben de görevim olan cihan fethini gerçekleştireceğim")
+        await ctx.send(embed=embed)
+    if "türk" in args:
+        fas = open("vatozlar/Türkiye.jpg", 'rb')
+        fasc = fas.read()
+        await Bot.change_presence(activity=Game(name="Yaşayamıyor"))
+        await Bot.user.edit(username="Bilge Türk Vatoz", avatar=fasc)
+        vatoz = "turancı"
+        print(vatoz)
+        embed = Embed(title="Ne mutlu Türküm diyene!")
+        await ctx.send(embed=embed)
+    if "ukrayna" in args:
+        dem = open("vatozlar/ukrayna.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Ukraynalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Ukraynalı oldum")
+        await ctx.send(embed=embed)
+    if "İngiltere" in args:
+        dem = open("vatozlar/Unitend-kingdom.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge İngiliz Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="İngiliz oldum")
+        await ctx.send(embed=embed)
+    if "yunanistan" in args:
+        dem = open("vatozlar/yunanistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Yunan Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Yunan oldum")
+        await ctx.send(embed=embed)
+    if "afganistan" in args:
+        dem = open("vatozlar/asya/afganistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Afgan Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Afgan oldum")
+        await ctx.send(embed=embed)
+    if "bahreyn" in args:
+        dem = open("vatozlar/asya/bahreyn.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Bahreynli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Bahreynli oldum")
+        await ctx.send(embed=embed)
+    if "bangladeş" in args:
+        dem = open("vatozlar/asya/bangladeş.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Bangladeşli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Bangladeşli oldum")
+        await ctx.send(embed=embed)
+    if "bae" in args:
+        dem = open("vatozlar/asya/Birleşik arap emirliği.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Cahil Arap Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Arap oldum")
+        await ctx.send(embed=embed)
+    if "brunei" in args:
+        dem = open("vatozlar/asya/Brunei.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Bruneyli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Bruneyli oldum")
+        await ctx.send(embed=embed)
+    if "butan" in args:
+        dem = open("vatozlar/asya/butan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Butanlı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Butanlı oldum")
+        await ctx.send(embed=embed)
+    if "çin" in args:
+        dem = open("vatozlar/asya/çin.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Çinli Vatoz", avatar=demo)
+        vatoz = "sosyalist"
+        print(vatoz)
+        embed = Embed(title="近前看其詳上寫着秦香蓮那三十二歲 那狀告當朝驸馬郎")
+        await ctx.send(embed=embed)
+    if "timor" in args:
+        dem = open("vatozlar/asya/doğu timor.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Timorlu Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Timorlu oldum")
+        await ctx.send(embed=embed)
+    if "endonezya" in args:
+        dem = open("vatozlar/asya/endonezya.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Orospu Endonezyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Endonezyalı oldum")
+        await ctx.send(embed=embed)
+    if "filipinler" in args:
+        dem = open("vatozlar/asya/filipinler.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Filipinli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Filipinli oldum")
+        await ctx.send(embed=embed)
+    if "güneykore" in args:
+        dem = open("vatozlar/asya/güney kore.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Koreli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Koreli oldum")
+        await ctx.send(embed=embed)
+    if "hindistan" in args:
+        dem = open("vatozlar/asya/Hindistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Hintli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Hintli oldum")
+        await ctx.send(embed=embed)
+    if "hong-kong" in args:
+        dem = open("vatozlar/asya/hong-kong.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Hong-konglu Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Hong-konglu oldum")
+        await ctx.send(embed=embed)
+    if "ırak" in args:
+        dem = open("vatozlar/asya/ırak.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Cahil Iraklı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="أصبحت عراقيا")
+        await ctx.send(embed=embed)
+    if "iran" in args:
+        dem = open("vatozlar/asya/İran.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Cahil İranlı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="أصبحت إيرانيًا")
+        await ctx.send(embed=embed)
+    if "israil" in args:
+        dem = open("vatozlar/asya/israil.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge İsrailli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="İsrailli oldum")
+        await ctx.send(embed=embed)
+    if "japonya" in args:
+        dem = open("vatozlar/asya/Japonya.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşıyor"))
+        await Bot.user.edit(username="Ultra Bilge Japon Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="日本人になった")
+        await ctx.send(embed=embed)
+    if "kamboçya" in args:
+        dem = open("vatozlar/asya/kamboçya.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Kmer Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Kmer oldum")
+        await ctx.send(embed=embed)
+    if "katar" in args:
+        dem = open("vatozlar/asya/Katar.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Zengin Katar Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Katarlı oldum")
+        await ctx.send(embed=embed)
+    if "kırgızistan" in args:
+        dem = open("vatozlar/asya/Kırgızistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Kırgız Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Kırgız oldum")
+        await ctx.send(embed=embed)
+    if "kuveyt" in args:
+        dem = open("vatozlar/asya/kuveyt.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Kuveytli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Kuveytli oldum")
+        await ctx.send(embed=embed)
+    if "kuzey-kore" in args:
+        dem = open("vatozlar/asya/kuzey kore.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Kuzey Koreli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Kuzey Koreli oldum")
+        await ctx.send(embed=embed)
+    if "laos" in args:
+        dem = open("vatozlar/asya/Laos.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Laoslu Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Laoslu oldum")
+        await ctx.send(embed=embed)
+    if "lübnan" in args:
+        dem = open("vatozlar/asya/Lübnan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Lübnanlı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Lübnanlı oldum")
+        await ctx.send(embed=embed)
+    if "maldivler" in args:
+        dem = open("vatozlar/asya/Maldivler.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Maldivli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Maldivli oldum")
+        await ctx.send(embed=embed)
+    if "malezya" in args:
+        dem = open("vatozlar/asya/malezya.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Malezyalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Malezyalı oldum")
+        await ctx.send(embed=embed)
+    if "mısır" in args:
+        dem = open("vatozlar/asya/mısır.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Mısırlı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Mısırlı oldum")
+        await ctx.send(embed=embed)
+    if "moğol" in args:
+        dem = open("vatozlar/asya/moğolistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Moğol Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Moğol oldum")
+        await ctx.send(embed=embed)
+    if "myanmar" in args:
+        dem = open("vatozlar/asya/Myanmar.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))            
+        await Bot.user.edit(username="Bilge Burmalı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Burmalı oldum")
+        await ctx.send(embed=embed)
+    if "nepal" in args:
+        dem = open("vatozlar/asya/nepal.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Nepalli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Nepalli oldum")
+        await ctx.send(embed=embed)
+    if "oman" in args:
+        dem = open("vatozlar/asya/oman.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Cahil Omanlı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Omanlı oldum")
+        await ctx.send(embed=embed)
+    if "özbekistan" in args:
+        dem = open("vatozlar/asya/özbekistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Türk Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Özbek, Türkmen, Uygur, Tatar, Azer bir boydur \nKarakalpak, Kırgız, Kazak bunlar bir soydur")
+        await ctx.send(embed=embed)
+    if "pakistan" in args:
+        dem = open("vatozlar/asya/pakistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Pakistanlı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Pakistanlı oldum")
+        await ctx.send(embed=embed)
+    if "singapur" in args:
+        dem = open("vatozlar/asya/singapur.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Singapurlu Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Singapurlu oldum")
+        await ctx.send(embed=embed)
+    if "srilanka" in args:
+        dem = open("vatozlar/asya/sri lanka.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Sri Lanka Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Sri Lankalı oldum")
+        await ctx.send(embed=embed)
+    if "suriye" in args:
+        dem = open("vatozlar/asya/Suriye.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Cahil Suriyeli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="أصبحت سوريًا")
+        await ctx.send(embed=embed)
+    if "suudi" in args:
+        dem = open("vatozlar/asya/suudi-america.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Cahil Suudi Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="أصبحت عربيا")
+        await ctx.send(embed=embed)
+    if "tacikistan" in args:
+        dem = open("vatozlar/asya/Tacikistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Tacik Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Tacik oldum")
+        await ctx.send(embed=embed)
+    if "tayland" in args:
+        dem = open("vatozlar/asya/tayland.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Taylandlı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Taylandlı oldum")
+        await ctx.send(embed=embed)
+    if "tayvan" in args:
+        dem = open("vatozlar/asya/tayvan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Tayvanlı Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Tayvanlı oldum")
+        await ctx.send(embed=embed)
+    if "türkmenistan" in args:
+        dem = open("vatozlar/asya/türkmenistan.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Türk Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Özbek, Türkmen, Uygur, Tatar, Azer bir boydur\nKarakalpak, Kırgız, Kazak bunlar bir soydur")
+        await ctx.send(embed=embed)
+    if "ürdün" in args:
+        dem = open("vatozlar/asya/ürdün.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Cahil Ürdünlü Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Arap oldum")
+        await ctx.send(embed=embed)
+    if "vietnam" in args:
+        dem = open("vatozlar/asya/Vietnam.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Vietnam Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Vietnamlı oldum")
+        await ctx.send(embed=embed)
+    if "yemen" in args:
+        dem = open("vatozlar/asya/yemen.jpg", 'rb')
+        demo = dem.read()
+        await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
+        await Bot.user.edit(username="Bilge Yemenli Vatoz", avatar=demo)
+        vatoz = "demokrat"
+        print(vatoz)
+        embed = Embed(title="Yemenli oldum")
+        await ctx.send(embed=embed)
 
 
 # Söz

@@ -1021,7 +1021,7 @@ async def ideoloji(ctx, *args):
         embed = Embed(title="Butanlı oldum")
         await ctx.send(embed=embed)
     if "çin" in args:
-        dem = open("vatozlar/asya/çin.jpg", 'rb')
+        dem = open("vatozlar/asya/Çin.jpg", 'rb')
         demo = dem.read()
         await Bot.change_presence(activity=Game(name="Yaşamaya çalışıyor"))
         await Bot.user.edit(username="Bilge Çinli Vatoz", avatar=demo)

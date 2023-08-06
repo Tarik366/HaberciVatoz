@@ -1,0 +1,10 @@
+beautifulsoup4==4.12.2
+discord.py==2.3.1
+opencv-python
+Pillow
+PyNaCl
+requests
+python-dotenv
+feedparser
+Flask==2.3.2
+pymongo

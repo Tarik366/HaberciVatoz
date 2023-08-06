@@ -1,0 +1,1 @@
+('Alya',), ('boktan', 'telefon', 'işlemcim'), ('balık',), ('Kemal', "Kılıçdaroğlu'nun", 'kazanması', 'için', 'dana')

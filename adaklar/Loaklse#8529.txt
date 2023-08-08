@@ -1,0 +1,1 @@
+('kebap',), ('dans',), ('bu', 'adağı', 'kabul', 'edenin', 'ben', 'ta'), ('Miyamura',), ('sınavlar',), ('Başar',), ('hayatım',)

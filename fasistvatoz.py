@@ -8,17 +8,16 @@ from bs4 import BeautifulSoup
 import requests
 import json
 from dotenv.main import load_dotenv
-from PIL import Image, ImageFont, ImageDraw
 import datetime as dt
 import feedparser
 from keep_alive import keep_alive
 
-Channel = 813886736051863554
-Channela = 1050431310163886191
-guildid = 798641429056454686
-guildida = 968587864805883995
-roleida = 1034897409668546631
-roleid = 996895568381091931
+Channela = 813886736051863554
+Channel = 1050431310163886191
+guildida = 798641429056454686
+guildid = 968587864805883995
+roleid = 1034897409668546631
+roleida = 996895568381091931
 intents = Intents.all()
 Bot = commands.Bot("!", help_command=None, intents=intents)
 tür = "vatoz"
@@ -31,14 +30,11 @@ async def on_ready():
     for site in sites:
         NF = feedparser.parse(f"{site}feed/")
     fentry = NF.entries[0]
-    msg1.start()
-    msg2.start()
     keep_alive()
 
 
 from Functions import getSeriePicture, getSerieId
 
-# TODO: repl.it'den latest versiyonr hali ile değiştirilececk
 
 @tasks.loop(seconds=10)
 async def msg1():
@@ -80,8 +76,7 @@ async def msg1():
         AthenaDiscord = Bot.get_guild(guildid)
 
         tümSeriler = AthenaDiscord.get_role(roleid)
-        SerieRoleIds = getSerieId(h)
-        print(SerieRoleIds)
+        SerieRoleIds = getSerieId(hgf)
 
         if SerieRoleIds == ["boş"]:
             await channeul.send(f"{tümSeriler.mention}", embed=emed)
@@ -90,8 +85,8 @@ async def msg1():
             for SerieRoleId in SerieRoleIds:
                 SerieRole = AthenaDiscord.get_role(SerieRoleId)
                 MentionMessage += SerieRole.mention
-                print(MentionMessage)
-                await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}", embed=emed)
+            await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}",
+                               embed=emed)
 
         with open("lastEntry.txt", "w", encoding="utf-8") as wle:
             wle.write(sentry)
@@ -130,33 +125,32 @@ async def msg2():
         h = sa['href']
 
         emed = Embed(title=f"{entry.title} yayında keyifli okumalar!",
-                     description=f"izlemek için {entry.link}",
+                     description=f"okumak için {entry.link}",
                      url=entry.link)
 
         hgf = getSeriePicture(h, anime=True)
         emed = emed.set_image(url=hgf)
 
-        channeul = Bot.get_channel(Channel)
-        AthenaDiscord = Bot.get_guild(guildid)
+        channtel = Bot.get_channel(Channel)
+        AthenaDiscord = Bot.get_guild(798641429056454686)
 
-        tümSeriler = AthenaDiscord.get_role(roleid)
+        tümSeriler = AthenaDiscord.get_role(996895568381091931)
         SerieRoleIds = getSerieId(h)
-        print(SerieRoleIds)
 
         if SerieRoleIds == ["boş"]:
-            await channeul.send(f"{tümSeriler.mention}", embed=emed)
+            await channtel.send(f"{tümSeriler.mention}", embed=emed)
         else:
             MentionMessage = ""
             for SerieRoleId in SerieRoleIds:
                 SerieRole = AthenaDiscord.get_role(SerieRoleId)
                 MentionMessage += SerieRole.mention
-                print(MentionMessage)
-                await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}", embed=emed)
+            await channtel.send(f"{MentionMessage}\n{tümSeriler.mention}",
+                               embed=emed)
 
         with open("lastAnimeEntry.txt", "w", encoding="utf-8") as wle:
             wle.write(sentry)
 
-# TODO: Help komutu yenilenecek
+# Help komutu
 
 @Bot.command()
 async def yardım(ctx):
@@ -224,57 +218,58 @@ from basvuru import basvurulist
 
 @Bot.command()
 async def başvuru(ctx, *args):
-    try:
-        tr = Embed(title="Başvuru formu", description=ilist.get(args[0]))
+    if args == "mangaçeviri" or args == "mangaeditör" or args == "webeditör" or args == "webçeviri" or args == "animeçeviri":
+        tr = Embed(title="Başvuru formu", description=basvurulist.get(args[0]))
         await ctx.send(embed=tr)
-    except:
+    if args != "mangaçeviri" or args != "mangaeditör" or args != "webeditör" or args != "webçeviri" or args != "animeçeviri":
         iembed = Embed(title="Bir hata oluştu", description="Büyük ihtimalle bir yazım yanlışı yapmış olabilirsin.\n\nBu komutta kullanabileceğin değişkenler:\nmangaçeviri\nmangaeditör\nwebçeviri\nwebeditör\nanimeçeviri")
         await ctx.send(embed=iembed)
 
 # Adak sistemi
 
-from mongodb import adak
 
 @Bot.command()
 async def ada(ctx, *args):
-    author = ctx.message.author
-    if "tarık" in args:
-        msg = Embed(title="Ne yazık ki adağınız kabul edilemedi")
-        await ctx.send(embed=msg)
-    if "alya" in args:
-        msg = Embed(title="Ne yazık ki adağınız kabul edilemedi")
-        await ctx.send(embed=msg)
-    if "Tarık" in args:
-        msg = Embed(title="Ne yazık ki adağınız kabul edilemedi")
-        await ctx.send(embed=msg)
-    if "Alya" in args:
-        msg = Embed(title="Ne yazık ki adağınız kabul edilemedi")
-        await ctx.send(embed=msg)
-    try:
-        adak(author.id, author.name, author.avatar.url, ' '.join(args))
+    author = str(ctx.message.author)
+    ad = "adaklar/" + author + ".txt"
+    if "temizle" in args:
+        os.remove(ad)
+        embed = Embed(title="Adağınız başarıyla temizlendi.")
+        await ctx.send(embed=embed)
+    if os.path.exists(ad) == True and "temizle" not in args:
         msg = Embed(title="Adağınız kabul edildi")
         await ctx.send(embed=msg)
-    except:
-        msg = Embed(title="Ne yazık ki adağınız kabul edilemedi")
+        r = open(ad, "r")
+        ar = r.read()
+        ada = open(str(ad), "w")
+        a = str(ar) + ", " + str(args)
+        ada.write(a)
+    if os.path.exists(ad) == False and "temizle" not in args:
+        msg = Embed(title="Adağınız kabul edildi")
         await ctx.send(embed=msg)
+
 
 @Bot.command()
 async def pp(ctx, Member: Member):
-    emed = Embed(title=f"{Member} adlı kulllanıcının profil fotoğrafı",
-                )
-    emed = emed.set_image(url=Member.avatar.url)
-    await ctx.send(embed=emed)
+    pembed = Embed(title=f"{Member}'in/ın profil fotoğrafı")
+    pembed.set_image(Member.avatar)
+    await ctx.send(embed=pembed)
 
 
 @Bot.command()
 async def spp(ctx):
     icon_url = ctx.guild.icon
-    emed = Embed(title=f"{ctx.guild.name} adlı sunucunun profil fotoğrafı",
-                )
-    emed = emed.set_image(url=icon_url)
-    await ctx.send(embed=emed)
+    await ctx.send(f"{icon_url}")
 
-# TODO: Buralar hep dutluktu dedirt
+
+@Bot.command()
+async def fok(ctx):
+    print("")
+
+
+@Bot.command()
+async def vatoz(ctx):
+    print("")
 
 import alya as a
 
@@ -310,12 +305,25 @@ async def söz(ctx):
         f = random.choice(list(Ataturklist))
         embed = Embed(title="Atatürk derki", description=Ataturklist[f])
         await ctx.send(embed=embed)
-        """
-if l == 3:
-        f = random.choice(list(LeninList))
-        embed = Embed(title="Lenin derki", description=LeninList[f])
+    if l == 3:
+        Leninlist = [
+            Lenin1, Lenin2, Lenin3, Lenin4, Lenin5, Lenin6, Lenin7, Lenin8,
+            Lenin9, Lenin10, Lenin11, Lenin12, Lenin13, Lenin14, Lenin15,
+            Lenin16, Lenin17, Lenin18, Lenin19, Lenin20, Lenin21
+        ]
+        f = random.choice(Leninlist)
+        embed = Embed(title="Lenin derki", description=f)
         await ctx.send(embed=embed)
-"""
+    if l == 4:
+        Stalinlist = [
+            Stalin1, Stalin2, Stalin3, Stalin4, Stalin5, Stalin6, Stalin7,
+            Stalin8, Stalin9, Stalin10, Stalin11, Stalin12, Stalin13, Stalin14,
+            Stalin15, Stalin16, Stalin17, Stalin18, Stalin19, Stalin20,
+            Stalin21, Stalin22, Stalin23, Stalin24, Stalin25
+        ]
+        f = random.choice(Stalinlist)
+        embed = Embed(title="Stalin derki", description=f)
+        await ctx.send(embed=embed)
     if l == 5:
         f = random.choice(list(Cengizlist))
         embed = Embed(title="Cengiz Han derki", description=f)
@@ -324,9 +332,13 @@ if l == 3:
         f = random.choice(list(CelalŞengörlist))
         embed = Embed(title="Celal Şengör derki", description=f)
         await ctx.send(embed=embed)
-    if l == 7:  
-        f = random.choice(list(Metehanlist))
-        embed = Embed(title="Metehan derki", description=(Metehanlist[f]))
+    if l == 7:  # TODO 2.7 Eklenecek
+        Metehanlist = [
+            Metehan1, Metehan2, Metehan3, Metehan4, Metehan5, Metehan6,
+            Metehan7
+        ]
+        f = random.choice(Metehanlist)
+        embed = Embed(title="Metehan derki", description=f)
         await ctx.send(embed=embed)
 
 # Konuşma
@@ -348,6 +360,98 @@ from propaganda import *
 async def propaganda(ctx):
     await ctx.send(random.choice(propagandalist))
 
+
+@Bot.command()
+async def r(ctx, *args):
+    if "kitap" in args:
+        page = requests.get(
+            "https://www.generatormix.com/random-book-generator")
+        soup = BeautifulSoup(page.text, "lxml")
+        a = soup.find("div", class_="col-7")
+        b = a.text.replace("Get it on Amazon US", "")
+        c = b.replace("Fiction", "Kurgu")
+        d = c.replace("keywords", "Anahtar Kelimeler")
+        e = d.replace("\n\n", "\n")
+        f = e.replace("\nby ", "\nYazar: ")
+        g = f.replace("Get it on Amazon DE", "")
+        embed = Embed(title="Random Kitap Önerisi",
+                      description=f,
+                      color=0x990000)
+        await ctx.send(embed=embed)
+    if "film" in args:
+        page = requests.get(
+            "https://www.generatormix.com/random-movie-generator")
+        soup = BeautifulSoup(page.text, "lxml")
+        a = soup.find("div",
+                      class_="thumbnail-col-3 tile-block-inner marg-top first")
+        b = a.text.replace("Watch trailer", "")
+        d = b.replace("Get it on Amazon US", "")
+        embed = Embed(title="Random Film Önerisi",
+                      description=d,
+                      color=0x990000)
+        await ctx.send(embed=embed)
+    if "şarkı" in args:
+        page = requests.get(
+            "https://www.generatormix.com/random-spotify-songs-generator")
+        soup = BeautifulSoup(page.text, "lxml")
+        a = soup.find("div",
+                      class_="thumbnail-col-3 tile-block-inner marg-top first")
+        z = soup.find(
+            "a", class_="btn btn-default col-10 no-float btn-spotify marg-top"
+        )["href"]
+        b = a.text.replace("No preview available.", "")
+        c = b.replace(" Get track on Spotify", z)
+        d = c.replace("Get it on Amazon US", "")
+        embed = Embed(title="Random Şarkı Önerisi",
+                      description=str(d),
+                      color=0x990000)
+        await ctx.send(embed=embed)
+    if "oyun" in args:
+        page = requests.get(
+            "https://www.generatormix.com/random-steam-games-generator")
+        soup = BeautifulSoup(page.text, "lxml")
+        a = soup.find("a", class_="btn btn-steam marg-bottom col-12")["href"]
+        await ctx.send(a)
+    if "anime" in args:
+        query = '''
+        query ($id: Int) { # Define which variables will be used in the query (id)
+        Media (id: $id, type: ANIME) { # Insert our variables into the query arguments (id) (type: ANIME is hard-coded in the query)
+            id
+            title {
+            romaji
+            }
+        }
+        }
+        '''
+        l = random.randint(1, 9999)
+        variables = {'id': l}
+        url = 'https://graphql.anilist.co'
+        response = requests.post(url,
+                                 json={
+                                     'query': query,
+                                     'variables': variables
+                                 })
+        a = json.loads(response.text)
+        url = 'https://anilist.co/anime/' + str(l)
+        u = a.get('data').get('Media').get('title').get('romaji')
+        embed = Embed(title=u, description=url, color=0x990000)
+        await ctx.send(embed=embed)
+    if "manga" in args:
+        l = random.randint(1, 20700)
+        url = 'https://myanimelist.net/manga/' + str(l)
+        embed = Embed(title="Random manga önerisi",
+                      description=url,
+                      color=0x990000)
+        await ctx.send(embed=embed)
+
+# HOI4 Tips
+
+from hoi4tips import *
+
+@Bot.command()
+async def hoi4tip(ctx):
+    await ctx.send(random.choice(list(Hoitiplist)))
+
 # Dersler
 
 @Bot.command()
@@ -357,18 +461,22 @@ async def ders(ctx, *args):
     if "manga-edit" in args:
         await ctx.send("https://drive.google.com/file/d/12Mz-LchkUk1LIIm0lyoT7eagNDx4vExI/view?usp=sharing\nhttps://drive.google.com/file/d/15YyU80w498WVgP6vgySKWRXD99o98z_b/view?usp=sharing")
 
+# Change my mind komutu
+
+from PIL import Image, ImageFont, ImageDraw
+import textwrap
+
 @Bot.command()
 async def cmm(ctx, *args):
+
     img = Image.open("change-my-mind.jpg")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("impact.ttf", 55, encoding="utf-8")
-    metin = str(args).replace("(", "")
-    metin = metin.replace(")", "")
-    metin = metin.replace("'", "")
-    metin = metin.replace(",", "")
-    metin = metin.replace("-", " ")
+    font = ImageFont.truetype("Roboto-Regular.ttf", 55, encoding="utf-8")
+    value = " ".join(args)
+    wrapper = textwrap.TextWrapper(width=15)
+    word_list = wrapper.wrap(text=value)
     y = 550
-    for i, metin in enumerate(metin.split(' ')):
+    for metin in word_list:
         draw.text((340, y), metin, (0, 0, 0), font=font)
         y = y + 60
     kdgh = "cmm/" + str(random.randint(0, 10000)) + ".jpg"

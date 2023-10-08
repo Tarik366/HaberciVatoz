@@ -48,3 +48,37 @@ def getSerieId(link):
     except ValueError:
         r = ["boş"]
     return r
+
+def redacteSerieName(cat):
+    catt = cat.replace(" ", "-")
+    catt = catt.replace("ğ", "g")
+    catt = catt.replace("ı", "i")
+    catt = catt.replace("ş", "s")
+    catt = catt.replace("ö", "o")
+    catt = catt.replace("ü", "u")
+    catt = catt.replace("ç", "c")
+    catt = catt.replace(",", "")
+    catt = catt.replace('"', "")
+    catt = catt.replace("%", "")
+    catt = catt.replace("#", "")
+    catt = catt.replace("@", "")
+    catt = catt.replace("!", "")
+    catt = catt.replace("&", "")
+    catt = catt.replace("/", "")
+    catt = catt.replace("(", "")
+    catt = catt.replace(")", "")
+    catt = catt.replace("[", "")
+    catt = catt.replace("]", "")
+    catt = catt.replace("{", "")
+    catt = catt.replace("}", "")
+    catt = catt.replace("═", "")
+    catt = catt.replace("=", "")
+    catt = catt.replace("↟", "")
+    catt = catt.replace("~", "")
+    catt = catt.replace("?", "")
+    catt = catt.replace("|", "")
+    catt = catt.replace("’", "")
+    catt = catt.replace("\\", "")
+    catt = catt.replace("'", "").lower()
+    return catt
+

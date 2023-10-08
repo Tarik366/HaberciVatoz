@@ -23,7 +23,7 @@ intents = Intents.all()
 Bot = commands.Bot("!", help_command=None, intents=intents)
 tür = "vatoz"
 load_dotenv()
-sites = ["https://athenafansub.com/", "https://anime.athenafansub.com/"]
+sites = ["https://athenamanga.com/", "https://anime.athenamanga.com/"]
 
 
 @Bot.event
@@ -44,7 +44,7 @@ from Functions import getSeriePicture, getSerieId
 async def msg1():
 
     # AthenaFansubのサイトから最後のエピソードとシリーズを取得してる
-    lkkl = feedparser.parse("https://athenafansub.com/feed/")
+    lkkl = feedparser.parse("https://athenamanga.com/feed/")
     entry = lkkl.entries[0]
 
     le = open("lastEntry.txt", "r", encoding="utf-8")
@@ -54,10 +54,9 @@ async def msg1():
         title = entry.title
         link = entry.link
         cat = entry.category
-        catt = cat.replace(" ", "-")
-        catt = catt.replace("'", "").lower()
-
-    h = f"https://athenafansub.com/manga/{n.catt}"
+        catt = redacteSerieName(cat)
+ 
+    h = f"https://athenamanga.com/manga/{n.catt}"
     sentry = entry.title
 
     if sentry not in str(ar):
@@ -85,21 +84,21 @@ async def msg1():
 
         if SerieRoleIds == ["boş"]:
             await channeul.send(f"{tümSeriler.mention}", embed=emed)
+        # if  n.title
         else:
             MentionMessage = ""
             for SerieRoleId in SerieRoleIds:
                 SerieRole = AthenaDiscord.get_role(SerieRoleId)
                 MentionMessage += SerieRole.mention
                 print(MentionMessage)
-                await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}", embed=emed)
+                await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}",
+                                    embed=emed)
 
         with open("lastEntry.txt", "w", encoding="utf-8") as wle:
             wle.write(sentry)
 
-
 @tasks.loop(seconds=10)
 async def msg2():
-
     # anime.athenafansub.comから最後のエピソードとシリーズを取得してる
     NF = feedparser.parse("https://anime.athenafansub.com/feed/")
     entry = NF.entries[0]
@@ -111,8 +110,7 @@ async def msg2():
         title = entry.title
         link = entry.link
         cat = entry.category
-        catt = cat.replace(" ", "-")
-        catt = catt.replace("'", "").lower()
+        catt = redacteSerieName(cat)
 
     h = ""
     sentry = entry.title
@@ -151,7 +149,8 @@ async def msg2():
                 SerieRole = AthenaDiscord.get_role(SerieRoleId)
                 MentionMessage += SerieRole.mention
                 print(MentionMessage)
-                await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}", embed=emed)
+                await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}",
+                                    embed=emed)
 
         with open("lastAnimeEntry.txt", "w", encoding="utf-8") as wle:
             wle.write(sentry)
@@ -160,49 +159,20 @@ async def msg2():
 
 @Bot.command()
 async def yardım(ctx):
-    embed = Embed(title="Yardım",
-                  description="Yardım komutları",
-                  color=0x8a0a01)
-    embed.add_field(name="!yardım",
-                    value="yardım komutlarını gösterir",
-                    inline=False)
-    embed.add_field(name="!yak <@Banlanacak kişi>",
-                    value="Etiketlenen kişiyi yakar(banlar)",
-                    inline=False)
-    embed.add_field(name="!kick <@kicklenecek kişi>",
-                    value="Etiketlenen kişiyi kickler",
-                    inline=False)
-    embed.add_field(
-        name="!i <resim ismi>",
-        value=
-        "110'dan fazla gif veya resimden seçileni atar. Resim listesi için !i help yazabilirsiniz",
-        inline=False)
-    embed.add_field(name="!başvuru <4 formdan birisi>",
-                    value="Seçilen başvuru formunu gönderir",
-                    inline=False)
-    embed.add_field(name="!ada <Adanacak şey>",
-                    value="İstediğiniz bir şeyi hayalet vatoza adar",
-                    inline=False)
-    embed.add_field(name="!pp <@profil fotoğrafını istediğiniz>",
-                    value="Yazan kişinin profil fotoğrafını atar",
-                    inline=False)
-    embed.add_field(name="!ideoloji <istediğiniz ideoloji veya ülke>",
-                    value="130 ideoloji arasından seçilen ideolojiye geçerim",
-                    inline=False)
-    embed.add_field(name="!söz",
-                    value="Rastgele bir kişinin sözünü atar",
-                    inline=False)
-    embed.add_field(name="!propaganda",
-                    value="Random propaganda gönderir",
-                    inline=False)
-    embed.add_field(
-        name="!r <kitap, film, şarkı, oyun, anime veya anime>",
-        value=
-        "Seçilen kitap, film, şarkı, oyun, anime veya manga seçeneklerden birisi için öneride bulunur gönderir",
-        inline=False)
+    embed = Embed(title="Yardım", description="Yardım komutları", color=0x8a0a01)
+    embed.add_field(name="!yardım", value="yardım komutlarını gösterir", inline=False)
+    embed.add_field(name="!yak <@Banlanacak kişi>", value="Etiketlenen kişiyi yakar(banlar)", inline=False)
+    embed.add_field(name="!kick <@kicklenecek kişi>", value="Etiketlenen kişiyi kickler", inline=False)
+    embed.add_field(name="!i <resim ismi>", value="110'dan fazla gif veya resimden seçileni atar. Resim listesi için !i help yazabilirsiniz", inline=False)
+    embed.add_field(name="!başvuru <4 formdan birisi>", value="Seçilen başvuru formunu gönderir", inline=False)
+    embed.add_field(name="!ada <Adanacak şey>", value="İstediğiniz bir şeyi hayalet vatoza adar", inline=False)
+    embed.add_field(name="!pp <@profil fotoğrafını istediğiniz>", value="Yazan kişinin profil fotoğrafını atar", inline=False)
+    embed.add_field(name="!ideoloji <istediğiniz ideoloji veya ülke>", value="130 ideoloji arasından seçilen ideolojiye geçerim", inline=False)
+    embed.add_field(name="!söz", value="Rastgele bir kişinin sözünü atar", inline=False)
+    embed.add_field(name="!propaganda", value="Random propaganda gönderir", inline=False)
+    embed.add_field(name="!r <kitap, film, şarkı, oyun, anime veya anime>", value="Seçilen kitap, film, şarkı, oyun, anime veya manga seçeneklerden birisi için öneride bulunur gönderir", inline=False)
     embed.add_field(name="!fok", value="Foka dönüşürüm", inline=False)
-    embed.add_field(name="!hoi4tip",
-                    value="Hearts of iron 4 için ipucu veririm")
+    embed.add_field(name="!hoi4tip", value="Hearts of iron 4 için ipucu veririm")
     await ctx.send(embed=embed)
 
 

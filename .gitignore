@@ -1,38 +1,14 @@
-token_2.py
-__pycache__/*.pyc
-bin/
-__pycache__/token_2.cpython-37.pyc
-main.exe
-.vscode/settings.json
-.vscode/tasks.json
-__pycache__/propaganda.cpython-37.pyc
-Sözler/__pycache__/Stalin.cpython-37.pyc
-__pycache__\token_2.cpython-37.pyc
-__pycache__/Vars.cpython-37.pyc
-__pycache__\Hitler.cpython-37.pyc
-__pycache__\main.cpython-37.pyc
-main.cpp
-main.cpp
-Sözler/__pycache__/Stalin.cpython-37.pyc
-işkence.py
-token_2.py
-*.env
-a.py
-*.swp
-*.swm
-*.swo
-*.un
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.pyc
 
 # C extensions
 *.so
 
 # Distribution / packaging
-bin/
 .Python
 build/
 develop-eggs/
@@ -111,14 +87,14 @@ ipython_config.py
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:
-.python-version
+# .python-version
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
 #   However, in case of collaboration, if having platform-specific dependencies or dependencies
 #   having no cross-platform support, pipenv may install dependencies that don't work, or not
 #   install all needed dependencies.
-Pipfile.lock
+#Pipfile.lock
 
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
@@ -177,10 +153,12 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+.vscode/
+.env
+a.py
+cmm/
+Sözler/__pycache__/*.pyc
+adaklar/
+__pycache__/*
+.pyc
+__pycache__/basvuru.cpython-311.pyc

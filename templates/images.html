@@ -1,0 +1,33 @@
+<head>
+    <title>İmage komutu</title>
+</head>
+<style>
+    * {
+        background: #333;
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+    }
+    body {
+        height: 100vh;
+    	justify-content: center;
+    	align-items: center;
+    }
+    h1 {
+        position: relative;
+        font-size: 90px;
+    }
+    ul {
+        font-size: 40px;
+    }
+</style>
+<body>
+    <div>
+    <h1>İ Komutları</h1>
+        <ul>
+            {% for item in x %}
+                <li>{{item}} </li>
+            {% endfor %}
+        </ul>
+        </div>
+    </body>

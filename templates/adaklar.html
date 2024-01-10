@@ -42,14 +42,14 @@
 			}
 		</style>
 		<div class="Header">
-			{%for i in range(0, len)%}
+			{%for i in AdakList%}
 			<div class="card">
 				<div class="profile">
-					<img class="pp" src="{{ AdakList[i].get('avatar') }}">
-					<h2>{{ AdakList[i].get('ad') }}</h2>
+					<img class="pp" src="{{ i.get('avatar') }}">
+					<h2>{{ i.get('ad') }}</h2>
 				</div>
-				<h2>{{ AdakList[i].get('adak') }}</h2><br>
-				<h3>{{ AdakList[i].get('tarih') }}</h3>
+				<h2>{{ i.get('adak') }}</h2><br>
+				<h3>{{ i.get('tarih') }}</h3>
 			</div>
 			{%endfor%}
 		</div>

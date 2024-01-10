@@ -36,64 +36,19 @@ async def on_ready():
 async def yardım(ctx):
     embed = Embed(title="Yardım", description="Yardım komutları", color=0x8a0a01)
     embed.add_field(name="!yardım", value="yardım komutlarını gösterir", inline=False)
-    embed.add_field(name="!yak <@Banlanacak kişi>", value="Etiketlenen kişiyi yakar(banlar)",
-                    inline=False)
-    embed.add_field(name="!kick <@kicklenecek kişi>", value="Etiketlenen kişiyi kickler",
-                    inline=False)
+    embed.add_field(name="!yak <@Banlanacak kişi>", value="Etiketlenen kişiyi yakar(banlar)", inline=False)
+    embed.add_field(name="!kick <@kicklenecek kişi>", value="Etiketlenen kişiyi kickler", inline=False)
     embed.add_field(name="!i <resim ismi>",value="110'dan fazla gif veya resimden seçileni atar. Resim listesi için !i help yazabilirsiniz", inline=False)
-    embed.add_field(name="!başvuru <4 formdan birisi>",
-                    value="Seçilen başvuru formunu gönderir",
-                    inline=False)
-    embed.add_field(name="!ada <Adanacak şey>",
-                    value="İstediğiniz bir şeyi hayalet vatoza adar",
-                    inline=False)
-    embed.add_field(name="!pp <@profil fotoğrafını istediğiniz>",
-                    value="Yazan kişinin profil fotoğrafını atar",
-                    inline=False)
-    embed.add_field(name="!ideoloji <istediğiniz ideoloji veya ülke>",
-                    value="130 ideoloji arasından seçilen ideolojiye geçerim",
-                    inline=False)
-    embed.add_field(name="!söz",
-                    value="Rastgele bir kişinin sözünü atar",
-                    inline=False)
-    embed.add_field(name="!propaganda",
-                    value="Random propaganda gönderir",
-                    inline=False)
-    embed.add_field(
-        name="!r <kitap, film, şarkı, oyun, anime veya anime>",
-        value=
-        "Seçilen kitap, film, şarkı, oyun, anime veya manga seçeneklerden birisi için öneride bulunur gönderir",
-        inline=False)
+    embed.add_field(name="!başvuru <4 formdan birisi>",value="Seçilen başvuru formunu gönderir",inline=False)
+    embed.add_field(name="!ada <Adanacak şey>",value="İstediğiniz bir şeyi hayalet vatoza adar",inline=False)
+    embed.add_field(name="!pp <@profil fotoğrafını istediğiniz>",value="Yazan kişinin profil fotoğrafını atar",inline=False)
+    embed.add_field(name="!ideoloji <istediğiniz ideoloji veya ülke>",value="130 ideoloji arasından seçilen ideolojiye geçerim",inline=False)
+    embed.add_field(name="!söz",value="Rastgele bir kişinin sözünü atar", inline=False)
+    embed.add_field(name="!propaganda", value="Random propaganda gönderir", inline=False)
+    embed.add_field(name="!r <kitap, film, şarkı, oyun, anime veya anime>",value="Seçilen kitap, film, şarkı, oyun, anime veya manga seçeneklerden birisi için öneride bulunur gönderir", inline=False)
     embed.add_field(name="!fok", value="Foka dönüşürüm", inline=False)
-    embed.add_field(name="!hoi4tip",
-                    value="Hearts of iron 4 için ipucu veririm")
+    embed.add_field(name="!hoi4tip", value="Hearts of iron 4 için ipucu veririm")
     await ctx.send(embed=embed)
-
-
-# gifs
-
-from i import ilist
-
-@Bot.command()
-async def i(ctx, *args):
-    try:
-        await ctx.send(ilist.get(args[0]))
-    except:
-        iembed = Embed(title="Bir hata oluştu", description="Büyük ihtimalle bir yazım yanlışı yapmış olabilirsin")
-        await ctx.send(embed=iembed)
-
-# ekibe başvuru
-
-from basvuru import basvurulist
-
-@Bot.command()
-async def başvuru(ctx, *args):
-    iembed = Embed(title="Bir hata oluştu", description="Büyük ihtimalle bir yazım yanlışı yapmış olabilirsin.\n\nBu komutta kullanabileceğin değişkenler:\nmangaçeviri\nmangaeditör\nwebçeviri\nwebeditör\nanimeçeviri")
-    try:
-        tr = Embed(title="Başvuru formu", description=ilist.get(args[0]))
-        await ctx.send(embed=tr)
-    except:
-        await ctx.send(embed=iembed)
 
 # Adak sistemi
 
@@ -112,20 +67,6 @@ async def ada(ctx, *args):
     except:
         msg = Embed(title="Ne yazık ki adağınız kabul edilemedi")
         await ctx.send(embed=msg)
-
-# TODO: Buralar hep dutluktu dedirt
-
-import alya as a
-
-@Bot.command()
-async def alya(ctx, *args):
-    if "ak4747" in args:
-        dem = open("vatozlar/ak4747.jpg", 'rb')
-        demo = dem.read()
-        await Bot.change_presence(activity=Game(name="Etrafa sikmaca"))
-        await Bot.user.edit(username="Bilge AK-4747 Vatoz", avatar=demo)
-        embed = Embed(title="Bir can karşılığında bir can. Bence mantıklı bir anlaşma")
-        await ctx.send(embed=embed)
 
 # Söz
 

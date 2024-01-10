@@ -6,15 +6,15 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return render_template('main.py')
+    return render_template('main.html')
 
-"""from mongodb import get_adaklar
+from mongodb import get_adaklar
 
 @app.route("/adaklar")
 def adaklarSite():
     AdakList = get_adaklar()
     return render_template("adaklar.html", AdakList=AdakList)
-"""
+
 def run():
     app.run(
 		host='0.0.0.0',

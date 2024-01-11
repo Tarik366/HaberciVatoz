@@ -1,8 +1,8 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import os
-from dotenv.main import load_dotenv
 from datetime import datetime
+from dotenv.main import load_dotenv
 load_dotenv()
 
 DBKey = os.environ['DBKey']
@@ -13,7 +13,7 @@ client = MongoClient(uri)
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
-def adak(id, username, pp, adak, tarih=dt_string):
+def adaklara_ekle(id, username, pp, adak, tarih=dt_string):
 
     mydb = client['Adaklar']
 

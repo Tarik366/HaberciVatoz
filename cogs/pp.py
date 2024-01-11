@@ -1,19 +1,20 @@
 import discord
-from discord import Embed
+from discord import Embed, app_commands
 from discord.ext import commands
 
 class pp(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def pp(self, ctx, Member: discord.Member):
-        emed = Embed(title=f"{Member} adlı kulllanıcının profil fotoğrafı")
-        emed = emed.set_image(url=Member.avatar.url)
+    @commands.hybrid_command(name="pp")
+    @app_commands.describe(member="Kullanıcı etiketi")
+    async def pp(self, ctx:discord.Interaction, member: discord.Member):
+        emed = Embed(title=f"{member} adlı kulllanıcının profil fotoğrafı")
+        emed = emed.set_image(url=member.avatar.url)
         await ctx.send(embed=emed)
 
 
-    @commands.command()
+    @commands.hybrid_command()
     async def spp(self, ctx):
         icon_url = ctx.guild.icon
         emed = Embed(title=f"{ctx.guild.name} adlı sunucunun profil fotoğrafı")

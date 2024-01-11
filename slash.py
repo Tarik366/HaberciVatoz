@@ -1,27 +1,25 @@
+# main.py
+import discord
+from discord.ext import commands
 import os
 from dotenv.main import load_dotenv
-
 load_dotenv()
 
-from interactions import slash_command, SlashContext, Client, Intents, listen
+class Client(commands.Bot):
+    def __init__(self):
+        super().__init__(
+            command_prefix = commands.when_mentioned_or("&"),
+            intents = discord.Intents.all(),
+            help_command = commands.DefaultHelpCommand(dm_help=True)
+        )
+    
+    async def setup_hook(self): #overwriting a handler
+        print(f"\033[31mLogged in as {client.user}\033[39m")
+        cogs = ["cogs.imageRenderer", "cogs.pp"]
+        for filename in cogs:
+            await client.load_extension(filename)
+        await client.tree.sync()
+        print("Loaded cogs")
 
-bot = Client(intents=Intents.DEFAULT)
-
-@listen()  # this decorator tells snek that it needs to listen for the corresponding event, and run this coroutine
-async def on_ready():
-    # This event is called when the bot is ready to respond to commands
-    print("Ready")
-    print(f"This bot is owned by {bot.owner}")
-
-@slash_command(name="add", description="My first command :)")
-async def my_command_function(ctx: SlashContext):
-    await ctx.send("Hello World")
-
-@slash_command(name="my_long_command", description="My second command :)")
-async def my_long_command_function(ctx: SlashContext):
-    # need to defer it, otherwise, it fails
-    await ctx.defer()
-
-    await ctx.send("Hello World")
-
-bot.start(os.getenv('token'))
+client = Client()
+client.run(os.getenv("token"))

@@ -13,18 +13,20 @@ from keep_alive import keep_alive
 
 # Discord bot settings
 intents = Intents.all()
-Bot = commands.Bot("!", help_command=None, intents=intents)
+client = discord.Client(intents=intents)
+Bot = app_commands.CommandTree(client)
 load_dotenv()
 cogs = ["cogs.imageRenderer", "cogs.pp"]
 
 from cogs.checkNews import News
 
-@Bot.event
+@client.event
 async def on_ready():
+    await Bot.sync()
     keep_alive()
     for cog in cogs:
         try:
-            await Bot.load_extension(cog)
+            await client.load_extension(cog)
             print(cog + " was loaded.")
         except Exception as e:
             print(e)
@@ -52,16 +54,21 @@ async def yardım(ctx):
 
 # Adak sistemi
 
-from mongodb import adak
+from mongodb import adaklara_ekle
+
+# adak parametreleri
+class adaFlags(commands.FlagConverter):
+    adak: str = commands.flag(description='Adanılacak şey')
 
 @Bot.command()
-async def ada(ctx, *args):
+@app_commands.describe(adak="Adanacak şey")
+async def ada(ctx: Interaction, adak:str):
     author = ctx.message.author
     theHolyThings = ["Alya", "tarık"]
-    if args in theHolyThings:
+    if adak in theHolyThings:
         msg = Embed(title="Ne yazık ki adağınız kabul edilemedi")
     try:
-        adak(author.id, author.name, author.avatar.url, ' '.join(args))
+        adaklara_ekle(author.id, author.name, author.avatar.url, ' '.join(adak))
         msg = Embed(title="Adağınız kabul edildi")
         await ctx.send(embed=msg)
     except:
@@ -111,7 +118,7 @@ if l == 3:
 
 # Konuşma
 
-@Bot.event
+@client.event
 async def on_message(message):
     if message.author == Bot.user:
         return
@@ -131,10 +138,11 @@ async def propaganda(ctx):
 # Dersler
 
 @Bot.command()
-async def ders(ctx, *args):
-    if "anime-çeviri" in args:
+@app_commands.describe(ders="Seçilen ders")
+async def ders(ctx, ders:str):
+    if "anime-çeviri" in ders:
         await ctx.send("https://i.imgur.com/DZBjYxg.jpg\nhttps://i.imgur.com/X5r544n.jpg")
-    if "manga-edit" in args:
+    if "manga-edit" in ders:
         await ctx.send("https://drive.google.com/file/d/12Mz-LchkUk1LIIm0lyoT7eagNDx4vExI/view?usp=sharing\nhttps://drive.google.com/file/d/15YyU80w498WVgP6vgySKWRXD99o98z_b/view?usp=sharing")
 
 # 4.2
@@ -231,7 +239,7 @@ async def dilrol():
 
 
 @Bot.command()
-async def Kapat(ctx):
+async def kapat(ctx):
     au = ctx.author.id
     if au == 618214247742308361:
         await ctx.send("Kapatılıyor...")
@@ -240,15 +248,15 @@ async def Kapat(ctx):
     if au != 618214247742308361:
         await ctx.send("Kapatma yetkiniz yok")
 
+import sys
 
 @Bot.command()
-async def Yeniden(ctx):
+async def yeniden(ctx):
     au = ctx.author.id
     if au == 618214247742308361:
         embed = Embed(title="Yeniden başlatılıyor...", color=0x00ff00)
         await ctx.send(embed=embed)
-        os.system("python fasistvatoz.py")
-        exit()
+        os.system("python restarter.py")
     if au != 618214247742308361:
         await ctx.send("Yeniden başlatma yetkiniz yok")
 
@@ -256,7 +264,7 @@ if discord.ext.commands.errors.CommandNotFound:
     print("")
 
 try:
-    Bot.run(os.getenv('token'))
+    client.run(os.getenv('token'))
 except discord.errors.HTTPException:
     print("\n\n\nBLOCKED BY RATE LIMITS\nRESTARTING NOW\n\n\n")
     os.system("python restarter.py")

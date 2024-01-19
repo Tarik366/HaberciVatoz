@@ -1,4 +1,4 @@
-AlyaList = {
+Metehanlist = {
 "Metehan1": "Ne kadar değersiz olursa olsun toprak devletin temelidir; hiç kimseye verilemez.",
 "Metehan2": "Benden eğerimi isteyin vereyim, çadırımı isteyin vereyim, atımı isteyin vereyim fakat vatanımdan hiç kimse bir karış toprak istemesin vermem, veremem.",
 "Metehan3": "Eğer Çin hükümdarı, Hunluların Çin sınırlarına yaklaşmasını istemiyorsa, sınır muhafızlarına ve sınır boyunda yaşayan halka sınırlardan uzaklaşmayı emretmelidir.",

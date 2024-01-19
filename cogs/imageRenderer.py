@@ -1,5 +1,5 @@
 import discord
-from discord import Embed
+from discord import Embed, app_commands
 from discord.ext import commands
 import textwrap
 from PIL import Image, ImageFont, ImageDraw
@@ -11,14 +11,12 @@ class render(commands.Cog):
 
     # TODO: Daha fazla komut ekle
 
-    @commands.command()
-    async def cmm(ctx, *args):
+    @commands.hybrid_command(name="change_my_mind", description="Kendi Change My Mind'ını oluşturur.")
+    @app_commands.describe(metin="Yazılacak metin")
+    async def cmm(self, ctx, metin:str):
         img = Image.open("change-my-mind.jpg")
         draw = ImageDraw.Draw(img)
         font = ImageFont.truetype("Roboto-Thin.ttf", 55)
-        metin = ""
-        for word in args:
-            metin += f"{word} "
         metin.encode("utf-8")
         y = 550
         margin = offset = 340

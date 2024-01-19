@@ -1,8 +1,7 @@
-import discord
 from discord import Embed
 from discord.ext import commands, tasks
 import feedparser
-from Functions import getSeriePicture, getSerieId
+from Functions import getSeriePicture, getSerieId, getSerieLink
 from bs4 import BeautifulSoup
 import requests
 
@@ -15,6 +14,7 @@ class News(): # create a class for our cog that inherits from commands.Cog
     # TODO: repl.it'den latest versiyonr hali ile değiştirilececk
     
     # Role identifications
+    is_dev = True
     MainChannel = 813886736051863554
     devChannel = 1050431310163886191
     AthenaGuildId = 798641429056454686
@@ -24,46 +24,10 @@ class News(): # create a class for our cog that inherits from commands.Cog
     
     sites = ["https://athenamanga.com/", "https://anime.athenamanga.com/"]
 
-    from Functions import getSeriePicture, getSerieId
-
-    def sanitize(catt):
-        catt = catt.replace(" ", "-")
-        catt = catt.replace("ğ", "g")
-        catt = catt.replace("ı", "i")
-        catt = catt.replace("ş", "s")
-        catt = catt.replace("ö", "o")
-        catt = catt.replace("ü", "u")
-        catt = catt.replace("ç", "c")
-        catt = catt.replace(",", "")
-        catt = catt.replace('"', "")
-        catt = catt.replace("%", "")
-        catt = catt.replace("#", "")
-        catt = catt.replace("@", "")
-        catt = catt.replace("!", "")
-        catt = catt.replace("&", "")
-        catt = catt.replace("/", "")
-        catt = catt.replace("(", "")
-        catt = catt.replace(")", "")
-        catt = catt.replace("[", "")
-        catt = catt.replace("]", "")
-        catt = catt.replace("{", "")
-        catt = catt.replace("}", "")
-        catt = catt.replace("═", "")
-        catt = catt.replace("=", "")
-        catt = catt.replace("↟", "")
-        catt = catt.replace("~", "")
-        catt = catt.replace("?", "")
-        catt = catt.replace("|", "")
-        catt = catt.replace("’", "")
-        catt = catt.replace("\\", "")
-        catt = catt.replace("'", "").lower()
-        return catt
-
     @tasks.loop(seconds=10)
-    async def msg1(self, is_dev: bool):
-        print("10 saniye geçti")
+    async def msg1(ctx):
 
-        if is_dev == True:
+        if News.is_dev == True:
             MainChannel = News.devChannel
             AthenaGuildId = News.devGuildId
             allRolesId = News.devRoleId
@@ -82,10 +46,8 @@ class News(): # create a class for our cog that inherits from commands.Cog
         class n:
             title = entry.title
             link = entry.link
-            cat = entry.category
-            catt = News.sanitize(cat)
+            serieLink = getSerieLink(link)
 
-        h = f"{News.sites[0]}manga/{n.catt}"
         sentry = entry.title
 
         if sentry not in str(ar):
@@ -94,22 +56,19 @@ class News(): # create a class for our cog that inherits from commands.Cog
                 'User-Agent':
                 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
             }
-            sou = requests.get(h, headers=headers)
+            sou = requests.get(n.serieLink, headers=headers)
             soup = BeautifulSoup(sou.content, 'html.parser')
 
-            emed = Embed(title=f"{entry.title} yayında keyifli okumalar!",
-                        description=f"okumak için {entry.link}",
-                        url=entry.link)
+            emed = Embed(title=f"{entry.title} yayında keyifli okumalar!", description=f"okumak için {entry.link}", url=entry.link)
 
-            hgf = getSeriePicture(h)
+            hgf = getSeriePicture(n.serieLink)
             emed = emed.set_image(url=hgf)
 
-            channeul = self.bot.get_channel(MainChannel)
-            AthenaDiscord = self.bot.get_guild(AthenaGuildId)
+            AthenaDiscord = ctx.get_guild(AthenaGuildId)
+            channeul = AthenaDiscord.get_channel(MainChannel)
 
             tümSeriler = AthenaDiscord.get_role(allRolesId)
-            SerieRoleIds = getSerieId(h)
-            print(SerieRoleIds)
+            SerieRoleIds = getSerieId(n.serieLink)
 
             if SerieRoleIds == ["boş"]:
                 await channeul.send(f"{tümSeriler.mention}", embed=emed)
@@ -119,18 +78,15 @@ class News(): # create a class for our cog that inherits from commands.Cog
                 for SerieRoleId in SerieRoleIds:
                     SerieRole = AthenaDiscord.get_role(SerieRoleId)
                     MentionMessage += SerieRole.mention
-                    print(MentionMessage)
-                    await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}",
-                                        embed=emed)
+                    await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}", embed=emed)
 
             with open("lastEntry.txt", "w", encoding="utf-8") as wle:
                 wle.write(sentry)
 
     @tasks.loop(seconds=10)
-    async def msg2(self, is_dev: bool):
-        print("10 saniye geçti")
+    async def msg2(self):
 
-        if is_dev == True:
+        if News.is_dev == True:
             MainChannel = News.devChannel
             AthenaGuildId = News.devGuildId
             allRolesId = News.devRoleId
@@ -149,10 +105,8 @@ class News(): # create a class for our cog that inherits from commands.Cog
         class n:
             title = entry.title
             link = entry.link
-            cat = entry.category
-            catt = News.sanitize(cat)
+            catt = getSerieLink(link, True)
 
-        h = f"{News.sites[1]}anime/{n.catt}"
         sentry = entry.title
 
         if sentry not in str(ar):
@@ -164,22 +118,16 @@ class News(): # create a class for our cog that inherits from commands.Cog
             sou = requests.get(n.link, headers=headers)
             soup = BeautifulSoup(sou.content, 'html.parser')
 
-            sa = soup.find('a', id='anime_title')
-            h = sa['href']
+            emed = Embed(title=f"{entry.title} yayında keyifli okumalar!", description=f"izlemek için {entry.link}", url=entry.link)
 
-            emed = Embed(title=f"{entry.title} yayında keyifli okumalar!",
-                        description=f"izlemek için {entry.link}",
-                        url=entry.link)
-
-            hgf = getSeriePicture(h, anime=True)
+            hgf = getSeriePicture(n.serieLink, anime=True)
             emed = emed.set_image(url=hgf)
 
-            channeul = self.bot.get_channel(MainChannel)
-            AthenaDiscord = self.bot.get_guild(AthenaGuildId)
+            channeul = self.get_channel(MainChannel)
+            AthenaDiscord = self.get_guild(AthenaGuildId)
 
             tümSeriler = AthenaDiscord.get_role(allRolesId)
-            SerieRoleIds = getSerieId(h)
-            print(SerieRoleIds)
+            SerieRoleIds = getSerieId(n.serieLink)
 
             if SerieRoleIds == ["boş"]:
                 await channeul.send(f"{tümSeriler.mention}", embed=emed)
@@ -187,10 +135,11 @@ class News(): # create a class for our cog that inherits from commands.Cog
                 MentionMessage = ""
                 for SerieRoleId in SerieRoleIds:
                     SerieRole = AthenaDiscord.get_role(SerieRoleId)
-                    MentionMessage += SerieRole.mention
-                    print(MentionMessage)
-                    await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}",
-                                        embed=emed)
+                    try:
+                        MentionMessage += SerieRole.mention
+                    except:
+                        pass
+                    await channeul.send(f"{MentionMessage}\n{tümSeriler.mention}", embed=emed)
 
             with open("lastAnimeEntry.txt", "w", encoding="utf-8") as wle:
                 wle.write(sentry)

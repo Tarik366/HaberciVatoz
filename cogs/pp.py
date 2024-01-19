@@ -6,7 +6,7 @@ class pp(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.hybrid_command(name="pp")
+    @commands.hybrid_command(name="pp", description="Seçilen kullanıcının profil fotoğrafını gönderir")
     @app_commands.describe(member="Kullanıcı etiketi")
     async def pp(self, ctx:discord.Interaction, member: discord.Member):
         emed = Embed(title=f"{member} adlı kulllanıcının profil fotoğrafı")
@@ -14,7 +14,7 @@ class pp(commands.Cog):
         await ctx.send(embed=emed)
 
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="spp", description="Bulunduğunuz sunucunun profil fotoğrafını gönderir")
     async def spp(self, ctx):
         icon_url = ctx.guild.icon
         emed = Embed(title=f"{ctx.guild.name} adlı sunucunun profil fotoğrafı")

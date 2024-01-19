@@ -1,11 +1,24 @@
 import requests
 from bs4 import BeautifulSoup
 
+headers = {
+    'User-Agent':
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+}
+
+def getSerieLink(link, anime=False):
+
+    sou = requests.get(link, headers=headers)
+    soup = BeautifulSoup(sou.content, 'html.parser')
+
+    if anime is True:
+        manga_link = soup.find(id='anime_title')
+    else:
+        manga_link = soup.select('.allc a')[0]
+
+    return manga_link['href']
+
 def getSeriePicture(link, anime=False):
-    headers = {
-        'User-Agent':
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
-    }
 
     sou = requests.get(link, headers=headers)
     soup = BeautifulSoup(sou.content, 'html.parser')
@@ -30,21 +43,16 @@ def getSeriePicture(link, anime=False):
             return hgf
 
 def getSerieId(link):
-    headers = {
-        'User-Agent':
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
-    }
 
     sou = requests.get(link, headers=headers)
     soup = BeautifulSoup(sou.content, 'html.parser')
-
-    roleid = soup.find("span", attrs={"id": "roleid"})
-    roleid = roleid.get_text()
-    roleid = roleid.split(", ")
     r = []
     try:
+        roleid = soup.find("span", attrs={"id": "roleid"})
+        roleid = roleid.get_text()
+        roleid = roleid.split(", ")
         for role in roleid:
             r.append(int(role))
-    except ValueError:
+    except:
         r = ["boş"]
     return r

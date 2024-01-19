@@ -27,10 +27,23 @@ def adaklarSite():
 def run():
     app.run(host='0.0.0.0', port=random.randint(2000, 9000))
 
+# Importing the library
+import psutil
+import time
+import os
+
+def ram():
+    x = False
+    while x == False:
+        ea = psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2
+        print(ea)
+        time.sleep(60)
 
 def keep_alive():
     '''
 	Creates and starts new thread that runs the function run.
 	'''
     t = Thread(target=run)
-    t.start()
+    # t.start()
+    a = Thread(target=ram)
+    a.start()

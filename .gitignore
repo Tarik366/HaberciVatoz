@@ -157,9 +157,4 @@ cython_debug/
 .env
 a.py
 cmm/
-Sözler/__pycache__/*.pyc
 adaklar/
-__pycache__/*.pyc
-.pyc
-__pycache__/basvuru.cpython-311.pyc
-__pycache__/mongodb.cpython-311.pyc

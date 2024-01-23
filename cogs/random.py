@@ -8,10 +8,10 @@ class random(commands.Cog):
 
     # Söz
 
-    from Sözler.Atatürk import Ataturklist
-    from Sözler.Cengiz import Cengizlist
-    from Sözler.CelalŞengör import CelalŞengörlist
-    from Sözler.MeteHan import Metehanlist
+    from HaberciVatoz.Sözler.Atatürk import Ataturklist
+    from HaberciVatoz.Sözler.Cengiz import Cengizlist
+    from HaberciVatoz.Sözler.CelalŞengör import CelalŞengörlist
+    from HaberciVatoz.Sözler.MeteHan import Metehanlist
     import random
 
     @commands.hybrid_command(name="söz", description="Rastgele, önemli bir kişinin, bir sözünü yazar")
@@ -39,7 +39,7 @@ class random(commands.Cog):
             embed = Embed(title="Metehan derki", description=(random.Metehanlist[f]))
             await ctx.send(embed=embed)
 
-    from propaganda import propagandalist
+    from HaberciVatoz.propaganda import propagandalist
 
     @commands.hybrid_command()
     async def propaganda(self, ctx):
@@ -51,7 +51,7 @@ class random(commands.Cog):
             super().__init__()
             self.value = None
     
-    from Seriler import getRandomSerie
+    from HaberciVatoz.Seriler import getRandomSerie
 
     @commands.hybrid_command()
     async def seri(self, ctx):

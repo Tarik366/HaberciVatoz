@@ -10,14 +10,17 @@ app = Flask(__name__)
 def hello_world():
     return render_template('main.html')
 
-from i import ilist 
+from HaberciVatoz.i import ilist 
 x = ilist.keys()
 
 @app.route("/i")
 def images():
     return render_template('images.html', x=x)
 
-from mongodb import get_adaklar
+from dotenv.main import load_dotenv
+load_dotenv()
+
+from HaberciVatoz.mongodb import get_adaklar
 
 @app.route("/adaklar")
 def adaklarSite():

@@ -8,7 +8,7 @@ class select(commands.Cog):
 
     # gifs
 
-    from i import ilist
+    from HaberciVatoz.i import ilist
 
     @commands.hybrid_command(name="resim", description="Adı yazılan resmi atar")
     @app_commands.describe(resim_adı="Resim adı")
@@ -21,7 +21,7 @@ class select(commands.Cog):
 
     # ekibe başvuru
 
-    from basvuru import basvurulist
+    from HaberciVatoz.basvuru import basvurulist
 
     @commands.hybrid_command(name="başvuru")
     @app_commands.describe(form_adı="Form adı")
@@ -63,7 +63,7 @@ class select(commands.Cog):
     
     # Adak sistemi
 
-    from mongodb import adaklara_ekle
+    from HaberciVatoz.mongodb import adaklara_ekle
 
     @commands.hybrid_command()
     @app_commands.describe(adak="Adanacak şey")

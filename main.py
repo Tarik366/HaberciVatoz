@@ -8,10 +8,13 @@ from discord import * # type: ignore
 from discord.ext import commands, tasks
 import json
 import datetime as dt
-from keep_alive import keep_alive
+from HaberciVatoz.keep_alive import keep_alive
+
+from dotenv.main import load_dotenv
+load_dotenv()
 
 # Discord bot settings
-cogs = ["cogs.buttons", "cogs.imageRenderer", "cogs.pp", "cogs.selectFromList", "cogs.random"]
+cogs = ["HaberciVatoz.cogs.buttons", "HaberciVatoz.cogs.imageRenderer", "HaberciVatoz.cogs.pp", "HaberciVatoz.cogs.selectFromList", "HaberciVatoz.cogs.random"]
 
 class Client(commands.Bot):
     def __init__(self):
@@ -35,7 +38,7 @@ class Client(commands.Bot):
 client = Client()
 Bot = client
 
-from cogs.checkNews import News as News
+from HaberciVatoz.cogs.checkNews import News as News
 
 @client.event
 async def on_ready():

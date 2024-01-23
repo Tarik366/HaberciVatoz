@@ -14,7 +14,7 @@ class News(): # create a class for our cog that inherits from commands.Cog
     # TODO: repl.it'den latest versiyonr hali ile değiştirilececk
     
     # Role identifications
-    is_dev = True
+    is_dev = False
     MainChannel = 813886736051863554
     devChannel = 1050431310163886191
     AthenaGuildId = 798641429056454686

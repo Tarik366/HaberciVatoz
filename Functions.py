@@ -18,6 +18,18 @@ def getSerieLink(link, anime=False):
 
     return manga_link['href']
 
+def getSerieName(link, anime=False):
+
+    ure = requests.get(link, headers=headers)
+    uso = BeautifulSoup(ure.content, 'html.parser')
+
+    if anime is True:
+        manga_link = uso.find(id='anime_title').get_text()
+    else:
+        manga_link = uso.select('.entry-title')[0].get_text()
+
+    return manga_link
+
 def getSeriePicture(link, anime=False):
 
     sou = requests.get(link, headers=headers)
@@ -56,3 +68,15 @@ def getSerieId(link):
     except:
         r = ["boş"]
     return r
+
+def getSerieDescription(site, anime=False):
+
+    sou = requests.get(site, headers=headers)
+    soup = BeautifulSoup(sou.content, 'html.parser')
+
+    if anime == True:
+        desc = soup.select("#animeDescription")[0].get_text()
+        return desc
+    else:
+        desc = soup.select(".entry-content")[0].get_text()
+        return desc

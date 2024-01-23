@@ -51,18 +51,17 @@ class random(commands.Cog):
             super().__init__()
             self.value = None
     
-    from Seriler import getSeries
+    from Seriler import getRandomSerie
 
     @commands.hybrid_command()
     async def seri(self, ctx):
-        seriList = random.getSeries()
-        seri = random.random.choice(seriList)
+        seri = random.getRandomSerie("https://athenamanga.com/manga/list-mode/")
         view = random.Menu()
         view.add_item(
-            ui.Button(label="Sitemizden oku", style=ButtonStyle.url, url=seri.url)
+            ui.Button(label="Sitemizden oku", style=ButtonStyle.url, url=seri['url'])
         )
-        embed = Embed(title=seri.ad, description=seri.desc)
-        embed.set_image(url=seri.image)
+        embed = Embed(title=seri['name'], description=seri['desc'])
+        embed.set_image(url=seri['cover'])
         await ctx.reply(embed=embed, view=view)
 
 async def setup(bot):

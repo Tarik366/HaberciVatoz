@@ -4,7 +4,7 @@ import os.path
 import os
 import random
 import discord
-from discord import *
+from discord import * # type: ignore
 from discord.ext import commands, tasks
 import json
 from dotenv.main import load_dotenv
@@ -13,7 +13,7 @@ from keep_alive import keep_alive
 
 # Discord bot settings
 load_dotenv()
-cogs = ["cogs.buttons", "cogs.imageRenderer", "cogs.pp", "cogs.selectFromList", "cogs.random", "cogs.onlyDeadsCanSee"]
+cogs = ["cogs.buttons", "cogs.imageRenderer", "cogs.pp", "cogs.selectFromList", "cogs.random"]
 
 class Client(commands.Bot):
     def __init__(self):

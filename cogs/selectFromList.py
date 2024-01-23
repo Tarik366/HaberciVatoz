@@ -33,22 +33,23 @@ class select(commands.Cog):
         except:
             await ctx.send(embed=iembed)
 
-    from idea import get_idea
+    #FIXME - ASAP
+    # from idea import get_idea
 
-    @commands.hybrid_command(name="idea")
-    @app_commands.describe(idea_adı="Fikir adı")
-    async def alya(self, ctx, idea_adı:str):
-        id = select.get_idea(idea_adı)
-        try:
-            dem = open(id.pp, 'rb')
-            demo = dem.read()
-            await self.bot.change_presence(activity=discord.Game(name=id.game))
-            await self.bot.user.edit(username=id.name, avatar=demo)
-            embed = Embed(title=id.ocm)
-            await ctx.send(embed=embed)
-        except:
-            embed = Embed(title="Bir hata oluştu")
-            await ctx.send(embed=embed)
+    # @commands.hybrid_command(name="idea")
+    # @app_commands.describe(idea_adı="Fikir adı")
+    # async def alya(self, ctx, idea_adı:str):
+    #     id = select.get_idea(idea_adı)
+    #     try:
+    #         dem = open(id.pp, 'rb')
+    #         demo = dem.read()
+    #         await self.bot.change_presence(activity=discord.Game(name=id.game))
+    #         await self.bot.user.edit(username=id.name, avatar=demo)
+    #         embed = Embed(title=id.ocm)
+    #         await ctx.send(embed=embed)
+    #     except:
+    #         embed = Embed(title="Bir hata oluştu", description="Lütfen sitemizden geçerli idealara bakınız")
+    #         await ctx.send(embed=embed)
     
     # Dersler
 

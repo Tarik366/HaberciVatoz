@@ -2,8 +2,6 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import os
 from datetime import datetime
-from dotenv.main import load_dotenv
-load_dotenv()
 
 DBKey = os.environ['DBKey']
 uri = f"mongodb+srv://{DBKey}/?retryWrites=true&w=majority"

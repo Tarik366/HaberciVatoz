@@ -7,12 +7,10 @@ import discord
 from discord import * # type: ignore
 from discord.ext import commands, tasks
 import json
-from dotenv.main import load_dotenv
 import datetime as dt
 from keep_alive import keep_alive
 
 # Discord bot settings
-load_dotenv()
 cogs = ["cogs.buttons", "cogs.imageRenderer", "cogs.pp", "cogs.selectFromList", "cogs.random"]
 
 class Client(commands.Bot):
@@ -66,7 +64,7 @@ if discord.ext.commands.errors.CommandNotFound:
     print("")
 
 try:
-    client.run(os.getenv('token'))
+    client.run(os.environ['discord_token'])
 except discord.errors.HTTPException:
     print("\n\n\nBLOCKED BY RATE LIMITS\nRESTARTING NOW\n\n\n")
     os.system("python restarter.py")

@@ -63,10 +63,11 @@ async def on_message(message):
 if discord.ext.commands.errors.CommandNotFound:
     print("")
 
-try:
-    print(os.environ['discord_token'])
-    client.run(os.environ['discord_token'])
-except discord.errors.HTTPException:
-    print("\n\n\nBLOCKED BY RATE LIMITS\nRESTARTING NOW\n\n\n")
-    os.system("python restarter.py")
-    os.system('kill 1')
+def application():
+    try:
+        print(os.environ['discord_token'])
+        client.run(os.environ['discord_token'])
+    except discord.errors.HTTPException:
+        print("\n\n\nBLOCKED BY RATE LIMITS\nRESTARTING NOW\n\n\n")
+        os.system("python restarter.py")
+        os.system('kill 1')

@@ -64,6 +64,7 @@ if discord.ext.commands.errors.CommandNotFound:
     print("")
 
 try:
+    print(os.environ['discord_token'])
     client.run(os.environ['discord_token'])
 except discord.errors.HTTPException:
     print("\n\n\nBLOCKED BY RATE LIMITS\nRESTARTING NOW\n\n\n")

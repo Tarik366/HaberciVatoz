@@ -14,16 +14,16 @@ class render(commands.Cog):
     @commands.hybrid_command(name="change_my_mind", description="Kendi Change My Mind'ını oluşturur.")
     @app_commands.describe(metin="Yazılacak metin")
     async def cmm(self, ctx, metin:str):
-        img = Image.open("change-my-mind.jpg")
+        img = Image.open("HaberciVatoz/change-my-mind.jpg")
         draw = ImageDraw.Draw(img)
-        font = ImageFont.truetype("Roboto-Thin.ttf", 55)
+        font = ImageFont.truetype("HaberciVatoz/Roboto-Thin.ttf", 55)
         metin.encode("utf-8")
         y = 550
         margin = offset = 340
         for line in textwrap.wrap(metin, width=20):
             draw.text((margin, y), line, font=font, fill="#000000")
             y += 60
-        kdgh = "cmm/" + str(random.randint(0, 10000)) + ".jpg"
+        kdgh = "HaberciVatoz/cmm/" + str(random.randint(0, 10000)) + ".jpg"
         img.save(kdgh)
         await ctx.send(' ', file=discord.File(kdgh))
     

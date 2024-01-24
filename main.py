@@ -43,6 +43,8 @@ from HaberciVatoz.cogs.checkNews import News as News
 @client.event
 async def on_ready():
     keep_alive()
+    demo = open("HaberciVatoz/HaberciVatoz.png")
+    await client.user.edit(username="Haberci Vatoz", avatar=demo)
     await News.msg1(client)
     await News.msg2(client)
 

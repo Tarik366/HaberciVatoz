@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from threading import Thread
 import random
-
+from main import application 
 
 app = Flask(__name__)
 
@@ -28,9 +28,8 @@ def adaklarSite():
     AdakList = get_adaklar()
     return render_template("adaklar.html", AdakList=AdakList)
 
-def run():
-    app.run(port=os.environ['PORT'])
-
+app.run(port=os.environ['PORT'])
+application()
 # Importing the library
 
 def keep_alive():

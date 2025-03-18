@@ -42,7 +42,6 @@ from cogs.checkNews import News as News
 
 @client.event
 async def on_ready():
-    keep_alive()
     await News.msg1(client)
 
 @client.event
@@ -57,5 +56,3 @@ def application():
         client.run(os.environ['discord_token'])
     except discord.errors.HTTPException:
         print("\n\n\nBLOCKED BY RATE LIMITS\nRESTARTING NOW\n\n\n")
-
-application()

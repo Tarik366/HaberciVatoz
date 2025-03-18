@@ -17,9 +17,6 @@ x = ilist.keys()
 def images():
     return render_template('images.html', x=x)
 
-from dotenv.main import load_dotenv
-load_dotenv()
-
 from mongodb import get_adaklar
 import os
 
@@ -28,7 +25,7 @@ def adaklarSite():
     AdakList = get_adaklar()
     return render_template("adaklar.html", AdakList=AdakList)
 
-app.run(port=os.environ['PORT'])
+app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 application()
 # Importing the library
 

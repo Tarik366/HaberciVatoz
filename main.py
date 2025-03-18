@@ -8,6 +8,7 @@ from discord import * # type: ignore
 from discord.ext import commands, tasks
 import json
 import datetime as dt
+from keep_alive import keep_alive
 
 from dotenv.main import load_dotenv
 load_dotenv()
@@ -41,6 +42,7 @@ from cogs.checkNews import News as News
 
 @client.event
 async def on_ready():
+    keep_alive()
     await News.msg1(client)
 
 @client.event
